@@ -1,0 +1,8 @@
+prefix=/home/mstrobotics/MATE_June2018/catkin_ws/install
+
+Name: rosserial_arduino
+Description: Description of rosserial_arduino
+Version: 0.7.6
+Cflags: -I/home/mstrobotics/MATE_June2018/catkin_ws/install/include
+Libs: -L/home/mstrobotics/MATE_June2018/catkin_ws/install/lib 
+Requires: message_runtime

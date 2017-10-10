@@ -1,0 +1,8 @@
+prefix=/home/mstrobotics/catkin_ws/install
+
+Name: rosserial_embeddedlinux
+Description: Description of rosserial_embeddedlinux
+Version: 0.7.6
+Cflags: 
+Libs: -L/home/mstrobotics/catkin_ws/install/lib 
+Requires: 

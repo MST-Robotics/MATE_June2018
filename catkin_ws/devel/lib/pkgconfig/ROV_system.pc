@@ -1,0 +1,8 @@
+prefix=/home/mstrobotics/MATE_June2018/catkin_ws/devel
+
+Name: ROV_system
+Description: Description of ROV_system
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mstrobotics/MATE_June2018/catkin_ws/devel/lib 
+Requires: 

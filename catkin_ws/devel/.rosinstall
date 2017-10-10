@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/mstrobotics/MATE_June2018/catkin_ws/devel/setup.sh

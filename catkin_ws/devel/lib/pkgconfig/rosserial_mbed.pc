@@ -1,0 +1,8 @@
+prefix=/home/mstrobotics/MATE_June2018/catkin_ws/devel
+
+Name: rosserial_mbed
+Description: Description of rosserial_mbed
+Version: 0.7.6
+Cflags: -I/home/mstrobotics/MATE_June2018/catkin_ws/devel/include
+Libs: -L/home/mstrobotics/MATE_June2018/catkin_ws/devel/lib 
+Requires: message_runtime
