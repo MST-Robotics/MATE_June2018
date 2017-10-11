@@ -3,7 +3,7 @@
  *	Email: vgmcn3@mst.edu
  *	Date: 10-10-2017
  
- *	Description: This file pair is used to set up onboard hardware
+ *	Description: This file contains libraries used for onboard hardware
  */
 
 #ifndef ROV_MAIN_H

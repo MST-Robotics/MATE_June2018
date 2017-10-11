@@ -1,3 +1,11 @@
+/*
+ *	Author: Vinnie Marco
+ *	Email: vgmcn3@mst.edu
+ *	Date: 10-10-2017
+ 
+ *	Description: This file contains libraries used for onboard hardware
+ */
+
 #include "ROV_main.h"
 #include "LSM9DS1_Registers.h"
 #include "LSM9DS1_Types.h"

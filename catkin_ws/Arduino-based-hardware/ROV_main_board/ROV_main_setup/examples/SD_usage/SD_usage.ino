@@ -10,18 +10,17 @@
 
 #include <ROV_main_setup.h>
 
-//uncomment this line if using sd card
-//#define card_used
-
 void setup() 
 {
+  Serial.begin(115200);//need to set up serial for this example 
+  
   bool error_flag = main_setup();//check for an error
   if(error_flag)
   {
     //Serial.println("ERROR");//prints error message if serial is started
     while(1);
   }
-  Serial.begin(115200);//need to set up serial for this example 
+  
 }
 
 void loop() 
