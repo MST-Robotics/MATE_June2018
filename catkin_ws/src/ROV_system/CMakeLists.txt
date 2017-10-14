@@ -104,8 +104,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES ROV_system
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+   LIBRARIES ROV_system
+   CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -200,3 +200,9 @@ include_directories(
 
 add_executable(controller_processing src/controller_processing.cpp)
 target_link_libraries(controller_processing ${catkin_LIBRARIES})
+
+add_executable(sensory_processing src/sensory_processing.cpp)
+target_link_libraries(sensory_processing ${catkin_LIBRARIES})
+
+add_executable(motion_processing src/motion_processing.cpp)
+target_link_libraries(motion_processing ${catkin_LIBRARIES})

@@ -1,0 +1,32 @@
+<launch>
+
+  <node pkg="joy" type="joy_node" name="joystick" respawn="true">
+    <param name="dev" value="/dev/input/js0" />
+    <remap from="joy" to="joystick_topic"/>
+  </node>
+
+  <node pkg="joy" type="joy_node" name="thruster" respawn="true">
+    <param name="dev" value="/dev/input/js1" />
+    <remap from="joy" to="thruster_topic"/>
+  </node>
+
+  <node pkg="ROV_system" type="controller_processing" name="Controller_processing" respawn="true">
+  </node>
+
+  <node pkg="ROV_system" type="sensory_processing" name="Sensory_processing" respawn="true">
+  </node>
+
+  <node pkg="ROV_system" type="motion_processing" name="Motion_processing" respawn="true">
+  </node>
+
+  <node pkg="rosserial_python" type="serial_node.py" name="ROV_main">
+    <param name="port" value="/dev/ttyUSB0"/>
+    <param name="baud" value="57600"/>
+  </node>
+  
+  <node pkg="rosserial_python" type="serial_node.py" name="ROV_cs">
+    <param name="port" value="/dev/ttyACM0"/>
+    <param name="baud" value="57600"/>
+  </node>
+  
+</launch>

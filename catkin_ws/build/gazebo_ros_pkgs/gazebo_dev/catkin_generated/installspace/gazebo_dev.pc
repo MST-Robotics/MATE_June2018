@@ -1,0 +1,8 @@
+prefix=/home/mstrobotics/MATE_June2018/catkin_ws/install
+
+Name: gazebo_dev
+Description: Description of gazebo_dev
+Version: 2.5.13
+Cflags: 
+Libs: -L/home/mstrobotics/MATE_June2018/catkin_ws/install/lib 
+Requires: 

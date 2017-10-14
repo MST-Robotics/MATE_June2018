@@ -56,6 +56,17 @@ CMAKE_BINARY_DIR = /home/mstrobotics/MATE_June2018/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -65,39 +76,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -110,17 +88,6 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -132,6 +99,39 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,184 +166,49 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-ROV_system/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : ROV_system/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+ROV_system/CMakeFiles/motion_processing.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/motion_processing.dir/rule
+.PHONY : ROV_system/CMakeFiles/motion_processing.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: ROV_system/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+motion_processing: ROV_system/CMakeFiles/motion_processing.dir/rule
 
-.PHONY : std_msgs_generate_messages_py
+.PHONY : motion_processing
 
 # fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/std_msgs_generate_messages_py.dir/build.make ROV_system/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
+motion_processing/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/motion_processing.dir/build.make ROV_system/CMakeFiles/motion_processing.dir/build
+.PHONY : motion_processing/fast
 
 # Convenience name for target.
-ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/rule
+ROV_system/CMakeFiles/sensory_processing.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/sensory_processing.dir/rule
+.PHONY : ROV_system/CMakeFiles/sensory_processing.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/rule
+sensory_processing: ROV_system/CMakeFiles/sensory_processing.dir/rule
 
-.PHONY : roscpp_generate_messages_py
+.PHONY : sensory_processing
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/build.make ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+sensory_processing/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/sensory_processing.dir/build.make ROV_system/CMakeFiles/sensory_processing.dir/build
+.PHONY : sensory_processing/fast
 
 # Convenience name for target.
-ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+ROV_system/CMakeFiles/controller_processing.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/controller_processing.dir/rule
+.PHONY : ROV_system/CMakeFiles/controller_processing.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+controller_processing: ROV_system/CMakeFiles/controller_processing.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : controller_processing
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-ROV_system/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : ROV_system/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: ROV_system/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make ROV_system/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/build.make ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ROV_system/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ROV_system/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: ROV_system/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make ROV_system/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+controller_processing/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/controller_processing.dir/build.make ROV_system/CMakeFiles/controller_processing.dir/build
+.PHONY : controller_processing/fast
 
 # Convenience name for target.
 ROV_system/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
@@ -361,49 +226,139 @@ roscpp_generate_messages_lisp/fast:
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
-ROV_system/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : ROV_system/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: ROV_system/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+roscpp_generate_messages_nodejs: ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
-.PHONY : std_msgs_generate_messages_eus
+.PHONY : roscpp_generate_messages_nodejs
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make ROV_system/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
+roscpp_generate_messages_nodejs/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make ROV_system/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
-ROV_system/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : ROV_system/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_lisp: ROV_system/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+roscpp_generate_messages_eus: ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
-.PHONY : std_msgs_generate_messages_lisp
+.PHONY : roscpp_generate_messages_eus
 
 # fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make ROV_system/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
+roscpp_generate_messages_eus/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/build.make ROV_system/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
-ROV_system/CMakeFiles/controller_processing.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/controller_processing.dir/rule
-.PHONY : ROV_system/CMakeFiles/controller_processing.dir/rule
+ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-controller_processing: ROV_system/CMakeFiles/controller_processing.dir/rule
+roscpp_generate_messages_cpp: ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
-.PHONY : controller_processing
+.PHONY : roscpp_generate_messages_cpp
 
 # fast build rule for target.
-controller_processing/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/controller_processing.dir/build.make ROV_system/CMakeFiles/controller_processing.dir/build
-.PHONY : controller_processing/fast
+roscpp_generate_messages_cpp/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make ROV_system/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/build.make ROV_system/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_lisp: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_py: ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_py/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make ROV_system/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
 
 src/controller_processing.o: src/controller_processing.cpp.o
 
@@ -432,38 +387,95 @@ src/controller_processing.cpp.s:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/controller_processing.dir/build.make ROV_system/CMakeFiles/controller_processing.dir/src/controller_processing.cpp.s
 .PHONY : src/controller_processing.cpp.s
 
+src/motion_processing.o: src/motion_processing.cpp.o
+
+.PHONY : src/motion_processing.o
+
+# target to build an object file
+src/motion_processing.cpp.o:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/motion_processing.dir/build.make ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o
+.PHONY : src/motion_processing.cpp.o
+
+src/motion_processing.i: src/motion_processing.cpp.i
+
+.PHONY : src/motion_processing.i
+
+# target to preprocess a source file
+src/motion_processing.cpp.i:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/motion_processing.dir/build.make ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.i
+.PHONY : src/motion_processing.cpp.i
+
+src/motion_processing.s: src/motion_processing.cpp.s
+
+.PHONY : src/motion_processing.s
+
+# target to generate assembly for a file
+src/motion_processing.cpp.s:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/motion_processing.dir/build.make ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.s
+.PHONY : src/motion_processing.cpp.s
+
+src/sensory_processing.o: src/sensory_processing.cpp.o
+
+.PHONY : src/sensory_processing.o
+
+# target to build an object file
+src/sensory_processing.cpp.o:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/sensory_processing.dir/build.make ROV_system/CMakeFiles/sensory_processing.dir/src/sensory_processing.cpp.o
+.PHONY : src/sensory_processing.cpp.o
+
+src/sensory_processing.i: src/sensory_processing.cpp.i
+
+.PHONY : src/sensory_processing.i
+
+# target to preprocess a source file
+src/sensory_processing.cpp.i:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/sensory_processing.dir/build.make ROV_system/CMakeFiles/sensory_processing.dir/src/sensory_processing.cpp.i
+.PHONY : src/sensory_processing.cpp.i
+
+src/sensory_processing.s: src/sensory_processing.cpp.s
+
+.PHONY : src/sensory_processing.s
+
+# target to generate assembly for a file
+src/sensory_processing.cpp.s:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system/CMakeFiles/sensory_processing.dir/build.make ROV_system/CMakeFiles/sensory_processing.dir/src/sensory_processing.cpp.s
+.PHONY : src/sensory_processing.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... edit_cache"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... test"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... controller_processing"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... motion_processing"
 	@echo "... install"
+	@echo "... sensory_processing"
+	@echo "... controller_processing"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... test"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_eus"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... rebuild_cache"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... edit_cache"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... src/controller_processing.o"
 	@echo "... src/controller_processing.i"
 	@echo "... src/controller_processing.s"
+	@echo "... src/motion_processing.o"
+	@echo "... src/motion_processing.i"
+	@echo "... src/motion_processing.s"
+	@echo "... src/sensory_processing.o"
+	@echo "... src/sensory_processing.i"
+	@echo "... src/sensory_processing.s"
 .PHONY : help
 
 

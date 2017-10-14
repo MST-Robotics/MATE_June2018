@@ -106,7 +106,7 @@ public:
 	int16_t gx, gy, gz; // x, y, and z axis readings of the gyroscope
 	int16_t ax, ay, az; // x, y, and z axis readings of the accelerometer
 	int16_t mx, my, mz; // x, y, and z axis readings of the magnetometer
-    int16_t temperature; // Chip temperature
+        int16_t temperature; // Chip temperature
 	float gBias[3], aBias[3], mBias[3];
 	int16_t gBiasRaw[3], aBiasRaw[3], mBiasRaw[3];
 	

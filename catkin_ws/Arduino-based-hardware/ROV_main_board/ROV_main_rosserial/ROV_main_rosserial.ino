@@ -12,7 +12,7 @@
  * Terminal 2:
  *    cd ~/catkin_ws
  *    source devel/setup.bash
- *    roslaunch start_rov.launch
+ *    roslaunch ROV_system rov_system.launch
  * 
  * This will start all necessary nodes to read both controllers
  * and stream data to the arduino
