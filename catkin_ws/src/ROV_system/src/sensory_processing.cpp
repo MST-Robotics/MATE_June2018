@@ -135,22 +135,19 @@ int main(int argc, char **argv)
   //Publisher for orientation in x=roll, y=pitch, z=heading
   ros::Publisher orientation_pub = n.advertise<geometry_msgs::Vector3>("orientation_topic", 1000);
 
-
-  current0_pub.publish(current0);
-  current1_pub.publish(current1);
-  current2_pub.publish(current2);
-  current3_pub.publish(current3);
-  current4_pub.publish(current4);
-  current5_pub.publish(current5);
-
-  orientation_pub.publish(orientation);
-
   ros::Rate loop_wait(30);//this is needed
   
   //ctr-c makes ok() return false, thus ending the program
   while(ros::ok())
   {  
-    
+    current0_pub.publish(current0);
+    current1_pub.publish(current1);
+    current2_pub.publish(current2);
+    current3_pub.publish(current3);
+    current4_pub.publish(current4);
+    current5_pub.publish(current5);
+
+    orientation_pub.publish(orientation);
 
     ros::spinOnce();
     loop_wait.sleep();//wait some
