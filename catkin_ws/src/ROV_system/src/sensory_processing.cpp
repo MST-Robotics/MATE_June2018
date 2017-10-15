@@ -92,7 +92,9 @@ void mag_cb(const geometry_msgs::Vector3 &msg)
   if(msg.y == 0)
     orientation.z = (msg.x < 0) ? PI : 0;
   else
-    orientation.z -= DECLINATION * PI/180;
+    orientation.z = atan2(msg.x, msg.y);
+   
+  orientation.z -= DECLINATION * PI/180;
 
   if (orientation.z > PI) 
     orientation.z -= (2 * PI);
