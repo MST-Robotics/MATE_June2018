@@ -52,7 +52,7 @@ void trigger_cb(const std_msgs::Bool &msg)
   */
   digitalWrite(led1, msg.data);    
 }
-
+/*
 //React to button_a data
 void button_a_cb(const std_msgs::Bool &msg)
 {
@@ -76,12 +76,13 @@ void rotary_3_cb(const std_msgs::Float32 &msg)
   uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
   servo_rty3.write(servo_val);
 }
+*/
 /*
  * Before you uncomment and test, make sure that the servo 
  * they use is not being used(same with leds)
  * NEED TO ADD MORE PIN OPTIONS/HAVE MORE SERVOS AND LEDS
  */
-/*
+
 void joystick_x_cb(const std_msgs::Float32 &msg)
 {
   uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
@@ -91,9 +92,9 @@ void joystick_x_cb(const std_msgs::Float32 &msg)
 void joystick_y_cb(const std_msgs::Float32 &msg)
 {
   uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
- // servo_JS_y.write(servo_val);
+  servo_JS_y.write(servo_val);
 }
-
+/*
 void thumb_stick_x_cb(const std_msgs::Float32 &msg)
 {
   uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
@@ -393,12 +394,13 @@ void button_s1_cb(const std_msgs::Bool &msg)
 
 
 //set up subscriptions
+/*
+ * Tested
 ros::Subscriber<std_msgs::Bool> sub_trigger("trigger", trigger_cb);
 ros::Subscriber<std_msgs::Bool> sub_button_a("button_a", button_a_cb);
 ros::Subscriber<std_msgs::Bool> sub_button_e("button_e", button_e_cb);
 ros::Subscriber<std_msgs::Float32> sub_rotary_4("rotary_4", rotary_4_cb);
-/*
- * Tested
+
 ros::Subscriber<std_msgs::Float32> sub_rotary_3("rotary_3", rotary_3_cb);
 ros::Subscriber<std_msgs::Float32> sub_joystick_x("joystick_x", joystick_x_cb);
 ros::Subscriber<std_msgs::Float32> sub_joystick_y("joystick_y", joystick_y_cb);
@@ -502,10 +504,10 @@ void setup()
   nh.initNode();
 
   //put all of the subscriptions here
-  nh.subscribe(sub_trigger);
-  nh.subscribe(sub_button_a);
-  nh.subscribe(sub_button_e);
-  nh.subscribe(sub_rotary_4);
+//  nh.subscribe(sub_trigger);
+//  nh.subscribe(sub_button_a);
+//  nh.subscribe(sub_button_e);
+//  nh.subscribe(sub_rotary_4);
   /*
   nh.subscribe(sub_rotary_3);
   nh.subscribe(sub_joystick_x);

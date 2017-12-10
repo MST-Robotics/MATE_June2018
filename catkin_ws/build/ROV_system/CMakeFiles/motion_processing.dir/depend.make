@@ -57,6 +57,8 @@ ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o: /opt/ro
 ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o: /opt/ros/kinetic/include/std_msgs/Bool.h
+ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o: /opt/ros/kinetic/include/std_msgs/Float32.h
 ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o: /opt/ros/kinetic/include/std_msgs/Int16.h
 ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 ROV_system/CMakeFiles/motion_processing.dir/src/motion_processing.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

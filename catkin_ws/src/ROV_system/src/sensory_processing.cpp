@@ -29,7 +29,7 @@
 // a declination to get a more accurate heading. Calculate 
 // your's here:
 // http://www.ngdc.noaa.gov/geomag-web/#declination
-#define DECLINATION -8.58 // Declination (degrees) in Boulder, CO.
+#define DECLINATION 0.116667 // in Rolla, MO
 
 std_msgs::Int16 current0;
 std_msgs::Int16 current1;
