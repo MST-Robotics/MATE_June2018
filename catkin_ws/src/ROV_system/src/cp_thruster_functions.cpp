@@ -4,9 +4,8 @@
 //process data from thruster
 void thruster_cb(const sensor_msgs::Joy &joy)
 {
-
-
- /* 
+ 
+  /* 
   Done
   //buttons are stored in joy.buttons[]
   //axes are stored in joy.axis[]

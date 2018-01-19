@@ -7,8 +7,6 @@ void joystick_cb(const sensor_msgs::Joy &joy)
   float angle = atan2(joy.axes[axis_stick_y],  joy.axes[axis_stick_x]*-1);
   float magnitude = sqrt(pow(joy.axes[axis_stick_y],2) + pow(joy.axes[axis_stick_x],2));
 
-  int trigger = 0;
-  int pinky = 0;
 
   angle *= 180/M_PI;
 
@@ -37,8 +35,6 @@ void joystick_cb(const sensor_msgs::Joy &joy)
   {
     ROS_INFO("Trigger pulled");
     button_trigger_state.data = 1;
-    trigger = button_trigger_state.data;
-    //trigger = 1;
   }
   else
     button_trigger_state.data = 0;
@@ -48,7 +44,6 @@ void joystick_cb(const sensor_msgs::Joy &joy)
   {
     ROS_INFO("Button pinky trigger pressed");
     button_pinky_trigger_state.data = 1;
-    pinky = 1;
   }
   else
     button_pinky_trigger_state.data = 0;

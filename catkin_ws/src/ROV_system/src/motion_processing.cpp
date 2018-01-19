@@ -20,7 +20,6 @@
 #include <geometry_msgs/Vector3.h>
 
 float magnitude = 0.0;
-
 std_msgs::Int16 motor1_value;
 std_msgs::Int16 motor2_value;
 std_msgs::Int16 motor3_value;
@@ -69,10 +68,25 @@ void velocity_cb(const std_msgs::Float32 &msg)
 { 
   magnitude = msg.data;
 }
-void trigger_cb(const std_msgs::Bool &msg)
+
+void trigger_cb(const std_msgs::Bool &msg)//going up
 {
   int trigger = msg.data;
   if(trigger == 1)
+  {
+    motor2_value.data = 2000;
+    motor5_value.data = 2000;
+  }
+  else
+  {
+    motor2_value.data = 1500;
+    motor5_value.data = 1500;
+  }
+}
+void button_pinky_trigger_cb(const std_msgs::Bool &msg)//going down
+{
+  int pinky = msg.data;
+  if(pinky == 1)
   {
     motor2_value.data = 2000;
     motor5_value.data = 2000;
@@ -89,13 +103,13 @@ void angle_cb(const std_msgs::Float32 &msg)
 
   if(msg.data > 85 && msg.data < 95)//forwards
   {
-     motor1_value.data = 1500+(magnitude*400); //MOTOR 3 = BACK RIGHT MOTOR
-     motor4_value.data = 1500+(magnitude*400); //MOTOR 4 = BACK LEFT MOTOR
+     motor1_value.data = 1500+(magnitude*400);
+     motor4_value.data = 1500+(magnitude*400);
   }
   else if(msg.data > 265 && msg.data < 275)//backwards
   {
-      motor1_value.data = 1500+(magnitude*-400); //MOTOR 1 = FRONT RIGHT MOTOR
-      motor4_value.data = 1500+(magnitude*-400); //MOTOR 2 = FRONT LEFT MOTOR
+      motor1_value.data = 1500+(magnitude*-400);
+      motor4_value.data = 1500+(magnitude*-400);
   }
 
   else if(msg.data > 175 && msg.data < 185)//left
@@ -104,47 +118,45 @@ void angle_cb(const std_msgs::Float32 &msg)
      motor6_value.data = 1500+(magnitude*400); 
   }
 
-  else if(msg.data > 0 && msg.data < 5 || msg.data > 355 && msg.data < 360)//right
+  else if(msg.data > 0 && msg.data < 5 || msg.data > 355 && msg.data < 359)//right
   {
-      motor1_value.data = 1500+(magnitude*400); //MOTOR 1 = FRONT RIGHT MOTOR
-      motor3_value.data = 1500+(magnitude*400); //MOTOR 3 = BACK RIGHT MOTOR
+      motor1_value.data = 1500+(magnitude*400);
+      motor3_value.data = 1500+(magnitude*400);
   }
 
 //*************************************************************************
 /*
   if(msg.data > 95 && msg.data < 175)//forward left
   {
-     motor6_value.data = 1500+(magnitude*-400); //MOTOR 2 = FRONT LEFT MOTOR
-     motor3_value.data = 1500+(magnitude*400); //MOTOR 3 = BACK RIGHT MOTOR
-     motor4_value.data = 1500+(magnitude*400); //MOTOR 4 = BACK LEFT MOTOR
+     motor6_value.data = 1500+(magnitude*-400); 
+     motor3_value.data = 1500+(magnitude*400); 
+     motor4_value.data = 1500+(magnitude*400); 
   }
 /*
   if(msg.data > 5 && msg.data < 85)//forward right
   {
-     motor1_value.data = 1500+(magnitude*-400); //MOTOR 1 = FRONT RIGHT MOTOR
-     motor3_value.data = 1500+(magnitude*400); //MOTOR 3 = BACK RIGHT MOTOR
-     motor4_value.data = 1500+(magnitude*400); //MOTOR 4 = BACK LEFT MOTOR
+     motor1_value.data = 1500+(magnitude*-400);
+     motor3_value.data = 1500+(magnitude*400); 
+     motor4_value.data = 1500+(magnitude*400);
   }
   if(msg.data > 185 && msg.data < 265)//backward right
   {
-     motor1_value.data = 1500+(magnitude*-400); //MOTOR 1 = FRONT RIGHT MOTOR
-     motor2_value.data = 1500+(magnitude*400); //MOTOR 3 = BACK RIGHT MOTOR
-     motor3_value.data = 1500+(magnitude*400); //MOTOR 4 = BACK LEFT MOTOR
+     motor1_value.data = 1500+(magnitude*-400); 
+     motor2_value.data = 1500+(magnitude*400);
+     motor3_value.data = 1500+(magnitude*400);
   }
   if(msg.data > 275 && msg.data < 355)//backward right
   {
-     motor1_value.data = 1500+(magnitude*-400); //MOTOR 1 = FRONT RIGHT MOTOR
-     motor2_value.data = 1500+(magnitude*400); //MOTOR 3 = BACK RIGHT MOTOR
-     motor4_value.data = 1500+(magnitude*400); //MOTOR 4 = BACK LEFT MOTOR
+     motor1_value.data = 1500+(magnitude*-400); 
+     motor2_value.data = 1500+(magnitude*400);
+     motor4_value.data = 1500+(magnitude*400);
   }
 */
   else
   {
       motor1_value.data = 1500;
-      //motor2_value.data = 1500;
       motor3_value.data = 1500;
       motor4_value.data = 1500;
-      //motor5_value.data = 1500;
       motor6_value.data = 1500;
   }
 }
@@ -160,7 +172,11 @@ int main(int argc, char **argv)
   //subscribe to current sensor data
   ros::Subscriber joystick_x_topic = n.subscribe("joystick_x", 1000, velocity_cb);
   ros::Subscriber joystick_y_topic = n.subscribe("joystick_y", 1000, angle_cb);
+
+
+
   ros::Subscriber trigger_topic = n.subscribe("trigger", 1000, trigger_cb);
+  ros::Subscriber button_pinky_trigger_topic = n.subscribe("button_pinky_trigger", 1000, button_pinky_trigger_cb);
 
   ros::Publisher motor1_pub = n.advertise<std_msgs::Int16>("motor1_topic", 1000);
   ros::Publisher motor2_pub = n.advertise<std_msgs::Int16>("motor2_topic", 1000);

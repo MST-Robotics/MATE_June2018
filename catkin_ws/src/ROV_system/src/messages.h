@@ -8,10 +8,14 @@ std_msgs::Float32 axis_stick_y_value;
 std_msgs::Float32 axis_stick_rotation_value;
 std_msgs::Bool button_trigger_state;
 std_msgs::Bool button_pinky_trigger_state;
+
+
 std_msgs::Int16 motor1_value;
 std_msgs::Int16 motor2_value;
 std_msgs::Int16 motor3_value;
 std_msgs::Int16 motor4_value;
+std_msgs::Int16 motor5_value;
+std_msgs::Int16 motor6_value;
 /*
 ____________TESTED_____________
 

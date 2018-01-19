@@ -1,0 +1,8 @@
+prefix=/home/mstrobotics/MATE_June2018/catkin_ws/devel
+
+Name: improved_rov_system
+Description: Description of improved_rov_system
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mstrobotics/MATE_June2018/catkin_ws/devel/lib 
+Requires: 

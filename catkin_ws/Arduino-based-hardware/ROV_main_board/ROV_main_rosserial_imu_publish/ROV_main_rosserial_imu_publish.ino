@@ -57,16 +57,16 @@ Servo middle_right;
 float desired_speed = 0;
 
 //React to trigger data
-void trigger_cb(const std_msgs::Bool &msg)
-{
-  digitalWrite(led1, msg.data);    
-}
+//void trigger_cb(const std_msgs::Bool &msg)
+//{
+//  digitalWrite(led1, msg.data);    
+//}
 
 //React to button_a data
-void button_a_cb(const std_msgs::Bool &msg)
-{
-  digitalWrite(led2, msg.data);       
-}
+//void button_a_cb(const std_msgs::Bool &msg)
+//{
+//  digitalWrite(led2, msg.data);       
+//}
 
 //React to button_e data
 void button_e_cb(const std_msgs::Bool &msg)
@@ -88,28 +88,28 @@ void button_e_cb(const std_msgs::Bool &msg)
 
 void motor1_cb(const std_msgs::Int16 &msg)
 {
-  front_left.writeMicroseconds(msg.data);
+ // front_left.writeMicroseconds(msg.data);
 }
 void motor2_cb(const std_msgs::Int16 &msg)
 {
-  middle_left.writeMicroseconds(msg.data);
+  //middle_left.writeMicroseconds(msg.data);
 }
 void motor3_cb(const std_msgs::Int16 &msg)
 {
-  back_left.writeMicroseconds(msg.data);
+  //back_left.writeMicroseconds(msg.data);
 }
 void motor4_cb(const std_msgs::Int16 &msg)
 {
-  front_right.writeMicroseconds(msg.data);
+ // front_right.writeMicroseconds(msg.data);
 }
 void motor5_cb(const std_msgs::Int16 &msg)
 {
-  middle_right.writeMicroseconds(msg.data);
+ // middle_right.writeMicroseconds(msg.data);
 }
 
 void motor6_cb(const std_msgs::Int16 &msg)
 {
-  back_right.writeMicroseconds(msg.data);
+ // back_right.writeMicroseconds(msg.data);
 }
 
 /*
@@ -145,8 +145,8 @@ void joystick_y_cb(const std_msgs::Float32 &msg)
 //set up subscriptions
 
 
-ros::Subscriber<std_msgs::Bool> sub_trigger("trigger", trigger_cb);
-ros::Subscriber<std_msgs::Bool> sub_button_a("button_a", button_a_cb);
+//ros::Subscriber<std_msgs::Bool> sub_trigger("trigger", trigger_cb);
+//ros::Subscriber<std_msgs::Bool> sub_button_a("button_a", button_a_cb);
 ros::Subscriber<std_msgs::Bool> sub_button_e("button_e", button_e_cb);
 
 ros::Subscriber<std_msgs::Int16> sub_motor1("motor1_topic", motor1_cb);
@@ -176,8 +176,8 @@ void setup()
   main_setup();//contains the declarations and hardware setups
   
   //set up pins and other things
-  pinMode(led1, OUTPUT);
-  pinMode(led2, OUTPUT);
+//  pinMode(led1, OUTPUT);
+ // pinMode(led2, OUTPUT);
  
 //  servo.attach(servo1_pin);
 //  servo_rty3.attach(servo2_pin);
@@ -198,8 +198,8 @@ void setup()
   //put all of the subscriptions here
 
   
-  nh.subscribe(sub_trigger);
-  nh.subscribe(sub_button_a);
+//  nh.subscribe(sub_trigger);
+//  nh.subscribe(sub_button_a);
   nh.subscribe(sub_button_e);
 //  nh.subscribe(sub_rotary_4);
 
