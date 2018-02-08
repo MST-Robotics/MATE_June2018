@@ -118,7 +118,7 @@ void angle_cb(const std_msgs::Float32 &msg)
      motor6_value.data = 1500+(magnitude*400); 
   }
 
-  else if(msg.data > 0 && msg.data < 5 || msg.data > 355 && msg.data < 359)//right
+  else if(msg.data >= 0 && msg.data <= 5 || msg.data >= 355 && msg.data <= 359)//right
   {
       motor1_value.data = 1500+(magnitude*400);
       motor3_value.data = 1500+(magnitude*400);

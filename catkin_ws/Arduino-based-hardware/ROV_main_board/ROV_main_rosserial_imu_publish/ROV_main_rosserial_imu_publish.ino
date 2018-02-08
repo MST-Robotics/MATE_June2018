@@ -57,67 +57,67 @@ Servo middle_right;
 float desired_speed = 0;
 
 //React to trigger data
-//void trigger_cb(const std_msgs::Bool &msg)
+//void trigger_callback(const std_msgs::Bool &msg)
 //{
 //  digitalWrite(led1, msg.data);    
 //}
 
 //React to button_a data
-//void button_a_cb(const std_msgs::Bool &msg)
+//void button_a_callback(const std_msgs::Bool &msg)
 //{
 //  digitalWrite(led2, msg.data);       
 //}
 
 //React to button_e data
-void button_e_cb(const std_msgs::Bool &msg)
+void button_e_callback(const std_msgs::Bool &msg)
 {
 //  digitalWrite(led3, msg.data);     
 }
 
-//void rotary_4_cb(const std_msgs::Float32 &msg)
+//void rotary_4_callback(const std_msgs::Float32 &msg)
 //{
 //  uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
 //  servo.write(servo_val);
 //}
 
-//void rotary_3_cb(const std_msgs::Float32 &msg)
+//void rotary_3_callback(const std_msgs::Float32 &msg)
 //{
 //  uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
 //  servo_rty3.write(servo_val);
 //}
 
-void motor1_cb(const std_msgs::Int16 &msg)
+void motor1_callback(const std_msgs::Int16 &msg)
 {
- // front_left.writeMicroseconds(msg.data);
+ front_left.writeMicroseconds(msg.data);
 }
-void motor2_cb(const std_msgs::Int16 &msg)
+void motor2_callback(const std_msgs::Int16 &msg)
 {
-  //middle_left.writeMicroseconds(msg.data);
+  middle_left.writeMicroseconds(msg.data);
 }
-void motor3_cb(const std_msgs::Int16 &msg)
+void motor3_callback(const std_msgs::Int16 &msg)
 {
-  //back_left.writeMicroseconds(msg.data);
+  back_left.writeMicroseconds(msg.data);
 }
-void motor4_cb(const std_msgs::Int16 &msg)
+void motor4_callback(const std_msgs::Int16 &msg)
 {
- // front_right.writeMicroseconds(msg.data);
+  front_right.writeMicroseconds(msg.data);
 }
-void motor5_cb(const std_msgs::Int16 &msg)
+void motor5_callback(const std_msgs::Int16 &msg)
 {
- // middle_right.writeMicroseconds(msg.data);
+  middle_right.writeMicroseconds(msg.data);
 }
 
-void motor6_cb(const std_msgs::Int16 &msg)
+void motor6_callback(const std_msgs::Int16 &msg)
 {
- // back_right.writeMicroseconds(msg.data);
+  back_right.writeMicroseconds(msg.data);
 }
 
 /*
-void button_pinky_trigger_cb(const std_msgs::Bool &msg)
+void button_pinky_trigger_callback(const std_msgs::Bool &msg)
 {
   middle_left.writeMicroseconds(msg.data);      
 }
-void button_trigger_cb(const std_msgs::Bool &msg)
+void button_trigger_callback(const std_msgs::Bool &msg)
 {
   middle_right.writeMicroseconds(msg.data);    
 }
@@ -125,17 +125,17 @@ void button_trigger_cb(const std_msgs::Bool &msg)
 
 
 //left and right
-void joystick_x_cb(const std_msgs::Float32 &msg)
+void joystick_x_callback(const std_msgs::Float32 &msg)
 {
  //uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
  //servo_JS_x.write(servo_val);
 }
 //foward and backward
-void joystick_y_cb(const std_msgs::Float32 &msg)
+void joystick_y_callback(const std_msgs::Float32 &msg)
 {
 }
 
-//void joystick_rotation_cb(const std_msgs::Float32 &msg)
+//void joystick_rotation_callback(const std_msgs::Float32 &msg)
 //{
 //  uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
 //  servo_JS_x.write(servo_val);
@@ -145,26 +145,26 @@ void joystick_y_cb(const std_msgs::Float32 &msg)
 //set up subscriptions
 
 
-//ros::Subscriber<std_msgs::Bool> sub_trigger("trigger", trigger_cb);
-//ros::Subscriber<std_msgs::Bool> sub_button_a("button_a", button_a_cb);
-ros::Subscriber<std_msgs::Bool> sub_button_e("button_e", button_e_cb);
+//ros::Subscriber<std_msgs::Bool> sub_trigger("trigger", trigger_callback);
+//ros::Subscriber<std_msgs::Bool> sub_button_a("button_a", button_a_callback);
+ros::Subscriber<std_msgs::Bool> sub_button_e("button_e", button_e_callback);
 
-ros::Subscriber<std_msgs::Int16> sub_motor1("motor1_topic", motor1_cb);
-ros::Subscriber<std_msgs::Int16> sub_motor2("motor2_topic", motor2_cb);
-ros::Subscriber<std_msgs::Int16> sub_motor3("motor3_topic", motor3_cb);
-ros::Subscriber<std_msgs::Int16> sub_motor4("motor4_topic", motor4_cb);
-ros::Subscriber<std_msgs::Int16> sub_motor5("motor5_topic", motor5_cb);
-ros::Subscriber<std_msgs::Int16> sub_motor6("motor6_topic", motor6_cb);
+ros::Subscriber<std_msgs::Int16> sub_motor1("motor1_topic", motor1_callback);
+ros::Subscriber<std_msgs::Int16> sub_motor2("motor2_topic", motor2_callback);
+ros::Subscriber<std_msgs::Int16> sub_motor3("motor3_topic", motor3_callback);
+ros::Subscriber<std_msgs::Int16> sub_motor4("motor4_topic", motor4_callback);
+ros::Subscriber<std_msgs::Int16> sub_motor5("motor5_topic", motor5_callback);
+ros::Subscriber<std_msgs::Int16> sub_motor6("motor6_topic", motor6_callback);
 
 /*
-ros::Subscriber<std_msgs::Bool> sub_button_trigger("motor2_topic", button_trigger_cb);
-ros::Subscriber<std_msgs::Bool> sub_button_pinky_trigger("motor5S_topic", button_pinky_trigger_cb);
+ros::Subscriber<std_msgs::Bool> sub_button_trigger("motor2_topic", button_trigger_callback);
+ros::Subscriber<std_msgs::Bool> sub_button_pinky_trigger("motor5S_topic", button_pinky_trigger_callback);
 */
-//ros::Subscriber<std_msgs::Float32> sub_rotary_4("rotary_4", rotary_4_cb);
+//ros::Subscriber<std_msgs::Float32> sub_rotary_4("rotary_4", rotary_4_callback);
 
-ros::Subscriber<std_msgs::Float32> sub_joystick_x("joystick_x", joystick_x_cb);
-ros::Subscriber<std_msgs::Float32> sub_joystick_y("joystick_y", joystick_y_cb);
-//ros::Subscriber<std_msgs::Float32> sub_joystick_rotation("joystick_rotation", joystick_rotation_cb);
+ros::Subscriber<std_msgs::Float32> sub_joystick_x("joystick_x", joystick_x_callback);
+ros::Subscriber<std_msgs::Float32> sub_joystick_y("joystick_y", joystick_y_callback);
+//ros::Subscriber<std_msgs::Float32> sub_joystick_rotation("joystick_rotation", joystick_rotation_callback);
 
 //set up publishers
 ros::Publisher accel_pub("accel_topic", &accelerometer);
@@ -232,7 +232,6 @@ float mapf(float x, float in_min, float in_max, float out_min, float out_max)
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
-
 void process_imu(void)
 {
   if(imu.gyroAvailable())
@@ -252,5 +251,4 @@ void process_imu(void)
 
   accel_pub.publish(&accelerometer);
   mag_pub.publish(&magnetometer);
-    
 }

@@ -1,6 +1,6 @@
 /*
  * Author: Vinnie Marco, Tamara Spivey, and the Most Honorable Christian Upschulte: President of S&T URT
- * Email: vgmcn3@mst,edu
+ * Email: vgmcn3@mst,edu, tjsxz4@mst.edu
  * Date: 01-18-2018
  * 
  * This node handles data from the thruster

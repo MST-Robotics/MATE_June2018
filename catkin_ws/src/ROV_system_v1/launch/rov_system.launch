@@ -16,4 +16,7 @@
   <node pkg="ROV_system_v1" type="thruster_processing_node" name="thruster_processing_node" respawn="true">
   </node>
 
+  <node pkg="ROV_system_v1" type="motion_processing_node" name="motion_processing_node" respawn="true">
+  </node>
+
 </launch>

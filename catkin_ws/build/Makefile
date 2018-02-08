@@ -2324,6 +2324,32 @@ joystick_processing_node/fast:
 .PHONY : joystick_processing_node/fast
 
 #=============================================================================
+# Target rules for targets named motion_processing_node
+
+# Build rule for target.
+motion_processing_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 motion_processing_node
+.PHONY : motion_processing_node
+
+# fast build rule for target.
+motion_processing_node/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/motion_processing_node.dir/build
+.PHONY : motion_processing_node/fast
+
+#=============================================================================
+# Target rules for targets named practice_node
+
+# Build rule for target.
+practice_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 practice_node
+.PHONY : practice_node
+
+# fast build rule for target.
+practice_node/fast:
+	$(MAKE) -f learning_ros/CMakeFiles/practice_node.dir/build.make learning_ros/CMakeFiles/practice_node.dir/build
+.PHONY : practice_node/fast
+
+#=============================================================================
 # Target rules for targets named topic_tools_generate_messages_nodejs
 
 # Build rule for target.
@@ -4218,6 +4244,8 @@ help:
 	@echo "... diagnostic_msgs_generate_messages_lisp"
 	@echo "... diagnostic_msgs_generate_messages_cpp"
 	@echo "... joystick_processing_node"
+	@echo "... motion_processing_node"
+	@echo "... practice_node"
 	@echo "... topic_tools_generate_messages_nodejs"
 	@echo "... topic_tools_generate_messages_eus"
 	@echo "... topic_tools_generate_messages_lisp"

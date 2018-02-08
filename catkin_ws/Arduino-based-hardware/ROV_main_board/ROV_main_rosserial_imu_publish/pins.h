@@ -18,7 +18,7 @@
   #define flt_pin 2
   #define middle_left_pin 3
   #define blt_pin 4
-  #define frt_pin 7 //shouldve been 5
+  #define frt_pin 7
   #define middle_right_pin 6
   #define brt_pin 5
 

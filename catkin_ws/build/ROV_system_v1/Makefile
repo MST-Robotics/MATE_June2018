@@ -78,6 +78,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -121,17 +132,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -270,6 +270,21 @@ joystick_processing_node/fast:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/joystick_processing_node.dir/build.make ROV_system_v1/CMakeFiles/joystick_processing_node.dir/build
 .PHONY : joystick_processing_node/fast
 
+# Convenience name for target.
+ROV_system_v1/CMakeFiles/motion_processing_node.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/motion_processing_node.dir/rule
+.PHONY : ROV_system_v1/CMakeFiles/motion_processing_node.dir/rule
+
+# Convenience name for target.
+motion_processing_node: ROV_system_v1/CMakeFiles/motion_processing_node.dir/rule
+
+.PHONY : motion_processing_node
+
+# fast build rule for target.
+motion_processing_node/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/motion_processing_node.dir/build
+.PHONY : motion_processing_node/fast
+
 src/joystick_processing_node.o: src/joystick_processing_node.cpp.o
 
 .PHONY : src/joystick_processing_node.o
@@ -296,6 +311,33 @@ src/joystick_processing_node.s: src/joystick_processing_node.cpp.s
 src/joystick_processing_node.cpp.s:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/joystick_processing_node.dir/build.make ROV_system_v1/CMakeFiles/joystick_processing_node.dir/src/joystick_processing_node.cpp.s
 .PHONY : src/joystick_processing_node.cpp.s
+
+src/motion_processing_node.o: src/motion_processing_node.cpp.o
+
+.PHONY : src/motion_processing_node.o
+
+# target to build an object file
+src/motion_processing_node.cpp.o:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/motion_processing_node.dir/src/motion_processing_node.cpp.o
+.PHONY : src/motion_processing_node.cpp.o
+
+src/motion_processing_node.i: src/motion_processing_node.cpp.i
+
+.PHONY : src/motion_processing_node.i
+
+# target to preprocess a source file
+src/motion_processing_node.cpp.i:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/motion_processing_node.dir/src/motion_processing_node.cpp.i
+.PHONY : src/motion_processing_node.cpp.i
+
+src/motion_processing_node.s: src/motion_processing_node.cpp.s
+
+.PHONY : src/motion_processing_node.s
+
+# target to generate assembly for a file
+src/motion_processing_node.cpp.s:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/motion_processing_node.dir/src/motion_processing_node.cpp.s
+.PHONY : src/motion_processing_node.cpp.s
 
 src/thruster_processing_node.o: src/thruster_processing_node.cpp.o
 
@@ -332,6 +374,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... diagnostic_msgs_generate_messages_nodejs"
 	@echo "... diagnostic_msgs_generate_messages_eus"
 	@echo "... thruster_processing_node"
@@ -343,10 +386,13 @@ help:
 	@echo "... install"
 	@echo "... diagnostic_msgs_generate_messages_cpp"
 	@echo "... joystick_processing_node"
-	@echo "... test"
+	@echo "... motion_processing_node"
 	@echo "... src/joystick_processing_node.o"
 	@echo "... src/joystick_processing_node.i"
 	@echo "... src/joystick_processing_node.s"
+	@echo "... src/motion_processing_node.o"
+	@echo "... src/motion_processing_node.i"
+	@echo "... src/motion_processing_node.s"
 	@echo "... src/thruster_processing_node.o"
 	@echo "... src/thruster_processing_node.i"
 	@echo "... src/thruster_processing_node.s"

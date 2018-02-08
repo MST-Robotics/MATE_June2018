@@ -264,6 +264,7 @@
 /home/mstrobotics/MATE_June2018/catkin_ws/build/beginner_tutorials/CMakeFiles/rebuild_cache.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/rebuild_cache.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/edit_cache.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/test.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/thruster_processing_node.dir
@@ -275,7 +276,15 @@
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/install.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/joystick_processing_node.dir
-/home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/test.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/motion_processing_node.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/learning_ros/CMakeFiles/list_install_components.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/learning_ros/CMakeFiles/install.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/learning_ros/CMakeFiles/rebuild_cache.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/learning_ros/CMakeFiles/edit_cache.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/learning_ros/CMakeFiles/install/strip.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/learning_ros/CMakeFiles/install/local.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/learning_ros/CMakeFiles/practice_node.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/learning_ros/CMakeFiles/test.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/rosserial/rosserial_server/CMakeFiles/install.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/rosserial/rosserial_server/CMakeFiles/rebuild_cache.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/rosserial/rosserial_server/CMakeFiles/edit_cache.dir

@@ -1,7 +1,6 @@
 /*
  * Author: Vinnie Marco, Tamara Spivey, and the Most Honorable Christian Upschulte: President of S&T URT
- * Email: vgmcn3@mst,edu
- * Date: 01-18-2018
+ * Email: vgmcn3@mst,edu, tjsxz4@mst.edu
  * 
  * This file handles data from the joystick
  */
@@ -30,7 +29,7 @@ int main(int argc, char **argv)
 
   ros::Rate loop_wait(30);//this is needed
  
-  while(ros::ok()) //ctr-c makes ok() return false, thus ending the program
+  while(ros::ok()) //ctrl-c makes ok() return false, thus ending the program
   {  
    //publish everything once per loop
    joystick_x_pub.publish(magnitude_value);   
@@ -82,105 +81,20 @@ FIX ME PLEASE look like ^
  //buttons are stored in joy.buttons[]
   //axes are stored in joy.axis[]
 
+  button_a_state.data = joy.buttons[button_a];
+  button_b_state.data = joy.buttons[button_b];
+  button_c_state.data = joy.buttons[button_c];
+  button_d_state.data = joy.buttons[button_d];
 
-  if(joy.buttons[button_a] == 1)
-  { 
-    ROS_INFO("Button A pressed");
-    button_a_state.data = 1;
-  }
-  else
-    button_a_state.data = 0;
+  button_h1_up_state.data = joy.buttons[button_h1_up];
+  button_h1_right_state.data = joy.buttons[button_h1_right];
+  button_h1_down_state.data = joy.buttons[button_h1_down];
+  button_h1_left_state.data = joy.buttons[button_h1_left];
 
-
-  if(joy.buttons[button_b] == 1)
-  {
-    ROS_INFO("Button B pressed");
-    button_b_state.data = 1;
-  }
-  else
-    button_b_state.data = 0;
-
-  if(joy.buttons[button_c] == 1)
-  {
-    ROS_INFO("Button C pressed");
-    button_c_state.data = 1;
-  }
-  else
-    button_c_state.data = 0;
-
-  if(joy.buttons[button_d] == 1)
-  {
-    ROS_INFO("Button D pressed");
-    button_d_state.data = 1;
-  }
-  else
-    button_d_state.data = 0;
-
-
-  if(joy.buttons[button_h1_up] == 1)
-  {
-    ROS_INFO("Button h1 up pressed");
-    button_h1_up_state.data = 1;
-  }
-  else
-    button_h1_up_state.data = 0;
-
-  if(joy.buttons[button_h1_right] == 1)
-  {
-    ROS_INFO("Button h1 right pressed");
-    button_h1_right_state.data = 1;
-  }
-  else
-    button_h1_right_state.data = 0;
-
-  if(joy.buttons[button_h1_down] == 1)
-  {
-    ROS_INFO("Button h1 down pressed");
-    button_h1_down_state.data = 1;
-  }
-  else
-    button_h1_down_state.data = 0;
-
-  if(joy.buttons[button_h1_left] == 1)
-  {
-    ROS_INFO("Button h1 left pressed");
-    button_h1_left_state.data = 1;
-  }
-  else
-    button_h1_left_state.data = 0;
-
-
-  if(joy.buttons[button_h2_up] == 1)
-  {
-    ROS_INFO("Button h2 up pressed");
-    button_h2_up_state.data = 1;
-  }
-  else
-    button_h2_up_state.data = 0;
-
-  if(joy.buttons[button_h2_right] == 1)
-  {
-    ROS_INFO("Button h2 right pressed");
-    button_h2_right_state.data = 1;
-  }
-  else
-    button_h2_right_state.data = 0;
-
-  if(joy.buttons[button_h2_down] == 1)
-  {
-    ROS_INFO("Button h2 down pressed");
-    button_h2_down_state.data = 1;
-  }
-  else
-    button_h2_down_state.data = 0;
-
-  if(joy.buttons[button_h2_left] == 1)
-  {
-    ROS_INFO("Button h2 left pressed");
-    button_h2_left_state.data = 1;
-  }
-  else
-    button_h2_left_state.data = 0;
+  button_h2_up_state.data = joy.buttons[button_h2_up];
+  button_h2_right_state.data = joy.buttons[button_h2_right];
+  button_h2_down_state.data = joy.buttons[button_h2_down];
+  button_h2_left_state.data = joy.buttons[button_h2_left];
 
   axis_pov_x_value.data = joy.axes[axis_pov_x];
   axis_pov_y_value.data = joy.axes[axis_pov_y];
