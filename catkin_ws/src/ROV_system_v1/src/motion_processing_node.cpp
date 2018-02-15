@@ -7,6 +7,15 @@
  */
 
 #include "motion_processing_node.h"
+#include <cmath>
+
+//MOVE THESE DEFINES TO THE HEADER FILE
+#define FORCE_X_MODIFIER 1 /*To Be Determined*/
+#define FORCE_Y_MODIFIER 1 /*To Be Determined*/
+#define MOMENT_MODIFIER 1 /*To Be Determined*/
+#define NEUTRAL_TWIST 90
+#define MOTOR_NEUTRAL 1500
+#define MOTOR_RAMP 400
 
 /*This is our main function
  *Pre: None
@@ -58,38 +67,6 @@ int main(int argc, char **argv)
   }
   return 0;
 }
-/* 
- *current0_callback -- current5_callback will probably be useless
- */
-void current0_callback(const std_msgs::Int16 &msg)
-{
-  
-}
-
-void current1_callback(const std_msgs::Int16 &msg)
-{
-  
-}
-
-void current2_callback(const std_msgs::Int16 &msg)
-{
-  
-}
-
-void current3_callback(const std_msgs::Int16 &msg)
-{
- 
-}
-
-void current4_callback(const std_msgs::Int16 &msg)
-{
-
-}
-
-void current5_callback(const std_msgs::Int16 &msg)
-{
-
-}
 
 /* 
  *orientation_callback will probably be useless
@@ -111,72 +88,34 @@ void velocity_callback(const std_msgs::Float32 &msg)
 /* angle_callback handles data recieved from the joystick_y_topic subscription
  * Pre: joystick_y_topic has to be initalized
  * Post: Any variables are updated to their current values for each itteration
- *       Determines the motor movement of ROV.
- *
- * Directions in order: forward, backward, left, and right
  */
 void angle_callback(const std_msgs::Float32 &msg)
 { 
-//BASIC DIRECTIONS
+  angle = msg.data;
+}
 
-  if(msg.data > 85 && msg.data < 95)
-  {
-     motor1_value.data = 1500+(magnitude*400);
-     motor4_value.data = 1500+(magnitude*400);
-  }
-  else if(msg.data > 265 && msg.data < 275)
-  {
-      motor1_value.data = 1500+(magnitude*-400);
-      motor4_value.data = 1500+(magnitude*-400);
-  }
+/* twist_callback handles data from the "" subscription (the one that handles the twisting of the joystick)
+ * Pre: "" has to be initialized
+ * Post: Any variables are updated to their current values for each itteration
+ */
+void twist_callback(const std_msgs::Float32 &msg)
+{
+    moment = MOMENT_MODIFIER * (msg.data - NEUTRAL_TWIST); //Neutral: moment = 0 = msg.data;
+}
 
-  else if(msg.data > 175 && msg.data < 185)
-  {
-     motor4_value.data = 1500+(magnitude*400);
-     motor6_value.data = 1500+(magnitude*400); 
-  }
-
-  else if(msg.data > 0 && msg.data < 5 || msg.data > 355 && msg.data < 359)
-  {
-      motor1_value.data = 1500+(magnitude*400);
-      motor3_value.data = 1500+(magnitude*400);
-  }
-
-//*************************************************************************
-/*
-  if(msg.data > 95 && msg.data < 175)//forward left
-  {
-     motor6_value.data = 1500+(magnitude*-400); 
-     motor3_value.data = 1500+(magnitude*400); 
-     motor4_value.data = 1500+(magnitude*400); 
-  }
-/*
-  if(msg.data > 5 && msg.data < 85)//forward right
-  {
-     motor1_value.data = 1500+(magnitude*-400);
-     motor3_value.data = 1500+(magnitude*400); 
-     motor4_value.data = 1500+(magnitude*400);
-  }
-  if(msg.data > 185 && msg.data < 265)//backward right
-  {
-     motor1_value.data = 1500+(magnitude*-400); 
-     motor2_value.data = 1500+(magnitude*400);
-     motor3_value.data = 1500+(magnitude*400);
-  }
-  if(msg.data > 275 && msg.data < 355)//backward right
-  {
-     motor1_value.data = 1500+(magnitude*-400); 
-     motor2_value.data = 1500+(magnitude*400);
-     motor4_value.data = 1500+(magnitude*400);
-  }
-*/
-  else
-  {
-      motor1_value.data = 1500;
-      motor3_value.data = 1500;
-      motor4_value.data = 1500;
-      motor6_value.data = 1500;
-  }
+/* calc_motors handles data from velocity_callback, angle_callback, and twist_callback to calculate ROV motor movement
+ * Pre: magnitude, angle, and moment are initialized
+ * Post: Any variables are updated to their current values for each itteration
+ */
+void calc_motors()
+{
+  float force_x = FORCE_X_MODIFIER * magnitude * cos(angle * 180 / PI);
+  float force_y = FORCE_Y_MODIFIER * magnitude * sin(angle * 180 / PI);
+  
+  motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * (-force_y + force_x - moment);
+  motor2_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * (-force_y - force_x + moment);
+  motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * ( force_y - force_x - moment);
+  motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * ( force_y + force_x + moment);
 }
 
 /* trigger_callback handles data recieved from the trigger_topic subscription
