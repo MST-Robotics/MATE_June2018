@@ -6,8 +6,8 @@
  * This handles all data for the sensors
  */
 
- #ifndef sensory_processing_node_H
- #define sensory_processing_node_H
+#ifndef sensory_processing_node_H
+#define sensory_processing_node_H
 
 #include "constants.h"
 
@@ -23,3 +23,5 @@ void mag_cb(const geometry_msgs::Vector3 &msg);
 
 //
 void pixy_cb(const geometry_msgs::Vector3 &msg);
+
+#endif
