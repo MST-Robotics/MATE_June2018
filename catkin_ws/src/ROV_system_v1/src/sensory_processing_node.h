@@ -11,8 +11,16 @@
 
 #include "constants.h"
 
-//value to store orientation
+/*
+ * Stores orientation data
+ * x=roll y=pitch z=heading
+ */
 geometry_msgs::Vector3 orientation;
+
+/*
+ * Stores pixy data
+ * x=color y=width z=height
+ */
 std_msgs::Char plane_type;
 
 //
