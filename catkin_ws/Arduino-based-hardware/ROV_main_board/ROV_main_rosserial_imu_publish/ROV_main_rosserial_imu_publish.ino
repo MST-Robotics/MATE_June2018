@@ -2,18 +2,18 @@
  * Author: Vinnie Marco
  * Email: vgmcn3@mst,edu
  * Date: 6-19-2017
- * 
+ *
  * Code for basic implementation of rosserial
- * 
+ *
  * To start the system, run from terminal:
- * Terminal 1: 
+ * Terminal 1:
  *    roscore
- * 
+ *
  * Terminal 2:
  *    cd ~/MATE_June2018/catkin_ws
  *    source devel/setup.bash
  *    roslaunch ROV_system rov_system.launch
- * 
+ *
  * This will start all necessary nodes to read both controllers
  * and stream data to the arduino
  */
@@ -24,7 +24,7 @@
 //required to use ros with arduino
 #include <ros.h>
 
-/*ros message data types can be 
+/*ros message data types can be
  * found at: http://wiki.ros.org/std_msgs
 */
 #include <std_msgs/Bool.h> //include required per type of message
@@ -40,11 +40,9 @@ ros::NodeHandle  nh;//this is necessary too
 geometry_msgs::Vector3 accelerometer;
 geometry_msgs::Vector3 magnetometer;
 
-Servo servo;//declare a servo object
+geometry_msgs::Vector3 pixy_data;
 
-Servo servo_rty3;
-Servo servo_JS_x;
-Servo servo_JS_y;
+Servo servo;//declare a servo object
 
 /*************************/
 Servo front_right;
@@ -56,22 +54,51 @@ Servo middle_right;
 
 float desired_speed = 0;
 
+void wing_detection_data()
+{
+  static int frame = 0;
+  int j;
+  uint16_t blocks;
+  char buf[32];
+
+  // grab blocks
+  blocks = pixy.getBlocks();
+
+  if (blocks)
+  {
+    frame++;
+
+    // run every 50 frames
+    if (frame%50==0)
+    {
+      for (j=0; j<blocks; j++)
+      {
+        pixy_data.x = pixy.blocks[j].signature;
+        pixy_data.y = pixy.blocks[j].width;
+        pixy_data.z = pixy.blocks[j].height;
+        pixy_pub.publish(&pixy_data);
+      }
+    }
+  }
+
+}
+
 //React to trigger data
 //void trigger_callback(const std_msgs::Bool &msg)
 //{
-//  digitalWrite(led1, msg.data);    
+//  digitalWrite(led1, msg.data);
 //}
 
 //React to button_a data
 //void button_a_callback(const std_msgs::Bool &msg)
 //{
-//  digitalWrite(led2, msg.data);       
+//  digitalWrite(led2, msg.data);
 //}
 
 //React to button_e data
 void button_e_callback(const std_msgs::Bool &msg)
 {
-//  digitalWrite(led3, msg.data);     
+//  digitalWrite(led3, msg.data);
 }
 
 //void rotary_4_callback(const std_msgs::Float32 &msg)
@@ -115,11 +142,11 @@ void motor6_callback(const std_msgs::Int16 &msg)
 /*
 void button_pinky_trigger_callback(const std_msgs::Bool &msg)
 {
-  middle_left.writeMicroseconds(msg.data);      
+  middle_left.writeMicroseconds(msg.data);
 }
 void button_trigger_callback(const std_msgs::Bool &msg)
 {
-  middle_right.writeMicroseconds(msg.data);    
+  middle_right.writeMicroseconds(msg.data);
 }
 */
 
@@ -139,7 +166,7 @@ void joystick_y_callback(const std_msgs::Float32 &msg)
 //{
 //  uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
 //  servo_JS_x.write(servo_val);
-//} 
+//}
 
 
 //set up subscriptions
@@ -169,16 +196,17 @@ ros::Subscriber<std_msgs::Float32> sub_joystick_y("joystick_y", joystick_y_callb
 //set up publishers
 ros::Publisher accel_pub("accel_topic", &accelerometer);
 ros::Publisher mag_pub("mag_topic", &magnetometer);
+ros::Publisher pixy_pub("pixy_topic", &pixy_data);
 
 //Arduino setup
 void setup()
 {
   main_setup();//contains the declarations and hardware setups
-  
+
   //set up pins and other things
 //  pinMode(led1, OUTPUT);
  // pinMode(led2, OUTPUT);
- 
+
 //  servo.attach(servo1_pin);
 //  servo_rty3.attach(servo2_pin);
  // servo_JS_x.attach(servo3_pin);
@@ -188,23 +216,23 @@ void setup()
   front_left.attach(flt_pin);
   back_right.attach(brt_pin);
   back_left.attach(blt_pin);
-  
+
   middle_right.attach(middle_right_pin);
   middle_left.attach(middle_left_pin);
- 
+
   //this is needed
   nh.initNode();
 
   //put all of the subscriptions here
 
-  
+
 //  nh.subscribe(sub_trigger);
 //  nh.subscribe(sub_button_a);
   nh.subscribe(sub_button_e);
 //  nh.subscribe(sub_rotary_4);
 
   nh.subscribe(sub_joystick_x);
-  
+
   nh.subscribe(sub_motor1);
   nh.subscribe(sub_motor2);
   nh.subscribe(sub_motor3);
@@ -214,17 +242,18 @@ void setup()
 
   nh.subscribe(sub_joystick_y);
   //nh.subscribe(sub_joystick_rotation);
-  
+
   nh.advertise(accel_pub);
   nh.advertise(mag_pub);
-  
+  nh.advertise(pixy_pub);
 }
 
 
 void loop()
-{ 
+{
   nh.spinOnce();
   process_imu();
+  wing_detection_data();
 }
 
 float mapf(float x, float in_min, float in_max, float out_min, float out_max)
@@ -239,8 +268,8 @@ void process_imu(void)
   if(imu.accelAvailable())
     imu.readAccel();
   if(imu.magAvailable())
-    imu.readMag();    
-    
+    imu.readMag();
+
   accelerometer.x = imu.calcAccel(imu.ax);
   accelerometer.y = imu.calcAccel(imu.ay);
   accelerometer.z = imu.calcAccel(imu.az);

@@ -19,4 +19,7 @@
   <node pkg="ROV_system_v1" type="motion_processing_node" name="motion_processing_node" respawn="true">
   </node>
 
+  <node pkg="ROV_system_v1" type="sensory_processing_node" name="sensory_processing_node" respawn="true">
+  </node>
+
 </launch>
