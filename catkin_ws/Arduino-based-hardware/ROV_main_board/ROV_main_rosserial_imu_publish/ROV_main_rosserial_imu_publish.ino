@@ -18,7 +18,6 @@
  * and stream data to the arduino
  */
 
-
 #include <ROV_main_setup.h>
 
 //required to use ros with arduino
@@ -42,8 +41,6 @@ geometry_msgs::Vector3 magnetometer;
 
 geometry_msgs::Vector3 pixy_data;
 
-Servo servo;//declare a servo object
-
 /*************************/
 Servo front_right;
 Servo front_left;
@@ -54,64 +51,7 @@ Servo middle_right;
 
 float desired_speed = 0;
 
-void wing_detection_data()
-{
-  static int frame = 0;
-  int j;
-  uint16_t blocks;
-  char buf[32];
 
-  // grab blocks
-  blocks = pixy.getBlocks();
-
-  if (blocks)
-  {
-    frame++;
-
-    // run every 50 frames
-    if (frame%50==0)
-    {
-      for (j=0; j<blocks; j++)
-      {
-        pixy_data.x = pixy.blocks[j].signature;
-        pixy_data.y = pixy.blocks[j].width;
-        pixy_data.z = pixy.blocks[j].height;
-        pixy_pub.publish(&pixy_data);
-      }
-    }
-  }
-
-}
-
-//React to trigger data
-//void trigger_callback(const std_msgs::Bool &msg)
-//{
-//  digitalWrite(led1, msg.data);
-//}
-
-//React to button_a data
-//void button_a_callback(const std_msgs::Bool &msg)
-//{
-//  digitalWrite(led2, msg.data);
-//}
-
-//React to button_e data
-void button_e_callback(const std_msgs::Bool &msg)
-{
-//  digitalWrite(led3, msg.data);
-}
-
-//void rotary_4_callback(const std_msgs::Float32 &msg)
-//{
-//  uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
-//  servo.write(servo_val);
-//}
-
-//void rotary_3_callback(const std_msgs::Float32 &msg)
-//{
-//  uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
-//  servo_rty3.write(servo_val);
-//}
 
 void motor1_callback(const std_msgs::Int16 &msg)
 {
@@ -150,48 +90,23 @@ void button_trigger_callback(const std_msgs::Bool &msg)
 }
 */
 
-
-//left and right
-void joystick_x_callback(const std_msgs::Float32 &msg)
-{
- //uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
- //servo_JS_x.write(servo_val);
-}
-//foward and backward
-void joystick_y_callback(const std_msgs::Float32 &msg)
-{
-}
-
-//void joystick_rotation_callback(const std_msgs::Float32 &msg)
-//{
-//  uint8_t servo_val = mapf(msg.data, -1.0, 1.0, 0.0, 180.0);
-//  servo_JS_x.write(servo_val);
-//}
-
-
 //set up subscriptions
-
-
-//ros::Subscriber<std_msgs::Bool> sub_trigger("trigger", trigger_callback);
-//ros::Subscriber<std_msgs::Bool> sub_button_a("button_a", button_a_callback);
+//ros::Subscriber<std_msgs::Bool> trigger_sub("trigger", trigger_callback);
+//ros::Subscriber<std_msgs::Bool> button_a_sub("button_a", button_a_callback);
 ros::Subscriber<std_msgs::Bool> sub_button_e("button_e", button_e_callback);
 
-ros::Subscriber<std_msgs::Int16> sub_motor1("motor1_topic", motor1_callback);
-ros::Subscriber<std_msgs::Int16> sub_motor2("motor2_topic", motor2_callback);
-ros::Subscriber<std_msgs::Int16> sub_motor3("motor3_topic", motor3_callback);
-ros::Subscriber<std_msgs::Int16> sub_motor4("motor4_topic", motor4_callback);
-ros::Subscriber<std_msgs::Int16> sub_motor5("motor5_topic", motor5_callback);
-ros::Subscriber<std_msgs::Int16> sub_motor6("motor6_topic", motor6_callback);
+ros::Subscriber<std_msgs::Int16> motor1_sub("motor1_topic", motor1_callback);
+ros::Subscriber<std_msgs::Int16> motor2_sub("motor2_topic", motor2_callback);
+ros::Subscriber<std_msgs::Int16> motor3_sub("motor3_topic", motor3_callback);
+ros::Subscriber<std_msgs::Int16> motor4_sub("motor4_topic", motor4_callback);
+ros::Subscriber<std_msgs::Int16> motor5_sub("motor5_topic", motor5_callback);
+ros::Subscriber<std_msgs::Int16> motor6_sub("motor6_topic", motor6_callback);
 
 /*
-ros::Subscriber<std_msgs::Bool> sub_button_trigger("motor2_topic", button_trigger_callback);
-ros::Subscriber<std_msgs::Bool> sub_button_pinky_trigger("motor5S_topic", button_pinky_trigger_callback);
+ros::Subscriber<std_msgs::Bool> button_trigger_sub("motor2_topic", button_trigger_callback);
+ros::Subscriber<std_msgs::Bool> button_pinky_trigger_sub("motor5S_topic", button_pinky_trigger_callback);
+ros::Subscriber<std_msgs::Float32> joystick_rotation_sub("joystick_rotation", joystick_rotation_callback);
 */
-//ros::Subscriber<std_msgs::Float32> sub_rotary_4("rotary_4", rotary_4_callback);
-
-ros::Subscriber<std_msgs::Float32> sub_joystick_x("joystick_x", joystick_x_callback);
-ros::Subscriber<std_msgs::Float32> sub_joystick_y("joystick_y", joystick_y_callback);
-//ros::Subscriber<std_msgs::Float32> sub_joystick_rotation("joystick_rotation", joystick_rotation_callback);
 
 //set up publishers
 ros::Publisher accel_pub("accel_topic", &accelerometer);
@@ -201,22 +116,12 @@ ros::Publisher pixy_pub("pixy_topic", &pixy_data);
 //Arduino setup
 void setup()
 {
-  main_setup();//contains the declarations and hardware setups
-
-  //set up pins and other things
-//  pinMode(led1, OUTPUT);
- // pinMode(led2, OUTPUT);
-
-//  servo.attach(servo1_pin);
-//  servo_rty3.attach(servo2_pin);
- // servo_JS_x.attach(servo3_pin);
- // servo_JS_y.attach(servo4_pin);
+  main_setup();//contains the declarations and hardware setup
 
   front_right.attach(frt_pin);
   front_left.attach(flt_pin);
   back_right.attach(brt_pin);
   back_left.attach(blt_pin);
-
   middle_right.attach(middle_right_pin);
   middle_left.attach(middle_left_pin);
 
@@ -224,24 +129,19 @@ void setup()
   nh.initNode();
 
   //put all of the subscriptions here
-
-
-//  nh.subscribe(sub_trigger);
-//  nh.subscribe(sub_button_a);
+  //nh.subscribe(trigger_sub);
+  //nh.subscribe(button_a_sub);
   nh.subscribe(sub_button_e);
-//  nh.subscribe(sub_rotary_4);
+  //nh.subscribe(rotary_4_sub);
 
-  nh.subscribe(sub_joystick_x);
+  nh.subscribe(motor1_sub);
+  nh.subscribe(motor2_sub);
+  nh.subscribe(motor3_sub);
+  nh.subscribe(motor4_sub);
+  nh.subscribe(motor5_sub);
+  nh.subscribe(motor6_sub);
 
-  nh.subscribe(sub_motor1);
-  nh.subscribe(sub_motor2);
-  nh.subscribe(sub_motor3);
-  nh.subscribe(sub_motor4);
-  nh.subscribe(sub_motor5);
-  nh.subscribe(sub_motor6);
-
-  nh.subscribe(sub_joystick_y);
-  //nh.subscribe(sub_joystick_rotation);
+  //nh.subscribe(joystick_rotation_sub);
 
   nh.advertise(accel_pub);
   nh.advertise(mag_pub);
@@ -280,4 +180,32 @@ void process_imu(void)
 
   accel_pub.publish(&accelerometer);
   mag_pub.publish(&magnetometer);
+}
+
+void wing_detection_data()
+{
+  static int frame = 0;
+  int j;
+  uint16_t blocks;
+  char buf[32];
+
+  // grab blocks
+  blocks = pixy.getBlocks();
+
+  if (blocks)
+  {
+    frame++;
+
+    // run every 50 frames
+    if (frame%50==0)
+    {
+      for (j=0; j<blocks; j++)
+      {
+        pixy_data.x = pixy.blocks[j].signature;
+        pixy_data.y = pixy.blocks[j].width;
+        pixy_data.z = pixy.blocks[j].height;
+        pixy_pub.publish(&pixy_data);
+      }
+    }
+  }
 }
