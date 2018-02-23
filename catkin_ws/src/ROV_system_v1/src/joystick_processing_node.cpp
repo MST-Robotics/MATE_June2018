@@ -25,7 +25,7 @@ int main(int argc, char **argv)
   ros::Publisher joystick_y_pub = n.advertise<std_msgs::Float32>("angle_topic", 1000);
   ros::Publisher joystick_rotation_pub = n.advertise<std_msgs::Float32>("joystick_rotation_topic", 1000);
   ros::Publisher trigger_pub = n.advertise<std_msgs::Bool>("trigger_topic", 1000);
-  ros::Publisher button_pinky_trigger_pub = n.advertise<std_msgs::Bool>("button_pinky_trigger_topic", 1000);
+  ros::Publisher button_pinky_trigger_pub = n.advertise<std_msgs::Bool>("pinky_trigger_topic", 1000);
 
   ros::Rate loop_wait(30);//this is needed
  
@@ -34,10 +34,10 @@ int main(int argc, char **argv)
    //publish everything once per loop
    joystick_x_pub.publish(magnitude_value);   
    joystick_y_pub.publish(angle_value);
-   joystick_rotation_pub.publish(axis_stick_rotation_value);
+   joystick_rotation_pub.publish(stick_rotation_value);
  
    trigger_pub.publish(button_trigger_state);
-   button_pinky_trigger_pub.publish(button_pinky_trigger_state);
+   button_pinky_trigger_pub.publish(pinky_trigger_state);
 
    ros::spinOnce();
    loop_wait.sleep();//wait some
@@ -72,8 +72,8 @@ void joystick_callback(const sensor_msgs::Joy &joy)
     magnitude_value.data = 0.0; //mapped to zero to match our scale 
   }
 
-  button_trigger_state.data = joy.buttons[button_trigger]; //Gets value from button trigger
-  button_pinky_trigger_state.data = joy.buttons[button_pinky_trigger];
+  trigger_state.data = joy.buttons[button_trigger]; //Gets value from button trigger
+  pinky_trigger_state.data = joy.buttons[button_pinky_trigger];
 
 
 /*
