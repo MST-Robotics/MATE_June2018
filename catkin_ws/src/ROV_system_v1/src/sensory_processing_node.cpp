@@ -8,6 +8,37 @@
 
 #include "sensory_processing_node.h"
 
+
+
+int main(int argc, char **argv)
+{
+  //necessary ros things
+  ros::init(argc, argv, "sensory_processing_node");
+  ros::NodeHandle n;
+
+  //Subscribers for raw accel and mag data
+  ros::Subscriber accel_topic = n.subscribe("accel_topic", 1000, accel_cb);
+  ros::Subscriber mag_topic = n.subscribe("mag_topic", 1000, mag_cb);
+  ros::Subscriber pixy_topic = n.subscribe("pixy_topic", 1000, pixy_cb);
+
+  //Publisher for orientation in x=roll, y=pitch, z=heading
+  ros::Publisher orientation_pub = n.advertise<geometry_msgs::Vector3>("orientation_topic", 1000);
+  ros::Publisher pixy_pub = n.advertise<std_msgs::Char>("pixy_topic", 1000);
+
+  ros::Rate loop_wait(30);//this is needed
+
+  //ctr-c makes ok() return false, thus ending the program
+  while(ros::ok())
+  {
+    orientation_pub.publish(orientation);
+    pixy_pub.publish(plane_type);
+
+    ros::spinOnce();
+    loop_wait.sleep();//wait some
+  }
+  return 0;
+}
+
 void accel_cb(const geometry_msgs::Vector3 &msg)
 {
   //calculate roll
@@ -93,33 +124,4 @@ void pixy_cb(const geometry_msgs::Vector3 &msg)
       plane_type.data = 'E';
     }
   }
-}
-
-int main(int argc, char **argv)
-{
-  //necessary ros things
-  ros::init(argc, argv,"sensory_processing_node");
-  ros::NodeHandle n;
-
-  //Subscribers for raw accel and mag data
-  ros::Subscriber accel_topic = n.subscribe("accel_topic", 1000, accel_cb);
-  ros::Subscriber mag_topic = n.subscribe("mag_topic", 1000, mag_cb);
-  ros::Subscriber pixy_topic = n.subscribe("pixy_topic", 1000, pixy_cb);
-
-  //Publisher for orientation in x=roll, y=pitch, z=heading
-  ros::Publisher orientation_pub = n.advertise<geometry_msgs::Vector3>("orientation_topic", 1000);
-  ros::Publisher pixy_pub = n.advertise<std_msgs::Char>("pixy_topic", 1000);
-
-  ros::Rate loop_wait(30);//this is needed
-
-  //ctr-c makes ok() return false, thus ending the program
-  while(ros::ok())
-  {
-    orientation_pub.publish(orientation);
-    pixy_pub.publish(plane_type);
-
-    ros::spinOnce();
-    loop_wait.sleep();//wait some
-  }
-  return 0;
 }
