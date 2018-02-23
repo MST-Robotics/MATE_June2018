@@ -49,9 +49,6 @@ Servo back_left;
 Servo middle_left;
 Servo middle_right;
 
-float desired_speed = 0;
-
-
 
 void motor1_callback(const std_msgs::Int16 &msg)
 {
