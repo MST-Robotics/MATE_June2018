@@ -37,7 +37,7 @@ int main(int argc, char **argv)
    joystick_rotation_pub.publish(stick_rotation_value);
  
    trigger_pub.publish(button_trigger_state);
-   button_pinky_trigger_pub.publish(pinky_trigger_state);
+   button_pinky_trigger_pub.publish(button_pinky_trigger_state);
 
    ros::spinOnce();
    loop_wait.sleep();//wait some
