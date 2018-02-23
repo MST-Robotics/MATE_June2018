@@ -50,59 +50,59 @@ Servo middle_left;
 Servo middle_right;
 
 
-void motor1_callback(const std_msgs::Int16 &msg)
+void motor1_cb(const std_msgs::Int16 &msg)
 {
  front_left.writeMicroseconds(msg.data);
 }
-void motor2_callback(const std_msgs::Int16 &msg)
+void motor2_cb(const std_msgs::Int16 &msg)
 {
   middle_left.writeMicroseconds(msg.data);
 }
-void motor3_callback(const std_msgs::Int16 &msg)
+void motor3_cb(const std_msgs::Int16 &msg)
 {
   back_left.writeMicroseconds(msg.data);
 }
-void motor4_callback(const std_msgs::Int16 &msg)
+void motor4_cb(const std_msgs::Int16 &msg)
 {
   front_right.writeMicroseconds(msg.data);
 }
-void motor5_callback(const std_msgs::Int16 &msg)
+void motor5_cb(const std_msgs::Int16 &msg)
 {
   middle_right.writeMicroseconds(msg.data);
 }
 
-void motor6_callback(const std_msgs::Int16 &msg)
+void motor6_cb(const std_msgs::Int16 &msg)
 {
   back_right.writeMicroseconds(msg.data);
 }
 
 /*
-void button_pinky_trigger_callback(const std_msgs::Bool &msg)
+void button_pinky_trigger_cb(const std_msgs::Bool &msg)
 {
   middle_left.writeMicroseconds(msg.data);
 }
-void button_trigger_callback(const std_msgs::Bool &msg)
+void button_trigger_cb(const std_msgs::Bool &msg)
 {
   middle_right.writeMicroseconds(msg.data);
 }
 */
 
 //set up subscriptions
-//ros::Subscriber<std_msgs::Bool> trigger_sub("trigger", trigger_callback);
-//ros::Subscriber<std_msgs::Bool> button_a_sub("button_a", button_a_callback);
-ros::Subscriber<std_msgs::Bool> sub_button_e("button_e", button_e_callback);
+//ros::Subscriber<std_msgs::Bool> trigger_sub("trigger", trigger_cb);
+//ros::Subscriber<std_msgs::Bool> button_a_sub("button_a", button_a_cb);
+ros::Subscriber<std_msgs::Bool> button_e_sub("button_e", button_e_cb);
 
-ros::Subscriber<std_msgs::Int16> motor1_sub("motor1_topic", motor1_callback);
-ros::Subscriber<std_msgs::Int16> motor2_sub("motor2_topic", motor2_callback);
-ros::Subscriber<std_msgs::Int16> motor3_sub("motor3_topic", motor3_callback);
-ros::Subscriber<std_msgs::Int16> motor4_sub("motor4_topic", motor4_callback);
-ros::Subscriber<std_msgs::Int16> motor5_sub("motor5_topic", motor5_callback);
-ros::Subscriber<std_msgs::Int16> motor6_sub("motor6_topic", motor6_callback);
+ros::Subscriber<std_msgs::Int16> motor1_sub("motor1_topic", motor1_cb);
+ros::Subscriber<std_msgs::Int16> motor2_sub("motor2_topic", motor2_cb);
+ros::Subscriber<std_msgs::Int16> motor3_sub("motor3_topic", motor3_cb);
+ros::Subscriber<std_msgs::Int16> motor4_sub("motor4_topic", motor4_cb);
+ros::Subscriber<std_msgs::Int16> motor5_sub("motor5_topic", motor5_cb);
+ros::Subscriber<std_msgs::Int16> motor6_sub("motor6_topic", motor6_cb);
 
 /*
-ros::Subscriber<std_msgs::Bool> button_trigger_sub("motor2_topic", button_trigger_callback);
-ros::Subscriber<std_msgs::Bool> button_pinky_trigger_sub("motor5S_topic", button_pinky_trigger_callback);
-ros::Subscriber<std_msgs::Float32> joystick_rotation_sub("joystick_rotation", joystick_rotation_callback);
+ros::Subscriber<std_msgs::Bool> button_trigger_sub("motor2_topic", button_trigger_cb);
+ros::Subscriber<std_msgs::Bool> button_pinky_trigger_sub("motor5S_topic", button_pinky_trigger_cb);
+ros::Subscriber<std_msgs::Float32> joystick_rotation_sub("joystick_rotation", joystick_rotation_cb);
 */
 
 //set up publishers
