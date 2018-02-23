@@ -74,9 +74,9 @@ void pixy_cb(const geometry_msgs::Vector3 &msg)
 {
   float temp;
   float ratio;
-  color = msg.x;
-  width = msg.y;
-  height = msg.z;
+  int color = msg.x;
+  float width = msg.y;
+  float height = msg.z;
 
   if (width > height)
   {
