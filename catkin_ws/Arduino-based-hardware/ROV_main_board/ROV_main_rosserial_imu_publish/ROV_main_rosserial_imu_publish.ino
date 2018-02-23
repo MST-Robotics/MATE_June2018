@@ -77,21 +77,18 @@ void motor6_cb(const std_msgs::Int16 &msg)
 }
 
 /*
-void button_pinky_trigger_cb(const std_msgs::Bool &msg)
+void pinky_trigger_cb(const std_msgs::Bool &msg)
 {
   middle_left.writeMicroseconds(msg.data);
 }
-void button_trigger_cb(const std_msgs::Bool &msg)
+void trigger_cb(const std_msgs::Bool &msg)
 {
   middle_right.writeMicroseconds(msg.data);
 }
 */
 
 //set up subscriptions
-//ros::Subscriber<std_msgs::Bool> trigger_sub("trigger", trigger_cb);
-//ros::Subscriber<std_msgs::Bool> button_a_sub("button_a", button_a_cb);
-ros::Subscriber<std_msgs::Bool> button_e_sub("button_e", button_e_cb);
-
+ros::Subscriber<std_msgs::Bool> e_button_sub("e_button_topic", button_e_cb);
 ros::Subscriber<std_msgs::Int16> motor1_sub("motor1_topic", motor1_cb);
 ros::Subscriber<std_msgs::Int16> motor2_sub("motor2_topic", motor2_cb);
 ros::Subscriber<std_msgs::Int16> motor3_sub("motor3_topic", motor3_cb);
@@ -100,8 +97,9 @@ ros::Subscriber<std_msgs::Int16> motor5_sub("motor5_topic", motor5_cb);
 ros::Subscriber<std_msgs::Int16> motor6_sub("motor6_topic", motor6_cb);
 
 /*
-ros::Subscriber<std_msgs::Bool> button_trigger_sub("motor2_topic", button_trigger_cb);
-ros::Subscriber<std_msgs::Bool> button_pinky_trigger_sub("motor5S_topic", button_pinky_trigger_cb);
+ros::Subscriber<std_msgs::Bool> a_button_sub("a_button_topic", button_a_cb);
+ros::Subscriber<std_msgs::Bool> trigger_sub("trigger_topic", trigger_cb);
+ros::Subscriber<std_msgs::Bool> pinky_trigger_sub("pinky_trigger_topic", pinky_trigger_cb);
 ros::Subscriber<std_msgs::Float32> joystick_rotation_sub("joystick_rotation", joystick_rotation_cb);
 */
 
@@ -128,7 +126,7 @@ void setup()
   //put all of the subscriptions here
   //nh.subscribe(trigger_sub);
   //nh.subscribe(button_a_sub);
-  nh.subscribe(sub_button_e);
+  //nh.subscribe(button_e_sub);
   //nh.subscribe(rotary_4_sub);
 
   nh.subscribe(motor1_sub);
