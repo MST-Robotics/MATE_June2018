@@ -34,7 +34,7 @@ int main(int argc, char **argv)
    //publish everything once per loop
    joystick_x_pub.publish(magnitude_value);   
    joystick_y_pub.publish(angle_value);
-   joystick_rotation_pub.publish(stick_rotation_value);
+   joystick_rotation_pub.publish(axis_stick_rotation_value);
  
    trigger_pub.publish(button_trigger_state);
    button_pinky_trigger_pub.publish(button_pinky_trigger_state);
