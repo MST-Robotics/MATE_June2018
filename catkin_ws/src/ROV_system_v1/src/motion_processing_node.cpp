@@ -13,7 +13,6 @@
 #define FORCE_X_MODIFIER 1 /*To Be Determined*/
 #define FORCE_Y_MODIFIER 1 /*To Be Determined*/
 #define MOMENT_MODIFIER 1 /*To Be Determined*/
-#define NEUTRAL_TWIST 90
 #define MOTOR_NEUTRAL 1500
 #define MOTOR_RAMP 400
 
@@ -28,10 +27,11 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
 
   //subscribe to current sensor data
-  ros::Subscriber joystick_x_topic = n.subscribe("joystick_x", 1000, velocity_callback);
-  ros::Subscriber joystick_y_topic = n.subscribe("joystick_y", 1000, angle_callback);
-  ros::Subscriber trigger_topic = n.subscribe("trigger", 1000, trigger_callback);
-  ros::Subscriber button_pinky_trigger_topic = n.subscribe("button_pinky_trigger", 1000, button_pinky_trigger_callback);
+  ros::Subscriber joystick_x_topic = n.subscribe("magnitude_topic", 1000, velocity_callback);
+  ros::Subscriber joystick_y_topic = n.subscribe("angle_topic", 1000, angle_callback);
+  ros::Subscriber joystick_rotation_topic = n.subscribe("joystick_rotation_topic", 1000, twist_callback);
+  ros::Subscriber trigger_topic = n.subscribe("trigger_topic", 1000, trigger_callback);
+  ros::Subscriber button_pinky_trigger_topic = n.subscribe("button_pinky_trigger_topic", 1000, button_pinky_trigger_callback);
 
   ros::Publisher motor1_pub = n.advertise<std_msgs::Int16>("motor1_topic", 1000);
   ros::Publisher motor2_pub = n.advertise<std_msgs::Int16>("motor2_topic", 1000);
@@ -40,13 +40,6 @@ int main(int argc, char **argv)
   ros::Publisher motor5_pub = n.advertise<std_msgs::Int16>("motor5_topic", 1000);
   ros::Publisher motor6_pub = n.advertise<std_msgs::Int16>("motor6_topic", 1000);
 
-  ros::Subscriber current0_topic = n.subscribe("current0_topic", 1000, current0_callback);
-  ros::Subscriber current1_topic = n.subscribe("current1_topic", 1000, current1_callback);
-  ros::Subscriber current2_topic = n.subscribe("current2_topic", 1000, current2_callback);
-  ros::Subscriber current3_topic = n.subscribe("current3_topic", 1000, current3_callback);
-  ros::Subscriber current4_topic = n.subscribe("current4_topic", 1000, current4_callback);
-  ros::Subscriber current5_topic = n.subscribe("current5_topic", 1000, current5_callback);
-
 
   ros::Subscriber orientation_topic = n.subscribe("orientation_topic", 1000, orientation_callback);
  
@@ -54,7 +47,8 @@ int main(int argc, char **argv)
   
   //ctr-c makes ok() return false, thus ending the program
   while(ros::ok())
-  {  
+  { 
+    calc_motors();
     motor1_pub.publish(motor1_value);
     motor2_pub.publish(motor2_value);
     motor3_pub.publish(motor3_value);
@@ -66,14 +60,6 @@ int main(int argc, char **argv)
     loop_wait.sleep();//wait some
   }
   return 0;
-}
-
-/* 
- *orientation_callback will probably be useless
- */
-void orientation_callback(const geometry_msgs::Vector3 &msg)
-{
-
 }
 
 /* velocity_callback handles data recieved from the joystick_x_topic subscription
@@ -100,7 +86,7 @@ void angle_callback(const std_msgs::Float32 &msg)
  */
 void twist_callback(const std_msgs::Float32 &msg)
 {
-    moment = MOMENT_MODIFIER * (msg.data - NEUTRAL_TWIST); //Neutral: moment = 0 = msg.data;
+    moment = MOMENT_MODIFIER * msg.data; //Neutral: moment = 0 = msg.data;
 }
 
 /* calc_motors handles data from velocity_callback, angle_callback, and twist_callback to calculate ROV motor movement
@@ -125,8 +111,7 @@ void calc_motors()
  */
 void trigger_callback(const std_msgs::Bool &msg)
 {
-  int trigger = msg.data;
-  if(trigger == 1)
+  if(msg.data == 1)
   {
     motor2_value.data = 2000;
     motor5_value.data = 2000;
@@ -145,8 +130,7 @@ void trigger_callback(const std_msgs::Bool &msg)
  */
 void button_pinky_trigger_callback(const std_msgs::Bool &msg)
 {
-  int pinky = msg.data;
-  if(pinky == 1)
+  if(msg.data == 1)
   {
     motor2_value.data = 2000;
     motor5_value.data = 2000;
