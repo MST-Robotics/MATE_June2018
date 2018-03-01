@@ -2,7 +2,7 @@
  * Author: Vinnie Marco, Tamara Spivey, and the Most Honorable Christian Upschulte: President of S&T URT
  * Email: vgmcn3@mst,edu, tjsxz4@mst.edu
  * Date: 01-18-2018
- * 
+ *
  * This handles all data for the motors
  */
 
@@ -46,13 +46,6 @@ void trigger_callback(const std_msgs::Bool &msg);
  * Post: Any variables are updated to their current values for each itteration******
  */
 void button_pinky_trigger_callback(const std_msgs::Bool &msg);
-
-void current0_callback(const std_msgs::Int16 &msg);
-void current1_callback(const std_msgs::Int16 &msg);
-void current2_callback(const std_msgs::Int16 &msg);
-void current3_callback(const std_msgs::Int16 &msg);
-void current4_callback(const std_msgs::Int16 &msg);
-void current5_callback(const std_msgs::Int16 &msg);
 
 void orientation_callback(const geometry_msgs::Vector3 &msg);
 
