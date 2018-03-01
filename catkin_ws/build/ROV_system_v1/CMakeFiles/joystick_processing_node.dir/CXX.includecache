@@ -19,6 +19,8 @@ std_msgs/Int16.h
 -
 geometry_msgs/Vector3.h
 -
+cmath
+-
 
 /home/mstrobotics/MATE_June2018/catkin_ws/src/ROV_system_v1/src/joystick_processing_node.cpp
 joystick_processing_node.h

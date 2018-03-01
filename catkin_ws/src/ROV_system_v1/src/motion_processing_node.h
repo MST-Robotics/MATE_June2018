@@ -12,6 +12,8 @@
 #include "constants.h"
 
 float magnitude = 0.0;
+float angle = 0.0;
+float moment = 0.0;
 
 std_msgs::Int16 motor1_value;
 std_msgs::Int16 motor2_value;
@@ -53,5 +55,8 @@ void current4_callback(const std_msgs::Int16 &msg);
 void current5_callback(const std_msgs::Int16 &msg);
 
 void orientation_callback(const geometry_msgs::Vector3 &msg);
+
+void twist_callback(const std_msgs::Float32 &msg);
+void calc_motors();
 
 #endif
