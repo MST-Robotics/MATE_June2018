@@ -72,8 +72,8 @@ void joystick_callback(const sensor_msgs::Joy &joy)
     magnitude_value.data = 0.0; //mapped to zero to match our scale 
   }
 
-  trigger_state.data = joy.buttons[button_trigger]; //Gets value from button trigger
-  pinky_trigger_state.data = joy.buttons[button_pinky_trigger];
+  button_trigger_state.data = joy.buttons[button_trigger]; //Gets value from button trigger
+  button_pinky_trigger_state.data = joy.buttons[button_pinky_trigger];
 
 
 /*

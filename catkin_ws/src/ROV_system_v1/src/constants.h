@@ -19,7 +19,7 @@
 #include <std_msgs/Float32.h>
 #include <std_msgs/Int16.h>
 #include <geometry_msgs/Vector3.h>
-#include <std_msgs/Char.h>
+#include <std_msgs/String.h>
 
 #include <math.h>
 

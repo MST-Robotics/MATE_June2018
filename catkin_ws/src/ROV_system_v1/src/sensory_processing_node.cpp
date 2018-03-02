@@ -19,11 +19,11 @@ int main(int argc, char **argv)
   //Subscribers for raw accel and mag data
   ros::Subscriber accel_topic = n.subscribe("accel_topic", 1000, accel_cb);
   ros::Subscriber mag_topic = n.subscribe("mag_topic", 1000, mag_cb);
-  ros::Subscriber pixy_topic = n.subscribe("pixy_topic", 1000, pixy_cb);
+  ros::Subscriber pixy_topic = n.subscribe("pixy_data_topic", 1000, pixy_cb);
 
   //Publisher for orientation in x=roll, y=pitch, z=heading
   ros::Publisher orientation_pub = n.advertise<geometry_msgs::Vector3>("orientation_topic", 1000);
-  ros::Publisher pixy_pub = n.advertise<std_msgs::Char>("pixy_topic", 1000);
+  ros::Publisher pixy_pub = n.advertise<std_msgs::String>("pixy_result_topic", 1000);
 
   ros::Rate loop_wait(30);//this is needed
 
@@ -92,36 +92,36 @@ void pixy_cb(const geometry_msgs::Vector3 &msg)
   {
     if (ratio <= triangle_ratio+tolerance && ratio >= triangle_ratio-tolerance)
     {
-      plane_type.data = 'A';
+      plane_type.data = "Plane A: red triangle";
     }
 
     else
     {
-      plane_type.data = 'D';
+      plane_type.data = "Plane D: red rectangle";
     }
   }
   else if (color == blue)
   {
     if (ratio <= triangle_ratio+tolerance && ratio >= triangle_ratio-tolerance)
     {
-      plane_type.data = 'C';
+      plane_type.data = "Plane C: blue triangle";
     }
 
     else
     {
-      plane_type.data = 'F';
+      plane_type.data = "Plane F: blue rectangle";
     }
   }
   else if (color == yellow)
   {
     if (ratio <= triangle_ratio+tolerance && ratio >= triangle_ratio-tolerance)
     {
-      plane_type.data = 'B';
+      plane_type.data = "Plane B: yellow triangle";
     }
 
     else
     {
-      plane_type.data = 'E';
+      plane_type.data = "Plane E: yellow rectangle";
     }
   }
 }

@@ -21,7 +21,7 @@ geometry_msgs::Vector3 orientation;
  * Stores pixy data
  * x=color y=width z=height
  */
-std_msgs::Char plane_type;
+std_msgs::String plane_type;
 
 //
 void accel_cb(const geometry_msgs::Vector3 &msg);
