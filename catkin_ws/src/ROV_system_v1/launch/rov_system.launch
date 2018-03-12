@@ -10,13 +10,24 @@
     <remap from="joy" to="thruster_topic"/>
   </node>
 
+  <node pkg="joy" type="joy_node" name="xbox_node" respawn="true">
+    <param name="dev" value="/dev/input/js0" />
+    <remap from="joy" to="xbox_topic"/>
+  </node>
+
   <node pkg="ROV_system_v1" type="joystick_processing_node" name="joystick_processing_node" respawn="true">
   </node>
 
   <node pkg="ROV_system_v1" type="thruster_processing_node" name="thruster_processing_node" respawn="true">
   </node>
 
+  <node pkg="ROV_system_v1" type="xbox_processing_node" name="xbox_processing_node" respawn="true">
+  </node>
+
   <node pkg="ROV_system_v1" type="motion_processing_node" name="motion_processing_node" respawn="true">
+  </node>
+
+  <node pkg="ROV_system_v1" type="arm_motion_processing_node" name="arm_motion_processing_node" respawn="true">
   </node>
 
   <node pkg="ROV_system_v1" type="sensory_processing_node" name="sensory_processing_node" respawn="true">
