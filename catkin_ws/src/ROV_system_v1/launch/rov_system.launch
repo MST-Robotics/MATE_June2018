@@ -11,7 +11,7 @@
   </node>
 
   <node pkg="joy" type="joy_node" name="xbox_node" respawn="true">
-    <param name="dev" value="/dev/input/js0" />
+    <param name="dev" value="/dev/input/js2" />
     <remap from="joy" to="xbox_topic"/>
   </node>
 

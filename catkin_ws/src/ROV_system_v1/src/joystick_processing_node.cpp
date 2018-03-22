@@ -27,6 +27,9 @@ int main(int argc, char **argv)
   ros::Publisher trigger_pub = n.advertise<std_msgs::Bool>("trigger_topic", 1000);
   ros::Publisher button_pinky_trigger_pub = n.advertise<std_msgs::Bool>("pinky_trigger_topic", 1000);
 
+  ros::Publisher button_h2_down_pub = n.advertise<std_msgs::Bool>("button_h2_down_topic", 1000);
+  ros::Publisher button_h2_up_pub = n.advertise<std_msgs::Bool>("button_h2_up_topic", 1000);
+
   ros::Rate loop_wait(30);//this is needed
  
   while(ros::ok()) //ctrl-c makes ok() return false, thus ending the program
@@ -38,7 +41,8 @@ int main(int argc, char **argv)
  
    trigger_pub.publish(button_trigger_state);
    button_pinky_trigger_pub.publish(button_pinky_trigger_state);
-
+   button_h2_down_pub.publish(button_h2_down_state);
+   button_h2_up_pub.publish(button_h2_up_state);
    ros::spinOnce();
    loop_wait.sleep();//wait some
   }
@@ -75,6 +79,8 @@ void joystick_callback(const sensor_msgs::Joy &joy)
   button_trigger_state.data = joy.buttons[button_trigger]; //Gets value from button trigger
   button_pinky_trigger_state.data = joy.buttons[button_pinky_trigger];
 
+  button_h2_up_state.data = joy.buttons[button_h2_up];
+  button_h2_down_state.data = joy.buttons[button_h2_down];
 
 /*
 FIX ME PLEASE look like ^

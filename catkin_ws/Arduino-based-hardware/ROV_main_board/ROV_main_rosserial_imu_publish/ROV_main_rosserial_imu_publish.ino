@@ -50,6 +50,8 @@ Servo back_left;
 Servo middle_left;
 Servo middle_right;
 
+Servo camera_one;
+Servo camera_two;
 
 void motor1_cb(const std_msgs::Int16 &msg)
 {
@@ -71,10 +73,19 @@ void motor5_cb(const std_msgs::Int16 &msg)
 {
   middle_right.writeMicroseconds(msg.data);
 }
-
 void motor6_cb(const std_msgs::Int16 &msg)
 {
   back_right.writeMicroseconds(msg.data);
+}
+
+void camera_move1_cb(const std_msgs::Int16 &msg)
+{
+  camera_one.writeMicroseconds(msg.data);
+}
+
+void camera_move2_cb(const std_msgs::Int16 &msg)
+{
+  camera_two.writeMicroseconds(msg.data);
 }
 
 /*
@@ -96,6 +107,9 @@ ros::Subscriber<std_msgs::Int16> motor3_sub("motor3_topic", motor3_cb);
 ros::Subscriber<std_msgs::Int16> motor4_sub("motor4_topic", motor4_cb);
 ros::Subscriber<std_msgs::Int16> motor5_sub("motor5_topic", motor5_cb);
 ros::Subscriber<std_msgs::Int16> motor6_sub("motor6_topic", motor6_cb);
+
+ros::Subscriber<std_msgs::Int16> camera_move1_sub("button_h2_up_topic", camera_move1_cb);
+ros::Subscriber<std_msgs::Int16> camera_move2_sub("motor6_topic", camera_move2_cb);
 
 /*
 ros::Subscriber<std_msgs::Bool> a_button_sub("a_button_topic", button_a_cb);
@@ -121,6 +135,8 @@ void setup()
   middle_right.attach(middle_right_pin);
   middle_left.attach(middle_left_pin);
 
+  camera_one.attach(junkservo);
+  camera_two.attach(other_junkservo);
   //this is needed
   nh.initNode();
 
@@ -137,6 +153,8 @@ void setup()
   nh.subscribe(motor5_sub);
   nh.subscribe(motor6_sub);
 
+  nh.subscribe(camera_move1_sub);
+  nh.subscribe(camera_move2_sub);
   //nh.subscribe(joystick_rotation_sub);
 
   nh.advertise(accel_pub);

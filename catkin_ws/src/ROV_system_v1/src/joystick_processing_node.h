@@ -22,6 +22,8 @@ std_msgs::Float32 axis_stick_rotation_value;
 std_msgs::Bool button_trigger_state;
 std_msgs::Bool button_pinky_trigger_state;
 
+std_msgs::Bool button_h2_down_state;
+std_msgs::Bool button_h2_up_state;
 
 /* joystick_callback handles data recieved from the joystick topic
  * Pre: Joystick topic has to be initalized

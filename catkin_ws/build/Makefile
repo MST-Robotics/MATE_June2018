@@ -2233,6 +2233,19 @@ _beginner_tutorials_generate_messages_check_deps_AddTwoInts/fast:
 .PHONY : _beginner_tutorials_generate_messages_check_deps_AddTwoInts/fast
 
 #=============================================================================
+# Target rules for targets named sensory_processing_node
+
+# Build rule for target.
+sensory_processing_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensory_processing_node
+.PHONY : sensory_processing_node
+
+# fast build rule for target.
+sensory_processing_node/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
+.PHONY : sensory_processing_node/fast
+
+#=============================================================================
 # Target rules for targets named diagnostic_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -2285,19 +2298,6 @@ diagnostic_msgs_generate_messages_py/fast:
 .PHONY : diagnostic_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named diagnostic_msgs_generate_messages_lisp
-
-# Build rule for target.
-diagnostic_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_lisp
-.PHONY : diagnostic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_lisp/fast
-
-#=============================================================================
 # Target rules for targets named diagnostic_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -2337,17 +2337,43 @@ motion_processing_node/fast:
 .PHONY : motion_processing_node/fast
 
 #=============================================================================
-# Target rules for targets named sensory_processing_node
+# Target rules for targets named xbox_processing_node
 
 # Build rule for target.
-sensory_processing_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensory_processing_node
-.PHONY : sensory_processing_node
+xbox_processing_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 xbox_processing_node
+.PHONY : xbox_processing_node
 
 # fast build rule for target.
-sensory_processing_node/fast:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
-.PHONY : sensory_processing_node/fast
+xbox_processing_node/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build.make ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build
+.PHONY : xbox_processing_node/fast
+
+#=============================================================================
+# Target rules for targets named diagnostic_msgs_generate_messages_lisp
+
+# Build rule for target.
+diagnostic_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_lisp
+.PHONY : diagnostic_msgs_generate_messages_lisp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named arm_motion_processing_node
+
+# Build rule for target.
+arm_motion_processing_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 arm_motion_processing_node
+.PHONY : arm_motion_processing_node
+
+# fast build rule for target.
+arm_motion_processing_node/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/build
+.PHONY : arm_motion_processing_node/fast
 
 #=============================================================================
 # Target rules for targets named practice_node
@@ -4250,15 +4276,17 @@ help:
 	@echo "... _beginner_tutorials_generate_messages_check_deps_Num"
 	@echo "... listener"
 	@echo "... _beginner_tutorials_generate_messages_check_deps_AddTwoInts"
+	@echo "... sensory_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_nodejs"
 	@echo "... diagnostic_msgs_generate_messages_eus"
 	@echo "... thruster_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_py"
-	@echo "... diagnostic_msgs_generate_messages_lisp"
 	@echo "... diagnostic_msgs_generate_messages_cpp"
 	@echo "... joystick_processing_node"
 	@echo "... motion_processing_node"
-	@echo "... sensory_processing_node"
+	@echo "... xbox_processing_node"
+	@echo "... diagnostic_msgs_generate_messages_lisp"
+	@echo "... arm_motion_processing_node"
 	@echo "... practice_node"
 	@echo "... topic_tools_generate_messages_nodejs"
 	@echo "... topic_tools_generate_messages_eus"

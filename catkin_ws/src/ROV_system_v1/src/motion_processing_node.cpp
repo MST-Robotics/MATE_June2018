@@ -32,6 +32,9 @@ int main(int argc, char **argv)
   ros::Subscriber trigger_topic = n.subscribe("trigger_topic", 1000, trigger_callback);
   ros::Subscriber button_pinky_trigger_topic = n.subscribe("button_pinky_trigger_topic", 1000, button_pinky_trigger_callback);
 
+  ros::Subscriber button_h2_up_topic = n.subscribe("button_h2_up_topic", 1000, button_h2_up_callback);
+  ros::Subscriber button_h2_down_topic = n.subscribe("button_h2_down_topic", 1000, button_h2_down_callback);
+
   ros::Publisher motor1_pub = n.advertise<std_msgs::Int16>("motor1_topic", 1000);
   ros::Publisher motor2_pub = n.advertise<std_msgs::Int16>("motor2_topic", 1000);
   ros::Publisher motor3_pub = n.advertise<std_msgs::Int16>("motor3_topic", 1000);
@@ -39,6 +42,8 @@ int main(int argc, char **argv)
   ros::Publisher motor5_pub = n.advertise<std_msgs::Int16>("motor5_topic", 1000);
   ros::Publisher motor6_pub = n.advertise<std_msgs::Int16>("motor6_topic", 1000);
 
+  ros::Publisher camera_one_pub = n.advertise<std_msgs::Int16>("camera_one_topic", 1000);
+  ros::Publisher camera_two_pub = n.advertise<std_msgs::Int16>("camera_two_topic", 1000);
 
  // ros::Subscriber orientation_topic = n.subscribe("orientation_topic", 1000, orientation_callback);
  
@@ -54,6 +59,9 @@ int main(int argc, char **argv)
     motor4_pub.publish(motor4_value);
     motor5_pub.publish(motor5_value);
     motor6_pub.publish(motor6_value);
+
+    camera_one_pub.publish(camera_one_value);
+    camera_two_pub.publish(camera_two_value);
 
     ros::spinOnce();
     loop_wait.sleep();//wait some
@@ -143,6 +151,31 @@ void button_pinky_trigger_callback(const std_msgs::Bool &msg)
   {
     motor2_value.data = 1500;
     motor5_value.data = 1500;
+  }
+}
+
+
+void button_h2_up_callback(const std_msgs::Bool &msg)
+{
+  if(msg.data == 1)
+  {
+    camera_one_value.data = 2000;
+  }
+  else
+  {
+    camera_one_value.data = 1500;
+  }
+}
+
+void button_h2_down_callback(const std_msgs::Bool &msg)
+{
+  if(msg.data == 1)
+  {
+    camera_one_value.data = -2000;
+  }
+  else
+  {
+    camera_one_value.data = 1500;
   }
 }
 

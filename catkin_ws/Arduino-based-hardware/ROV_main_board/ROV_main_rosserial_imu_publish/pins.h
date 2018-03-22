@@ -23,6 +23,9 @@
   #define brt_pin 5
 
 
+  #define junkservo 9
+  #define other_junkservo 10
+
 //#define servo3_pin 3
 //joystick x-axis
 #define servo4_pin 8

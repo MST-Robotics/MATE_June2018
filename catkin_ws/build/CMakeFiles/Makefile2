@@ -105,7 +105,7 @@ CMakeFiles/run_tests.dir/all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tes
 
 # Build rule for subdir invocation for target.
 CMakeFiles/run_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/run_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : CMakeFiles/run_tests.dir/rule
@@ -172,7 +172,7 @@ CMakeFiles/tests.dir/all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/set_model_st
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : CMakeFiles/tests.dir/rule
@@ -250,12 +250,12 @@ gtest/preinstall:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=73 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gtest/CMakeFiles/gtest.dir/rule
@@ -282,7 +282,7 @@ clean: gtest/CMakeFiles/gtest.dir/clean
 gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=73 "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -463,7 +463,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.di
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=81 "Built target rosserial_arduino_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=80 "Built target rosserial_arduino_generate_messages_py"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -500,7 +500,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/all: ross
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gennodejs.dir/rule
@@ -528,12 +528,12 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodej
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=80 "Built target rosserial_arduino_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_arduino_generate_messages_nodejs"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/rule
@@ -597,7 +597,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/all: rosseri
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule
@@ -625,7 +625,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.d
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=79 "Built target rosserial_arduino_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=78 "Built target rosserial_arduino_generate_messages_eus"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -658,12 +658,12 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.d
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=78 "Built target rosserial_arduino_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_arduino_generate_messages_cpp"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/rule
@@ -704,7 +704,7 @@ all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/rule
@@ -796,12 +796,12 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_arduino_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=79 "Built target rosserial_arduino_generate_messages_lisp"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/rule
@@ -833,7 +833,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/all: rosser
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/rule
@@ -960,7 +960,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/all: rosserial/
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule
@@ -988,12 +988,12 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/depend
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_mbed_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=81 "Built target rosserial_mbed_generate_messages_cpp"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/rule
@@ -1131,7 +1131,7 @@ all: rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/al
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/rule
@@ -1159,12 +1159,12 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/depend
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_mbed_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=83 "Built target rosserial_mbed_generate_messages_nodejs"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/rule
@@ -1224,12 +1224,12 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/al
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/depend
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=83 "Built target rosserial_mbed_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_mbed_generate_messages_lisp"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/rule
@@ -1261,7 +1261,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gencpp.dir/all: rosserial/ros
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gencpp.dir/rule
@@ -1293,7 +1293,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_genlisp.dir/all: rosserial/ro
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_genlisp.dir/rule
@@ -1399,7 +1399,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_geneus.dir/all: rosserial/ros
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_geneus.dir/rule
@@ -1463,7 +1463,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/all: rosserial/ros
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/rule
@@ -1494,12 +1494,12 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_TopicInfo.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=85,86 "Built target rosserial_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=85 "Built target rosserial_msgs_generate_messages_cpp"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/rule
@@ -1690,12 +1690,12 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/al
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_TopicInfo.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=88,89 "Built target rosserial_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=88 "Built target rosserial_msgs_generate_messages_lisp"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/rule
@@ -1727,7 +1727,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_genlisp.dir/all: rosserial/ro
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_genlisp.dir/rule
@@ -1758,12 +1758,12 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_TopicInfo.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=90 "Built target rosserial_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=89,90 "Built target rosserial_msgs_generate_messages_nodejs"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/rule
@@ -1795,7 +1795,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gennodejs.dir/all: rosserial/
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gennodejs.dir/rule
@@ -1862,12 +1862,12 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_TopicInfo.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=87 "Built target rosserial_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=86,87 "Built target rosserial_msgs_generate_messages_eus"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/rule
@@ -1983,7 +1983,7 @@ rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscrib
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_subscriber_test.dir/rule
@@ -2015,7 +2015,7 @@ rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client.dir/all: rosse
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client.dir/rule
@@ -2047,7 +2047,7 @@ rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/all: rosser
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client.dir/rule
@@ -2075,12 +2075,12 @@ rosserial/rosserial_client/CMakeFiles/float64_test.dir/all: gtest/CMakeFiles/gte
 rosserial/rosserial_client/CMakeFiles/float64_test.dir/all: gtest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f rosserial/rosserial_client/CMakeFiles/float64_test.dir/build.make rosserial/rosserial_client/CMakeFiles/float64_test.dir/depend
 	$(MAKE) -f rosserial/rosserial_client/CMakeFiles/float64_test.dir/build.make rosserial/rosserial_client/CMakeFiles/float64_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=7 "Built target float64_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target float64_test"
 .PHONY : rosserial/rosserial_client/CMakeFiles/float64_test.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/float64_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/float64_test.dir/rule
@@ -2108,12 +2108,12 @@ rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/all: gtest/CMakeFiles/
 rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/all: gtest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/depend
 	$(MAKE) -f rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=97 "Built target subscriber_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target subscriber_test"
 .PHONY : rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/rule
@@ -2146,7 +2146,7 @@ rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/all: 
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/rule
@@ -2180,7 +2180,7 @@ rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_float64_
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_float64_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_float64_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest_float64_test.dir/rule
@@ -2213,7 +2213,7 @@ rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/all:
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/_run_tests_rosserial_client_gtest.dir/rule
@@ -2245,7 +2245,7 @@ rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscribe
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_subscriber_test.dir/rule
@@ -2277,7 +2277,7 @@ rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_float64_t
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_float64_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_float64_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest_float64_test.dir/rule
@@ -4850,7 +4850,7 @@ clean: ROV_system/CMakeFiles/motion_processing.dir/clean
 ROV_system/CMakeFiles/sensory_processing.dir/all:
 	$(MAKE) -f ROV_system/CMakeFiles/sensory_processing.dir/build.make ROV_system/CMakeFiles/sensory_processing.dir/depend
 	$(MAKE) -f ROV_system/CMakeFiles/sensory_processing.dir/build.make ROV_system/CMakeFiles/sensory_processing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target sensory_processing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=95 "Built target sensory_processing"
 .PHONY : ROV_system/CMakeFiles/sensory_processing.dir/all
 
 # Include target in all.
@@ -4860,7 +4860,7 @@ all: ROV_system/CMakeFiles/sensory_processing.dir/all
 
 # Build rule for subdir invocation for target.
 ROV_system/CMakeFiles/sensory_processing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/sensory_processing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : ROV_system/CMakeFiles/sensory_processing.dir/rule
@@ -4887,7 +4887,7 @@ clean: ROV_system/CMakeFiles/sensory_processing.dir/clean
 ROV_system/CMakeFiles/controller_processing.dir/all:
 	$(MAKE) -f ROV_system/CMakeFiles/controller_processing.dir/build.make ROV_system/CMakeFiles/controller_processing.dir/depend
 	$(MAKE) -f ROV_system/CMakeFiles/controller_processing.dir/build.make ROV_system/CMakeFiles/controller_processing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=6 "Built target controller_processing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target controller_processing"
 .PHONY : ROV_system/CMakeFiles/controller_processing.dir/all
 
 # Include target in all.
@@ -4897,7 +4897,7 @@ all: ROV_system/CMakeFiles/controller_processing.dir/all
 
 # Build rule for subdir invocation for target.
 ROV_system/CMakeFiles/controller_processing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 ROV_system/CMakeFiles/controller_processing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : ROV_system/CMakeFiles/controller_processing.dir/rule
@@ -5284,12 +5284,12 @@ beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/al
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=4 "Built target beginner_tutorials_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target beginner_tutorials_generate_messages_nodejs"
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/rule
@@ -5321,7 +5321,7 @@ beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/all: beginner_tutor
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_genlisp.dir/rule
@@ -5358,7 +5358,7 @@ all: beginner_tutorials/CMakeFiles/add_two_ints_client.dir/all
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/add_two_ints_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/add_two_ints_client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/add_two_ints_client.dir/rule
@@ -5387,12 +5387,12 @@ beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all:
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target beginner_tutorials_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=4 "Built target beginner_tutorials_generate_messages_lisp"
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/rule
@@ -5458,7 +5458,7 @@ beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/all: beginner_tutori
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/rule
@@ -5487,12 +5487,12 @@ beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all: 
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=2 "Built target beginner_tutorials_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target beginner_tutorials_generate_messages_cpp"
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/rule
@@ -5561,7 +5561,7 @@ all: beginner_tutorials/CMakeFiles/add_two_ints_server.dir/all
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/add_two_ints_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/add_two_ints_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/add_two_ints_server.dir/rule
@@ -5593,7 +5593,7 @@ beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/all: beginner_tut
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/rule
@@ -5634,7 +5634,7 @@ all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/rule
@@ -5695,7 +5695,7 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir
 beginner_tutorials/CMakeFiles/talker.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target talker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=97 "Built target talker"
 .PHONY : beginner_tutorials/CMakeFiles/talker.dir/all
 
 # Include target in all.
@@ -5806,7 +5806,7 @@ all: beginner_tutorials/CMakeFiles/listener.dir/all
 
 # Build rule for subdir invocation for target.
 beginner_tutorials/CMakeFiles/listener.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/listener.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : beginner_tutorials/CMakeFiles/listener.dir/rule
@@ -5862,23 +5862,27 @@ clean: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check
 # Directory level rules for directory ROV_system_v1
 
 # Convenience name for "all" pass in the directory.
+ROV_system_v1/all: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all
 ROV_system_v1/all: ROV_system_v1/CMakeFiles/thruster_processing_node.dir/all
 ROV_system_v1/all: ROV_system_v1/CMakeFiles/joystick_processing_node.dir/all
 ROV_system_v1/all: ROV_system_v1/CMakeFiles/motion_processing_node.dir/all
-ROV_system_v1/all: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all
+ROV_system_v1/all: ROV_system_v1/CMakeFiles/xbox_processing_node.dir/all
+ROV_system_v1/all: ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/all
 
 .PHONY : ROV_system_v1/all
 
 # Convenience name for "clean" pass in the directory.
+ROV_system_v1/clean: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean
 ROV_system_v1/clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/clean
 ROV_system_v1/clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/clean
 ROV_system_v1/clean: ROV_system_v1/CMakeFiles/thruster_processing_node.dir/clean
 ROV_system_v1/clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/clean
-ROV_system_v1/clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean
 ROV_system_v1/clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/clean
 ROV_system_v1/clean: ROV_system_v1/CMakeFiles/joystick_processing_node.dir/clean
 ROV_system_v1/clean: ROV_system_v1/CMakeFiles/motion_processing_node.dir/clean
-ROV_system_v1/clean: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean
+ROV_system_v1/clean: ROV_system_v1/CMakeFiles/xbox_processing_node.dir/clean
+ROV_system_v1/clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean
+ROV_system_v1/clean: ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/clean
 
 .PHONY : ROV_system_v1/clean
 
@@ -5886,6 +5890,43 @@ ROV_system_v1/clean: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean
 ROV_system_v1/preinstall:
 
 .PHONY : ROV_system_v1/preinstall
+
+#=============================================================================
+# Target rules for target ROV_system_v1/CMakeFiles/sensory_processing_node.dir
+
+# All Build rule for target.
+ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/depend
+	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target sensory_processing_node"
+.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all
+
+# Include target in all.
+all: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+
+# Convenience name for target.
+sensory_processing_node: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+
+.PHONY : sensory_processing_node
+
+# clean rule for target.
+ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean
+.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean
+
+# clean rule for target.
+clean: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir
@@ -5958,7 +5999,7 @@ clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/clean
 ROV_system_v1/CMakeFiles/thruster_processing_node.dir/all:
 	$(MAKE) -f ROV_system_v1/CMakeFiles/thruster_processing_node.dir/build.make ROV_system_v1/CMakeFiles/thruster_processing_node.dir/depend
 	$(MAKE) -f ROV_system_v1/CMakeFiles/thruster_processing_node.dir/build.make ROV_system_v1/CMakeFiles/thruster_processing_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=98 "Built target thruster_processing_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target thruster_processing_node"
 .PHONY : ROV_system_v1/CMakeFiles/thruster_processing_node.dir/all
 
 # Include target in all.
@@ -5968,7 +6009,7 @@ all: ROV_system_v1/CMakeFiles/thruster_processing_node.dir/all
 
 # Build rule for subdir invocation for target.
 ROV_system_v1/CMakeFiles/thruster_processing_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/thruster_processing_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : ROV_system_v1/CMakeFiles/thruster_processing_node.dir/rule
@@ -6017,38 +6058,6 @@ ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target diagnostic_msgs_generate_messages_lisp"
-.PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
-.PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_lisp: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_lisp
-
-# clean rule for target.
-ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean
-.PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean
 
 .PHONY : clean
 
@@ -6159,39 +6168,108 @@ clean: ROV_system_v1/CMakeFiles/motion_processing_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target ROV_system_v1/CMakeFiles/sensory_processing_node.dir
+# Target rules for target ROV_system_v1/CMakeFiles/xbox_processing_node.dir
 
 # All Build rule for target.
-ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/depend
-	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=96 "Built target sensory_processing_node"
-.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all
+ROV_system_v1/CMakeFiles/xbox_processing_node.dir/all:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build.make ROV_system_v1/CMakeFiles/xbox_processing_node.dir/depend
+	$(MAKE) -f ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build.make ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=100 "Built target xbox_processing_node"
+.PHONY : ROV_system_v1/CMakeFiles/xbox_processing_node.dir/all
 
 # Include target in all.
-all: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all
+all: ROV_system_v1/CMakeFiles/xbox_processing_node.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule: cmake_check_build_system
+ROV_system_v1/CMakeFiles/xbox_processing_node.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/sensory_processing_node.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/xbox_processing_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
-.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+.PHONY : ROV_system_v1/CMakeFiles/xbox_processing_node.dir/rule
 
 # Convenience name for target.
-sensory_processing_node: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+xbox_processing_node: ROV_system_v1/CMakeFiles/xbox_processing_node.dir/rule
 
-.PHONY : sensory_processing_node
-
-# clean rule for target.
-ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean
-.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean
+.PHONY : xbox_processing_node
 
 # clean rule for target.
-clean: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/clean
+ROV_system_v1/CMakeFiles/xbox_processing_node.dir/clean:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build.make ROV_system_v1/CMakeFiles/xbox_processing_node.dir/clean
+.PHONY : ROV_system_v1/CMakeFiles/xbox_processing_node.dir/clean
+
+# clean rule for target.
+clean: ROV_system_v1/CMakeFiles/xbox_processing_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target diagnostic_msgs_generate_messages_lisp"
+.PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+.PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+diagnostic_msgs_generate_messages_lisp: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : diagnostic_msgs_generate_messages_lisp
+
+# clean rule for target.
+ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean
+.PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir
+
+# All Build rule for target.
+ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/all:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/depend
+	$(MAKE) -f ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=2 "Built target arm_motion_processing_node"
+.PHONY : ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/all
+
+# Include target in all.
+all: ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+.PHONY : ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/rule
+
+# Convenience name for target.
+arm_motion_processing_node: ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/rule
+
+.PHONY : arm_motion_processing_node
+
+# clean rule for target.
+ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/clean:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/clean
+.PHONY : ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/clean
+
+# clean rule for target.
+clean: ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/clean
 
 .PHONY : clean
 
@@ -6220,7 +6298,7 @@ learning_ros/preinstall:
 learning_ros/CMakeFiles/practice_node.dir/all:
 	$(MAKE) -f learning_ros/CMakeFiles/practice_node.dir/build.make learning_ros/CMakeFiles/practice_node.dir/depend
 	$(MAKE) -f learning_ros/CMakeFiles/practice_node.dir/build.make learning_ros/CMakeFiles/practice_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=77 "Built target practice_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target practice_node"
 .PHONY : learning_ros/CMakeFiles/practice_node.dir/all
 
 # Include target in all.
@@ -6230,7 +6308,7 @@ all: learning_ros/CMakeFiles/practice_node.dir/all
 
 # Build rule for subdir invocation for target.
 learning_ros/CMakeFiles/practice_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 learning_ros/CMakeFiles/practice_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : learning_ros/CMakeFiles/practice_node.dir/rule
@@ -6436,7 +6514,7 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all: 
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all: rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/depend
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=94 "Built target rosserial_server_udp_socket_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_server_udp_socket_node"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all
 
 # Include target in all.
@@ -6446,7 +6524,7 @@ all: rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/rule
@@ -6529,7 +6607,7 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all: ross
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all: rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/depend
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=93 "Built target rosserial_server_serial_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_server_serial_node"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all
 
 # Include target in all.
@@ -6539,7 +6617,7 @@ all: rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/rule
@@ -6590,7 +6668,7 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all: ross
 rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all: rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/depend
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_server_socket_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=93 "Built target rosserial_server_socket_node"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all
 
 # Include target in all.
@@ -6600,7 +6678,7 @@ all: rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/rule
@@ -6685,7 +6763,7 @@ gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
@@ -6724,8 +6802,8 @@ gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_eus.dir/all
-gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_eus.dir/all
+gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_cpp.dir/all
@@ -6985,7 +7063,7 @@ gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ro
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
@@ -7024,8 +7102,8 @@ gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ro
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_eus.dir/all
-gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_eus.dir/all
+gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_cpp.dir/all
@@ -7041,7 +7119,7 @@ gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ro
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/all
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/build.make gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/build.make gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=67 "Built target gazebo_ros_paths_plugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_paths_plugin"
 .PHONY : gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all
 
 # Include target in all.
@@ -7051,7 +7129,7 @@ all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 46
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 45
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_paths_plugin.dir/rule
@@ -7836,7 +7914,7 @@ rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosse
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_serial.test.dir/rule
@@ -7919,12 +7997,12 @@ rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all: rosser
 rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all: rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
 	$(MAKE) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/depend
 	$(MAKE) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=95 "Built target rosserial_test_rosserial_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_test_rosserial_lib"
 .PHONY : rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/rule
@@ -7957,7 +8035,7 @@ rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosse
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_socket.test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_socket.test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_server_socket.test.dir/rule
@@ -7989,7 +8067,7 @@ rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/all: rosserial
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test.dir/rule
@@ -8057,7 +8135,7 @@ rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest.dir/all: r
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest.dir/rule
@@ -8085,12 +8163,12 @@ rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all: gt
 rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all: rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all
 	$(MAKE) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/depend
 	$(MAKE) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target rosserial_test_publish_subscribe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=94 "Built target rosserial_test_publish_subscribe"
 .PHONY : rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/rule
@@ -8187,7 +8265,7 @@ rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosse
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_python_socket.test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_python_socket.test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_test/CMakeFiles/_run_tests_rosserial_test_rostest_test_rosserial_python_socket.test.dir/rule
@@ -8390,7 +8468,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest_test
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest_test_range_range_plugin.test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest_test_range_range_plugin.test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest_test_range_range_plugin.test.dir/rule
@@ -8545,7 +8623,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/run_tests_gazebo_plugins.dir/cl
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/set_model_state-test.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/set_model_state-test.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/set_model_state-test.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/set_model_state-test.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/set_model_state-test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target set_model_state-test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=96 "Built target set_model_state-test"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/set_model_state-test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -8614,7 +8692,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_template.dir/clean
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/all:
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=72 "Built target gazebo_ros_vacuum_gripper"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_vacuum_gripper"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/all
 
 # Include target in all.
@@ -8624,7 +8702,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_vacuum_gripper.dir/rule
@@ -8721,7 +8799,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_range.dir/clean
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/all:
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_hand_of_god"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=61 "Built target gazebo_ros_hand_of_god"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/all
 
 # Include target in all.
@@ -8731,7 +8809,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_hand_of_god.dir/rule
@@ -8832,7 +8910,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_tricycle_drive.dir/c
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_utils.dir/all
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=58 "Built target gazebo_ros_diff_drive"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_diff_drive"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/all
 
 # Include target in all.
@@ -8842,7 +8920,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_diff_drive.dir/rule
@@ -8880,7 +8958,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
@@ -8911,8 +8989,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: ROV_sys
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_py.dir/all
@@ -8923,8 +9001,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_eus.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_eus.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_cpp.dir/all
@@ -9668,7 +9746,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins.dir/all: gaz
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins.dir/rule
@@ -9696,7 +9774,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/all: gaze
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_camera_utils.dir/all
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=66 "Built target gazebo_ros_openni_kinect"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_openni_kinect"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/all
 
 # Include target in all.
@@ -9706,7 +9784,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 48
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 47
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_openni_kinect.dir/rule
@@ -9840,7 +9918,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/all: gazebo_ro
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/all
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target camera_synchronizer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=6 "Built target camera_synchronizer"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/all
 
 # Include target in all.
@@ -9850,7 +9928,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 47
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 48
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/rule
@@ -9877,7 +9955,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/camera_synchronizer.dir/clean
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=100 "Built target vision_reconfigure"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=99 "Built target vision_reconfigure"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/vision_reconfigure.dir/all
 
 # Include target in all.
@@ -9921,7 +9999,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest_test
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest_test_set_model_state_test_set_model_state_test.test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest_test_set_model_state_test_set_model_state_test.test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest_test_set_model_state_test_set_model_state_test.test.dir/rule
@@ -9954,7 +10032,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest.dir/
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/_run_tests_gazebo_plugins_rostest.dir/rule
@@ -10061,7 +10139,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gaz
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
@@ -10092,8 +10170,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: ROV
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_py.dir/all
@@ -10104,8 +10182,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gaz
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_eus.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_eus.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_cpp.dir/all
@@ -10141,7 +10219,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gaz
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/bond_generate_messages_py.dir/all
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target pub_joint_trajectory_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=77 "Built target pub_joint_trajectory_test"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all
 
 # Include target in all.
@@ -10151,7 +10229,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 45
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 46
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/rule
@@ -10178,7 +10256,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/pub_joint_trajectory_test.dir/c
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/all
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_elevator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=58 "Built target gazebo_ros_elevator"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/all
 
 # Include target in all.
@@ -10188,7 +10266,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 46
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 47
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_elevator.dir/rule
@@ -10359,7 +10437,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_block_laser.dir/clea
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/all:
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_planar_move"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=67 "Built target gazebo_ros_planar_move"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/all
 
 # Include target in all.
@@ -10369,7 +10447,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_planar_move.dir/rule
@@ -10478,7 +10556,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/a
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
@@ -10509,8 +10587,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/a
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_py.dir/all
@@ -10521,8 +10599,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/a
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_eus.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_eus.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_cpp.dir/all
@@ -10595,7 +10673,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_pose_trajector
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/all:
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=61 "Built target gazebo_ros_gpu_laser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_gpu_laser"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/all
 
 # Include target in all.
@@ -10605,7 +10683,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/rule
@@ -10632,7 +10710,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_gpu_laser.dir/clean
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/all:
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_video"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=72 "Built target gazebo_ros_video"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/all
 
 # Include target in all.
@@ -10642,7 +10720,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/rule
@@ -10669,7 +10747,7 @@ clean: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_video.dir/clean
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/all:
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/build.make gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target gazebo_ros_p3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=66 "Built target gazebo_ros_p3d"
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/all
 
 # Include target in all.
@@ -10679,7 +10757,7 @@ all: gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_p3d.dir/rule
@@ -10754,7 +10832,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
@@ -10785,8 +10863,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: ROV_system/
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_py.dir/all
@@ -10797,8 +10875,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_eus.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_eus.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_bumper.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_cpp.dir/all
@@ -11026,7 +11104,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: g
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
@@ -11057,8 +11135,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: R
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_py.dir/all
@@ -11069,8 +11147,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: g
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_eus.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_eus.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_trajectory.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_cpp.dir/all
@@ -11154,7 +11232,7 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/a
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
@@ -11185,8 +11263,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/a
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_py.dir/all
@@ -11197,8 +11275,8 @@ gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/a
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_eus.dir/all
-gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_eus.dir/all
+gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/tf_generate_messages_nodejs.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 gazebo_ros_pkgs/gazebo_plugins/CMakeFiles/gazebo_ros_joint_state_publisher.dir/all: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/actionlib_generate_messages_cpp.dir/all
@@ -11403,7 +11481,7 @@ clean: gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/control_toolbox_generate_me
 gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/all:
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/build.make gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/depend
 	$(MAKE) -f gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/build.make gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target default_robot_hw_sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=7 "Built target default_robot_hw_sim"
 .PHONY : gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/all
 
 # Include target in all.
@@ -11413,7 +11491,7 @@ all: gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/all
 
 # Build rule for subdir invocation for target.
 gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : gazebo_ros_pkgs/gazebo_ros_control/CMakeFiles/default_robot_hw_sim.dir/rule
@@ -11748,7 +11826,7 @@ usb_cam/preinstall:
 usb_cam/CMakeFiles/usb_cam.dir/all:
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target usb_cam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=98 "Built target usb_cam"
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/all
 
 # Include target in all.
@@ -11758,7 +11836,7 @@ all: usb_cam/CMakeFiles/usb_cam.dir/all
 
 # Build rule for subdir invocation for target.
 usb_cam/CMakeFiles/usb_cam.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/usb_cam.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles 0
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/rule
@@ -11785,7 +11863,7 @@ clean: usb_cam/CMakeFiles/usb_cam.dir/clean
 usb_cam/CMakeFiles/usb_cam_node.dir/all: usb_cam/CMakeFiles/usb_cam.dir/all
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num=99 "Built target usb_cam_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mstrobotics/MATE_June2018/catkin_ws/build/CMakeFiles --progress-num= "Built target usb_cam_node"
 .PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/all
 
 # Include target in all.
