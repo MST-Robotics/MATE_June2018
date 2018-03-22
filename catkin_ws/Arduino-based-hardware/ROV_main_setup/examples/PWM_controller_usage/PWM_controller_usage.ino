@@ -2,36 +2,31 @@
  * Author: Vinnie Marco
  * Email: vgmcn3@mst.edu
  * 
- * Date: 3-21-2018
+ * Date: 10-10-2017
  * 
  * Description: Basic usage for onboard 
  *      external servo controller
- *      
- * NOTE: Motor controller PCB channel implemetations can be
- *      found in "pwm_channels.h"
  */
 
-/*
- * Inlucdes setup for:
- *  IMU hardware on mainboard
- *  Motor controller hardware on motor_driver_board
- */
 #include <ROV_main_setup.h>
+
+//define pin 7 as a servo pin
+#define servo 7
 
 void setup() 
 {
-  bool error_flag = main_setup();//initalize the imu sensor
-  if(error_flag)//check for an IMU error
+  bool error_flag = main_setup();//check for an error
+  if(error_flag)
   {
     //Serial.println("ERROR");//prints error message if serial is started
-    while(1);//halt if error
+    while(1);
   }
 }
 
 void loop() 
 {  
-  pwm_primary.writeMicroseconds(gimbal_x, 1000);//max one direction
+  external_servo.writeMicroseconds(servo, 1000);//max one direction
   delay(2000);
-  pwm_primary.writeMicroseconds(gimbal_x, 2000);//max other direction
+  external_servo.writeMicroseconds(servo, 2000);//max other direction
   delay(2000);
 }

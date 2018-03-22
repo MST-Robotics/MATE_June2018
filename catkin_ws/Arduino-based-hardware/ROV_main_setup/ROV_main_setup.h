@@ -11,7 +11,7 @@
 
 #include "ROV_main.h"
 #include "Arduino.h"
-#include "pwm_channels.h"
+
 #include <SPI.h>
 
 #include <Pixy.h>
@@ -19,9 +19,7 @@ Pixy pixy;
 
 LSM9DS1 imu;// imu object
 
-PWMcontroller pwm_primary = PWMcontroller(0x40);//pwm controller object
-PWMcontroller pwm_secondary = PWMcontroller(0x41);
-
+PWMcontroller external_servo = PWMcontroller(0x7f);//pwm controller object
 
 /* sets up all hardware on the main board
  * and returns an error flag if something fails
@@ -39,8 +37,7 @@ bool main_setup(void)
     error_flag = 1;
 
   //external servo controller setup
-  pwm_primary.begin();
-  pwm_secondary.begin();
+  external_servo.begin();
 
   //intialize pixy camera
   pixy.init();
