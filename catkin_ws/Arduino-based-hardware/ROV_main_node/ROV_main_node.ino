@@ -19,7 +19,6 @@
  */
 
 #include <ROV_main_setup.h>
-
 //required to use ros with arduino
 #include <ros.h>
 
@@ -32,7 +31,6 @@
 #include <std_msgs/Int16.h>
 #include <geometry_msgs/Vector3.h>
 #include "pins.h"//this file should be in the same directory as .ino
-#include <Servo.h>
 
 ros::NodeHandle  nh;//this is necessary too
 
@@ -41,52 +39,41 @@ geometry_msgs::Vector3 magnetometer;
 
 geometry_msgs::Vector3 pixy_data;
 
-
-/*************************/
-Servo front_right;
-Servo front_left;
-Servo back_right;
-Servo back_left;
-Servo middle_left;
-Servo middle_right;
-
-
+/*Front left motor*/
 void motor1_cb(const std_msgs::Int16 &msg)
 {
- front_left.writeMicroseconds(msg.data);
+  pwm_primary.writeMicroseconds(motor_1, msg.data);
 }
+
+/*Middle left motor*/
 void motor2_cb(const std_msgs::Int16 &msg)
 {
-  middle_left.writeMicroseconds(msg.data);
+  pwm_primary.writeMicroseconds(motor_2, msg.data);
 }
+
+/*Back left motor*/
 void motor3_cb(const std_msgs::Int16 &msg)
 {
-  back_left.writeMicroseconds(msg.data);
+  pwm_primary.writeMicroseconds(motor_3, msg.data);
 }
+
+/*Front right motor*/
 void motor4_cb(const std_msgs::Int16 &msg)
 {
-  front_right.writeMicroseconds(msg.data);
+  pwm_primary.writeMicroseconds(motor_4, msg.data);
 }
+
+/*Middle right motor*/
 void motor5_cb(const std_msgs::Int16 &msg)
 {
-  middle_right.writeMicroseconds(msg.data);
+  pwm_primary.writeMicroseconds(motor_5, msg.data);
 }
 
+/*Back right motor*/
 void motor6_cb(const std_msgs::Int16 &msg)
 {
-  back_right.writeMicroseconds(msg.data);
+  pwm_primary.writeMicroseconds(motor_6, msg.data);
 }
-
-/*
-void pinky_trigger_cb(const std_msgs::Bool &msg)
-{
-  middle_left.writeMicroseconds(msg.data);
-}
-void trigger_cb(const std_msgs::Bool &msg)
-{
-  middle_right.writeMicroseconds(msg.data);
-}
-*/
 
 //set up subscriptions
 //ros::Subscriber<std_msgs::Bool> e_button_sub("e_button_topic", button_e_cb);
@@ -114,13 +101,6 @@ void setup()
 {
   main_setup();//contains the declarations and hardware setup
 
-  front_right.attach(frt_pin);
-  front_left.attach(flt_pin);
-  back_right.attach(brt_pin);
-  back_left.attach(blt_pin);
-  middle_right.attach(middle_right_pin);
-  middle_left.attach(middle_left_pin);
-
   //this is needed
   nh.initNode();
 
@@ -145,17 +125,16 @@ void setup()
 
 }
 
-
 void loop()
 {
   nh.spinOnce();
-   //rocess_imu();
+  process_imu();
   wing_detection_data();
 }
 
 float mapf(float x, float in_min, float in_max, float out_min, float out_max)
 {
-    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
 void process_imu(void)
