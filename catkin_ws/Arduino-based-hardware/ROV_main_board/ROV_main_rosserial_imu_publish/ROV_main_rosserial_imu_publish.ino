@@ -50,8 +50,8 @@ Servo back_left;
 Servo middle_left;
 Servo middle_right;
 
-Servo camera_one;
-Servo camera_two;
+//Servo camera_one;
+//Servo camera_two;
 
 void motor1_cb(const std_msgs::Int16 &msg)
 {
@@ -77,7 +77,7 @@ void motor6_cb(const std_msgs::Int16 &msg)
 {
   back_right.writeMicroseconds(msg.data);
 }
-
+/*
 void camera_move1_cb(const std_msgs::Int16 &msg)
 {
   camera_one.writeMicroseconds(msg.data);
@@ -88,7 +88,7 @@ void camera_move2_cb(const std_msgs::Int16 &msg)
   camera_two.writeMicroseconds(msg.data);
 }
 
-/*
+
 void pinky_trigger_cb(const std_msgs::Bool &msg)
 {
   middle_left.writeMicroseconds(msg.data);
@@ -97,8 +97,8 @@ void trigger_cb(const std_msgs::Bool &msg)
 {
   middle_right.writeMicroseconds(msg.data);
 }
-*/
 
+*/
 //set up subscriptions
 //ros::Subscriber<std_msgs::Bool> e_button_sub("e_button_topic", button_e_cb);
 ros::Subscriber<std_msgs::Int16> motor1_sub("motor1_topic", motor1_cb);
@@ -108,9 +108,11 @@ ros::Subscriber<std_msgs::Int16> motor4_sub("motor4_topic", motor4_cb);
 ros::Subscriber<std_msgs::Int16> motor5_sub("motor5_topic", motor5_cb);
 ros::Subscriber<std_msgs::Int16> motor6_sub("motor6_topic", motor6_cb);
 
-ros::Subscriber<std_msgs::Int16> camera_move1_sub("button_h2_up_topic", camera_move1_cb);
-ros::Subscriber<std_msgs::Int16> camera_move2_sub("motor6_topic", camera_move2_cb);
+//ros::Subscriber<std_msgs::Int16> camera_move1_sub("button_h2_up_topic", camera_move1_cb);
+//ros::Subscriber<std_msgs::Int16> camera_move2_sub("motor6_topic", camera_move2_cb);
 
+//ros::Subscriber<std_msgs::Bool> trigger_sub("trigger_topic", trigger_cb);
+//ros::Subscriber<std_msgs::Bool> pinky_trigger_sub("pinky_trigger_topic", pinky_trigger_cb);
 /*
 ros::Subscriber<std_msgs::Bool> a_button_sub("a_button_topic", button_a_cb);
 ros::Subscriber<std_msgs::Bool> trigger_sub("trigger_topic", trigger_cb);
@@ -135,8 +137,16 @@ void setup()
   middle_right.attach(middle_right_pin);
   middle_left.attach(middle_left_pin);
 
-  camera_one.attach(junkservo);
-  camera_two.attach(other_junkservo);
+  //start with the motors off
+  front_right.writeMicroseconds(1500);
+  front_left.writeMicroseconds(1500);
+  middle_right.writeMicroseconds(1500);
+  middle_left.writeMicroseconds(1500);
+  back_right.writeMicroseconds(1500);
+  back_left.writeMicroseconds(1500);   
+
+  //camera_one.attach(junkservo);
+  //camera_two.attach(other_junkservo);
   //this is needed
   nh.initNode();
 
@@ -145,7 +155,10 @@ void setup()
   //nh.subscribe(button_a_sub);
   //nh.subscribe(button_e_sub);
   //nh.subscribe(rotary_4_sub);
-
+  
+//  nh.subscribe(trigger_sub);
+  //nh.subscribe(pinky_trigger_sub);
+  
   nh.subscribe(motor1_sub);
   nh.subscribe(motor2_sub);
   nh.subscribe(motor3_sub);
@@ -153,8 +166,8 @@ void setup()
   nh.subscribe(motor5_sub);
   nh.subscribe(motor6_sub);
 
-  nh.subscribe(camera_move1_sub);
-  nh.subscribe(camera_move2_sub);
+//  nh.subscribe(camera_move1_sub);
+  //nh.subscribe(camera_move2_sub);
   //nh.subscribe(joystick_rotation_sub);
 
   nh.advertise(accel_pub);
@@ -167,8 +180,8 @@ void setup()
 void loop()
 {
   nh.spinOnce();
-   //rocess_imu();
-  wing_detection_data();
+  //process_imu();
+  //wing_detection_data();
 }
 
 float mapf(float x, float in_min, float in_max, float out_min, float out_max)

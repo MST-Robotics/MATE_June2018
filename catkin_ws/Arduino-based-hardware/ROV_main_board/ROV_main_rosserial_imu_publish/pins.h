@@ -14,21 +14,20 @@
 
 
 //servo and thruster pins
+#define flt_pin 4
+#define middle_left_pin 5
+#define blt_pin 6
+#define frt_pin 9
+#define middle_right_pin 10
+#define brt_pin 12
 
-  #define flt_pin 2
-  #define middle_left_pin 3
-  #define blt_pin 4
-  #define frt_pin 7
-  #define middle_right_pin 6
-  #define brt_pin 5
 
-
-  #define junkservo 9
-  #define other_junkservo 10
+  //#define junkservo 9
+  //#define other_junkservo 10
 
 //#define servo3_pin 3
 //joystick x-axis
-#define servo4_pin 8
+//#define servo4_pin 8
 //joystick y-axis
 
 //led pins

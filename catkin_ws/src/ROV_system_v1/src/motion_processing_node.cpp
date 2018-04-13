@@ -13,7 +13,7 @@
 #define FORCE_Y_MODIFIER 1 /*To Be Determined*/
 #define MOMENT_MODIFIER 1 /*To Be Determined*/
 #define MOTOR_NEUTRAL 1500
-#define MOTOR_RAMP 400
+#define MOTOR_RAMP -400 /*Make sure this is negative*/
 
 /*This is our main function
  *Pre: None
@@ -32,8 +32,8 @@ int main(int argc, char **argv)
   ros::Subscriber trigger_topic = n.subscribe("trigger_topic", 1000, trigger_callback);
   ros::Subscriber button_pinky_trigger_topic = n.subscribe("button_pinky_trigger_topic", 1000, button_pinky_trigger_callback);
 
-  ros::Subscriber button_h2_up_topic = n.subscribe("button_h2_up_topic", 1000, button_h2_up_callback);
-  ros::Subscriber button_h2_down_topic = n.subscribe("button_h2_down_topic", 1000, button_h2_down_callback);
+//  ros::Subscriber button_h2_up_topic = n.subscribe("button_h2_up_topic", 1000, button_h2_up_callback);
+ // ros::Subscriber button_h2_down_topic = n.subscribe("button_h2_down_topic", 1000, button_h2_down_callback);
 
   ros::Publisher motor1_pub = n.advertise<std_msgs::Int16>("motor1_topic", 1000);
   ros::Publisher motor2_pub = n.advertise<std_msgs::Int16>("motor2_topic", 1000);
@@ -42,8 +42,8 @@ int main(int argc, char **argv)
   ros::Publisher motor5_pub = n.advertise<std_msgs::Int16>("motor5_topic", 1000);
   ros::Publisher motor6_pub = n.advertise<std_msgs::Int16>("motor6_topic", 1000);
 
-  ros::Publisher camera_one_pub = n.advertise<std_msgs::Int16>("camera_one_topic", 1000);
-  ros::Publisher camera_two_pub = n.advertise<std_msgs::Int16>("camera_two_topic", 1000);
+ // ros::Publisher camera_one_pub = n.advertise<std_msgs::Int16>("camera_one_topic", 1000);
+ // ros::Publisher camera_two_pub = n.advertise<std_msgs::Int16>("camera_two_topic", 1000);
 
  // ros::Subscriber orientation_topic = n.subscribe("orientation_topic", 1000, orientation_callback);
  
@@ -60,8 +60,8 @@ int main(int argc, char **argv)
     motor5_pub.publish(motor5_value);
     motor6_pub.publish(motor6_value);
 
-    camera_one_pub.publish(camera_one_value);
-    camera_two_pub.publish(camera_two_value);
+   // camera_one_pub.publish(camera_one_value);
+   // camera_two_pub.publish(camera_two_value);
 
     ros::spinOnce();
     loop_wait.sleep();//wait some
@@ -69,7 +69,7 @@ int main(int argc, char **argv)
   return 0;
 }
 
-/* velocity_callback handles data recieved from the joystick_x_topic subscription
+/* velocity_callback handles data recieved from the jo ystick_x_topic subscription
  * Pre: joystick_x_topic has to be initalized
  * Post: Any variables are updated to their current values for each itteration
  */
@@ -96,19 +96,25 @@ void twist_callback(const std_msgs::Float32 &msg)
   moment = MOMENT_MODIFIER * msg.data; //Neutral: moment = 0 = msg.data;
 }
 
+//This exists.
+float normalize_400(float x)
+{
+  return (x>400 ? 400 : (x < -400 ? -400 : x ) );
+}
+
 /* calc_motors handles data from velocity_callback, angle_callback, and twist_callback to calculate ROV motor movement
  * Pre: magnitude, angle, and moment are initialized
  * Post: Any variables are updated to their current values for each itteration
  */
 void calc_motors()
 {
-  float force_x = FORCE_X_MODIFIER * magnitude * cos(angle * 180 /M_PI);
-  float force_y = FORCE_Y_MODIFIER * magnitude * sin(angle * 180 /M_PI);
+  float force_x = FORCE_X_MODIFIER * magnitude * cos(angle * M_PI / 180);
+  float force_y = FORCE_Y_MODIFIER * magnitude * sin(angle * M_PI / 180);
   
-  motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * (-force_y + force_x - moment);
-  motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * (-force_y - force_x + moment);
-  motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * ( force_y - force_x - moment);
-  motor6_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * ( force_y + force_x + moment);
+  motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400(-force_y + force_x - moment);
+  motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( -force_y - force_x + moment);
+  motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( force_y - force_x - moment);
+  motor6_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( force_y + force_x + moment);
 }
 
 /* trigger_callback handles data recieved from the trigger_topic subscription
@@ -137,15 +143,15 @@ void trigger_callback(const std_msgs::Bool &msg)
  */
 /*
  *
- * IT DOESN'T GO DOWNWARDS.
+ * IT DOESN'T GO DOWN. WE'LL SEE
  *
  */
 void button_pinky_trigger_callback(const std_msgs::Bool &msg)
 {
   if(msg.data == 1)
   {
-    motor2_value.data = 2000;
-    motor5_value.data = 2000;
+    motor2_value.data = 1100;
+    motor5_value.data = 1100;
   }
   else
   {
@@ -153,8 +159,8 @@ void button_pinky_trigger_callback(const std_msgs::Bool &msg)
     motor5_value.data = 1500;
   }
 }
-
-
+/*
+default code
 void button_h2_up_callback(const std_msgs::Bool &msg)
 {
   if(msg.data == 1)
@@ -178,4 +184,4 @@ void button_h2_down_callback(const std_msgs::Bool &msg)
     camera_one_value.data = 1500;
   }
 }
-
+*/
