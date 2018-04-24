@@ -25,7 +25,7 @@
   <node pkg="ROV_system_v1" type="sensory_processing_node" name="sensory_processing_node" respawn="true">
   </node>
 
-  <node pkg="rosserial_python" type="serial_node.py" name="ROV_main">
+  <node pkg="rosserial_python" type="serial_node.py" name="ROV_main" respawn="true">
     <param name="port" value="/dev/ttyUSB0"/>
     <param name="baud" value="57600"/>
   </node>

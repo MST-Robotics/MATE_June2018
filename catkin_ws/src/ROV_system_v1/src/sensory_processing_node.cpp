@@ -20,10 +20,12 @@ int main(int argc, char **argv)
   ros::Subscriber accel_topic = n.subscribe("accel_topic", 1000, accel_cb);
   ros::Subscriber mag_topic = n.subscribe("mag_topic", 1000, mag_cb);
   ros::Subscriber pixy_topic = n.subscribe("pixy_data_topic", 1000, pixy_cb);
+  ros::Subscriber raw_temp_topic = n.subscribe("raw_temp_topic", 1000, raw_temp_cb);
 
   //Publisher for orientation in x=roll, y=pitch, z=heading
   ros::Publisher orientation_pub = n.advertise<geometry_msgs::Vector3>("orientation_topic", 1000);
   ros::Publisher pixy_pub = n.advertise<std_msgs::String>("pixy_result_topic", 1000);
+  ros::Publisher temp_result_pub = n.advertise<std_msgs::Float32>("temp_result_topic", 1000);
 
   ros::Rate loop_wait(30);//this is needed
 
@@ -32,6 +34,7 @@ int main(int argc, char **argv)
   {
     orientation_pub.publish(orientation);
     pixy_pub.publish(plane_type);
+    temp_result_pub.publish(temp_F);
 
     ros::spinOnce();
     loop_wait.sleep();//wait some
@@ -124,4 +127,9 @@ void pixy_cb(const geometry_msgs::Vector3 &msg)
       plane_type.data = "Plane E: yellow rectangle";
     }
   }
+}
+
+void raw_temp_cb(const std_msgs::Float32 &msg)
+{
+  
 }

@@ -24,6 +24,15 @@ int main(int argc, char **argv)
 
   //set up publishers
   ros::Publisher throttle_publisher = n.advertise<std_msgs::Float32>("throttle_topic", 1000);
+  ros::Publisher sw1_pub = n.advertise<std_msgs::Bool>("sw1_topic", 1000);
+  ros::Publisher sw2_pub = n.advertise<std_msgs::Bool>("sw2_topic", 1000);
+  ros::Publisher sw3_pub = n.advertise<std_msgs::Bool>("sw3_topic", 1000);
+  ros::Publisher sw4_pub = n.advertise<std_msgs::Bool>("sw4_topic", 1000);
+  ros::Publisher sw5_pub = n.advertise<std_msgs::Bool>("sw5_topic", 1000);
+  ros::Publisher sw6_pub = n.advertise<std_msgs::Bool>("sw6_topic", 1000);
+
+  ros::Publisher tgl1_up_pub = n.advertise<std_msgs::Bool>("tgl1_up_topic", 1000);
+  ros::Publisher tgl1_down_pub = n.advertise<std_msgs::Bool>("tgl1_down_topic", 1000);
 
   ros::Rate loop_wait(30);//this is needed
   
@@ -32,8 +41,19 @@ int main(int argc, char **argv)
     //publish everything once per loop
   
    throttle_publisher.publish(throttle_value);
+   
+   sw1_pub.publish(button_sw1_state);
+   sw2_pub.publish(button_sw2_state);
+   sw3_pub.publish(button_sw3_state);
+   sw4_pub.publish(button_sw4_state);
+   sw5_pub.publish(button_sw5_state);
+   sw6_pub.publish(button_sw6_state);
 
+   tgl1_up_pub.publish(button_tgl1_up_state);
+   tgl1_down_pub.publish(button_tgl1_down_state);
+ 
    ros::spinOnce();
+
    loop_wait.sleep();//wait some
   }
   return 0;
@@ -48,7 +68,16 @@ void thruster_callback(const sensor_msgs::Joy &joy)
 {
   throttle_value.data = joy.axes[axis_left_thruster];
   
-  /* 
+  button_sw1_state.data = joy.buttons[button_sw1];
+  button_sw2_state.data = joy.buttons[button_sw2];
+  button_sw3_state.data = joy.buttons[button_sw3];
+  button_sw4_state.data = joy.buttons[button_sw4];
+  button_sw5_state.data = joy.buttons[button_sw5];
+  button_sw6_state.data = joy.buttons[button_sw6];
+  
+  button_tgl1_up_state.data = joy.buttons[button_tgl1_up];
+  button_tgl1_down_state.data = joy.buttons[button_tgl1_down];
+/* 
   Done
   //buttons are stored in joy.buttons[]
   //axes are stored in joy.axis[]
@@ -58,16 +87,6 @@ void thruster_callback(const sensor_msgs::Joy &joy)
   button_rotary_g_state.data = joy.buttons[button_rotary_g];
   button_i_state.data = joy.buttons[button_i];
   button_h_state.data = joy.buttons[button_h];
-
-  button_sw1_state.data = joy.buttons[button_sw1];
-  button_sw2_state.data = joy.buttons[button_sw2];
-  button_sw3_state.data = joy.buttons[button_sw3];
-  button_sw4_state.data = joy.buttons[button_sw4];
-  button_sw5_state.data = joy.buttons[button_sw5];
-  button_sw6_state.data = joy.buttons[button_sw6];
-
-  button_tgl1_up_state.data = joy.buttons[button_tgl1_up];
-  button_tgl1_down_state.data = joy.buttons[button_tgl1_down];
 
   button_tgl2_up_state.data = joy.buttons[button_tgl2_up];
   button_tgl2_down_state.data = joy.buttons[button_tgl2_down];

@@ -16,27 +16,16 @@ float xbox_magnitude = 0.0;
 float xbox_angle = 0.0;
 float xbox_moment = 0.0;
 
+//we won't have motors, we will just have servos
+std_msgs::Int16 wrist_value;
+std_msgs::Int16 claw_value;
+std_msgs::Int16 elbow_value;
 
-std_msgs::Int16 arm_motor1_value;
-std_msgs::Int16 arm_motor2_value;
-std_msgs::Int16 arm_motor3_value;
-std_msgs::Int16 arm_motor4_value;
-std_msgs::Int16 arm_motor5_value;
-std_msgs::Int16 arm_motor6_value;
-
-
-/* velocity_callback handles data recieved from the joystick_x_topic subscription
- * Pre: joystick_x_topic has to be initalized
- * Post: Any variables are updated to their current values for each itteration
- */
-void xbox_velocity_callback(const std_msgs::Float32 &msg);
-
-/* angle_callback handles data recieved from the joystick_y_topic subscription
- * Pre: joystick_y_topic has to be initalized
- * Post: Any variables are updated to their current values for each itteration******
- */
-void xbox_angle_callback(const std_msgs::Float32 &msg);
-
-void xbox_calc_motors();
+void sw1_callback(const std_msgs::Bool &msg);
+void sw2_callback(const std_msgs::Bool &msg);
+void sw3_callback(const std_msgs::Bool &msg);
+void sw4_callback(const std_msgs::Bool &msg);
+void sw5_callback(const std_msgs::Bool &msg);
+void sw6_callback(const std_msgs::Bool &msg);
 
 #endif

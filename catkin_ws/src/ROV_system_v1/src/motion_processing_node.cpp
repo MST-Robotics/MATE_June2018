@@ -11,8 +11,9 @@
 //MOVE THESE DEFINES TO THE HEADER FILE
 #define FORCE_X_MODIFIER 1 /*To Be Determined*/
 #define FORCE_Y_MODIFIER 1 /*To Be Determined*/
-#define MOMENT_MODIFIER 1 /*To Be Determined*/
+#define MOMENT_MODIFIER 0.5 /*To Be Determined*/
 #define MOTOR_NEUTRAL 1500
+#define VERTICAL_SCALE 400
 #define MOTOR_RAMP -400 /*Make sure this is negative*/
 
 /*This is our main function
@@ -30,7 +31,7 @@ int main(int argc, char **argv)
   ros::Subscriber joystick_y_topic = n.subscribe("angle_topic", 1000, angle_callback);
   ros::Subscriber joystick_rotation_topic = n.subscribe("joystick_rotation_topic", 1000, twist_callback);
   ros::Subscriber trigger_topic = n.subscribe("trigger_topic", 1000, trigger_callback);
-  ros::Subscriber button_pinky_trigger_topic = n.subscribe("button_pinky_trigger_topic", 1000, button_pinky_trigger_callback);
+  ros::Subscriber button_pinky_trigger_topic = n.subscribe("pinky_trigger_topic", 1000, button_pinky_trigger_callback);
 
 //  ros::Subscriber button_h2_up_topic = n.subscribe("button_h2_up_topic", 1000, button_h2_up_callback);
  // ros::Subscriber button_h2_down_topic = n.subscribe("button_h2_down_topic", 1000, button_h2_down_callback);
@@ -114,7 +115,9 @@ void calc_motors()
   motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400(-force_y + force_x - moment);
   motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( -force_y - force_x + moment);
   motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( force_y - force_x - moment);
-  motor6_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( force_y + force_x + moment);
+  motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * normalize_400( force_y + force_x + moment);
+
+  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2));
 }
 
 /* trigger_callback handles data recieved from the trigger_topic subscription
@@ -122,18 +125,9 @@ void calc_motors()
  * Post: Any variables are updated to their current values for each itteration.
  *       Determines upward movements of ROV.
  */
-void trigger_callback(const std_msgs::Bool &msg)
+void trigger_callback(const std_msgs::Bool &msg) 
 {
-  if(msg.data == 1)
-  {
-    motor2_value.data = 2000;
-    motor5_value.data = 2000;
-  }
-  else
-  {
-    motor2_value.data = 1500;
-    motor5_value.data = 1500;
-  }
+  msg.data ? (vertical |= 2) : (vertical &= (~2));
 }
 
 /* button_pinky_trigger_callback handles data recieved from the button_pinky_trigger_topic subscription
@@ -141,23 +135,9 @@ void trigger_callback(const std_msgs::Bool &msg)
  * Post: Any variables are updated to their current values for each itteration.
  *       Determines downnward movements of ROV.
  */
-/*
- *
- * IT DOESN'T GO DOWN. WE'LL SEE
- *
- */
 void button_pinky_trigger_callback(const std_msgs::Bool &msg)
 {
-  if(msg.data == 1)
-  {
-    motor2_value.data = 1100;
-    motor5_value.data = 1100;
-  }
-  else
-  {
-    motor2_value.data = 1500;
-    motor5_value.data = 1500;
-  }
+  msg.data ? (vertical |= 1) : (vertical &= (~1));
 }
 /*
 default code

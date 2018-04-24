@@ -23,6 +23,11 @@ geometry_msgs::Vector3 orientation;
  */
 std_msgs::String plane_type;
 
+/*
+ * Stores temperature data
+ */
+std_msgs::Float32 temp_F;
+
 //
 void accel_cb(const geometry_msgs::Vector3 &msg);
 
@@ -31,5 +36,8 @@ void mag_cb(const geometry_msgs::Vector3 &msg);
 
 //
 void pixy_cb(const geometry_msgs::Vector3 &msg);
+
+//
+void raw_temp_cb(const std_msgs::Float32 &msg);
 
 #endif

@@ -14,6 +14,7 @@
 float magnitude = 0.0;
 float angle = 0.0;
 float moment = 0.0;
+char vertical = 0;
 
 std_msgs::Int16 motor1_value;
 std_msgs::Int16 motor2_value;
@@ -49,6 +50,7 @@ void trigger_callback(const std_msgs::Bool &msg);
  * Post: Any variables are updated to their current values for each itteration******
  */
 void button_pinky_trigger_callback(const std_msgs::Bool &msg);
+
 void orientation_callback(const geometry_msgs::Vector3 &msg);
 
 void twist_callback(const std_msgs::Float32 &msg);
