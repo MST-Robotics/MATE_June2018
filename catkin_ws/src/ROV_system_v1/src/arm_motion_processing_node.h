@@ -15,19 +15,31 @@
 #define XBOX_FORCE_X_MODIFIER 1 /*To Be Determined*/
 #define XBOX_FORCE_Y_MODIFIER 1 /*To Be Determined*/
 #define XBOX_MOMENT_MODIFIER 1 /*To Be Determined*/
+
 #define ARM_MOTOR_NEUTRAL 1500
 #define ARM_MOTOR_RAMP 400
-#define POS_WRIST_LOWER_BOUND 0
-#define POS_WRIST_UPPER_BOUND 180
-#define POS_ELBOW_LOWER_BOUND 0
-#define POS_ELBOW_UPPER_BOUND 180
-#define POS_CLAW_LOWER_BOUND 0
-#define POS_CLAW_UPPER_BOUND 180
 
+//Wrist bounds
+#define WRIST_HOME 90
+#define WRIST_MIN 0
+#define WRIST_MAX 180
+
+//Elbow bounds
+#define ELBOW_HOME 90
+#define ELBOW_MIN 0
+#define ELBOW_MAX 180
+
+//Claw bounds
+#define CLAW_HOME 90
+#define CLAW_MIN 0
+#define CLAW_MAX 180
+
+//Gimbal X bounds
 #define GIMBAL_X_HOME 92
 #define GIMBAL_X_MIN 35
 #define GIMBAL_X_MAX 160
 
+//Gimbal Y bounds
 #define GIMBAL_Y_HOME 88
 #define GIMBAL_Y_MIN 45
 #define GIMBAL_Y_MAX 170

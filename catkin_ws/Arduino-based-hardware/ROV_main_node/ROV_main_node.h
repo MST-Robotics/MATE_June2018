@@ -31,10 +31,13 @@
 #include <std_msgs/Bool.h> //include required per type of message
 #include <std_msgs/Float32.h>
 #include <std_msgs/Float64.h>
-#include <std_msgs/Int16.h>
+#include <std_msgs/Int16.h> 
 #include <geometry_msgs/Vector3.h>
 
-ros::NodeHandle  nh;
+
+//use this version of to increase the buffer size 
+//12 subscribers, 5 publishers 1024 bytes per buffer
+ros::NodeHandle_<ArduinoHardware, 12, 5, 1024, 1024> nh;
 
 /*
  * Stores accelerometer data
@@ -64,8 +67,6 @@ Servo back_left;
 Servo middle_left;
 Servo middle_right;
 
-//Servo camera_one;
-//Servo camera_two;
 
 //These are the callback functions that control the motors
 void motor1_cb(const std_msgs::Int16 &msg)

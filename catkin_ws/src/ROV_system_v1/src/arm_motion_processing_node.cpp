@@ -35,14 +35,14 @@ int main(int argc, char **argv)
   ros::Subscriber gimbal_xpos_topic = n.subscribe("gimbal_xpos_topic", 1000, gimbal_x_cb);
   ros::Subscriber gimbal_ypos_topic = n.subscribe("gimbal_ypos_topic", 1000, gimbal_y_cb);
 
-  ros::Publisher wrist_pub = n.advertise<std_msgs::Int16>("arm_motor1_topic", 1000);
-  ros::Publisher claw_pub = n.advertise<std_msgs::Int16>("arm_motor2_topic", 1000);
-  ros::Publisher elbow_pub = n.advertise<std_msgs::Int16>("arm_motor3_topic", 1000);
+  ros::Publisher wrist_pub = n.advertise<std_msgs::Int16>("wrist_topic", 1000);
+  ros::Publisher claw_pub = n.advertise<std_msgs::Int16>("claw_topic", 1000);
+  ros::Publisher elbow_pub = n.advertise<std_msgs::Int16>("elbow_topic", 1000);
 
   ros::Publisher gimbal_x_pub = n.advertise<std_msgs::Int16>("gimbal_x_topic", 1000);
   ros::Publisher gimbal_y_pub = n.advertise<std_msgs::Int16>("gimbal_y_topic", 1000);
 
-  ros::Rate loop_wait(30);//this is needed
+  ros::Rate loop_wait(20);//this is needed
   
   //ctr-c makes ok() return false, thus ending the program
   while(ros::ok())
@@ -111,7 +111,7 @@ void sw1_callback(const std_msgs::Bool &msg)
   if(msg.data == 1)
   {
 	pos_wrist += movement_speed;
-	if(pos_wrist > POS_WRIST_UPPER_BOUND) {
+	if(pos_wrist > WRIST_MAX) {
     	pos_wrist = POS_WRIST_UPPER_BOUND;
 	}
 	wrist_value.data = pos_wrist;
