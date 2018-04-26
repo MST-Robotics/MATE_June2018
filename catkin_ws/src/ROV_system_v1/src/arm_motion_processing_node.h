@@ -16,9 +16,6 @@
 #define XBOX_FORCE_Y_MODIFIER 1 /*To Be Determined*/
 #define XBOX_MOMENT_MODIFIER 1 /*To Be Determined*/
 
-#define ARM_MOTOR_NEUTRAL 1500
-#define ARM_MOTOR_RAMP 400
-
 //Wrist bounds
 #define WRIST_HOME 90
 #define WRIST_MIN 0
@@ -57,14 +54,20 @@ std_msgs::Int16 gimbal_y_value;
 
 void gimbal_home_cb(const std_msgs::Bool &msg);
 
+//Gimbal control
 void gimbal_x_cb(const std_msgs::Int16 &msg);
 void gimbal_y_cb(const std_msgs::Int16 &msg);
 
-void sw1_callback(const std_msgs::Bool &msg);
-void sw2_callback(const std_msgs::Bool &msg);
-void sw3_callback(const std_msgs::Bool &msg);
-void sw4_callback(const std_msgs::Bool &msg);
-void sw5_callback(const std_msgs::Bool &msg);
-void sw6_callback(const std_msgs::Bool &msg);
+//Elbow control
+void sw1_callback(const std_msgs::Bool &msg);//increment
+void sw2_callback(const std_msgs::Bool &msg);//decrement
+
+//Wrist control
+void sw3_callback(const std_msgs::Bool &msg);//increment
+void sw4_callback(const std_msgs::Bool &msg);//decrement
+
+//Claw control
+void sw5_callback(const std_msgs::Bool &msg);//increment
+void sw6_callback(const std_msgs::Bool &msg);//decrement
 
 #endif
