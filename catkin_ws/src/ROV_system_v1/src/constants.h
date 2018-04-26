@@ -23,11 +23,6 @@
 
 #include <math.h>
 
-//these values used for calcualting current
-#define voltage (5000/1024)
-#define center_point 2500
-#define mv_a 66
-
 #define PI 3.14159
 
 // Earth's magnetic field varies by location. Add or subtract

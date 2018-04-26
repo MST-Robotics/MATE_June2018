@@ -131,5 +131,10 @@ void pixy_cb(const geometry_msgs::Vector3 &msg)
 
 void raw_temp_cb(const std_msgs::Float32 &msg)
 {
-  
+  float voltage = 0.0;
+  float temp_C = 0.0; //temperature in Celsius
+
+  voltage = msg.data * (5.0/1023) - 0.5; //convert adc value to voltage 0 degrees being 0.5V
+  temp_C = voltage/.01; //0.01V per degree C
+  temp_F.data = temp_C * (9.0/5.0) + 32;
 }
