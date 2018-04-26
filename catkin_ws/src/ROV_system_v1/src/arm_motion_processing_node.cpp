@@ -7,9 +7,9 @@
  */
 #include "arm_motion_processing_node.h"
 
-int pos_wrist = 90;
-int pos_elbow = 90;
-int pos_claw = 90;
+int pos_wrist = WRIST_HOME;
+int pos_elbow = ELBOW_HOME;
+int pos_claw = CLAW_HOME;
 
 int pos_gimbal_x = GIMBAL_X_HOME;
 int pos_gimbal_y = GIMBAL_Y_HOME;
@@ -110,9 +110,8 @@ void sw1_callback(const std_msgs::Bool &msg)
   // increment wrist
   if(msg.data == 1)
   {
-	pos_wrist += movement_speed;
-	if(pos_wrist > WRIST_MAX) {
-    	pos_wrist = POS_WRIST_UPPER_BOUND;
+	if(pos_wrist < WRIST_MAX) {
+    	pos_wrist += movement_speed;
 	}
 	wrist_value.data = pos_wrist;
   }
@@ -122,9 +121,8 @@ void sw2_callback(const std_msgs::Bool &msg)
   // decrement wrist
   if(msg.data == 1)
   {
-	pos_wrist -= movement_speed;
-	if(pos_wrist < POS_WRIST_LOWER_BOUND) {
-    	pos_wrist = POS_WRIST_LOWER_BOUND;
+	if(pos_wrist > WRIST_MIN) {
+    	pos_wrist -= movement_speed;
 	}
 	wrist_value.data = pos_wrist;
   }
@@ -134,9 +132,8 @@ void sw3_callback(const std_msgs::Bool &msg)
   // increment elbow
   if(msg.data == 1)
   {
-	pos_elbow += movement_speed;
-	if(pos_elbow > POS_ELBOW_UPPER_BOUND) {
-    	pos_elbow = POS_ELBOW_UPPER_BOUND;
+	if(pos_elbow < ELBOW_MAX) {
+    	pos_elbow += movement_speed;
 	}
 	elbow_value.data = pos_elbow;
   }
@@ -146,9 +143,8 @@ void sw4_callback(const std_msgs::Bool &msg)
   // decrement elbow
   if(msg.data == 1)
   {
-	pos_elbow -= movement_speed;
-	if(pos_elbow < POS_ELBOW_LOWER_BOUND) {
-    	pos_elbow = POS_ELBOW_LOWER_BOUND;
+	if(pos_elbow > ELBOW_MIN) {
+    	pos_elbow -= movement_speed;
 	}
 	elbow_value.data = pos_elbow;
   }
@@ -158,9 +154,8 @@ void sw5_callback(const std_msgs::Bool &msg)
   // increment claw
   if(msg.data == 1)
   {
-    pos_claw += movement_speed;
-	if(pos_claw > POS_CLAW_UPPER_BOUND) {
-	  pos_claw = POS_CLAW_UPPER_BOUND;
+	if(pos_claw < CLAW_MAX) {
+	  pos_claw += movement_speed;
 	}
 	claw_value.data = pos_claw;
   }
@@ -170,9 +165,8 @@ void sw6_callback(const std_msgs::Bool &msg)
   //decrement claw
   if(msg.data == 1)
   {
-    pos_claw -= movement_speed;
-	if(pos_claw < POS_CLAW_LOWER_BOUND) {
-	  pos_claw = POS_CLAW_LOWER_BOUND;
+	if(pos_claw > CLAW_MIN) {
+	  pos_claw -= movement_speed;
 	}
 	claw_value.data = pos_claw;
   }
