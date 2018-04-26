@@ -27,8 +27,10 @@ int main(int argc, char **argv)
   ros::Publisher trigger_pub = n.advertise<std_msgs::Bool>("trigger_topic", 1000);
   ros::Publisher button_pinky_trigger_pub = n.advertise<std_msgs::Bool>("pinky_trigger_topic", 1000);
 
-  //ros::Publisher button_h2_down_pub = n.advertise<std_msgs::Bool>("button_h2_down_topic", 1000);
-  //ros::Publisher button_h2_up_pub = n.advertise<std_msgs::Bool>("button_h2_up_topic", 1000);
+  ros::Publisher button_h2_x_pub = n.advertise<std_msgs::Int16>("gimbal_xpos_topic", 1000);
+  ros::Publisher button_h2_y_pub = n.advertise<std_msgs::Int16>("gimbal_ypos_topic", 1000);
+
+  ros::Publisher button_a_pub = n.advertise<std_msgs::Bool>("button_a_topic", 1000);
 
   ros::Rate loop_wait(30);//this is needed
  
@@ -38,11 +40,15 @@ int main(int argc, char **argv)
    joystick_x_pub.publish(magnitude_value);   
    joystick_y_pub.publish(angle_value);
    joystick_rotation_pub.publish(axis_stick_rotation_value);
- 
+
+   button_h2_x_pub.publish(gimbal_x_value);
+   button_h2_y_pub.publish(gimbal_y_value);
+
    trigger_pub.publish(button_trigger_state);
    button_pinky_trigger_pub.publish(button_pinky_trigger_state);
- //  button_h2_down_pub.publish(button_h2_down_state);
-  // button_h2_up_pub.publish(button_h2_up_state);
+
+   button_a_pub.publish(button_a_state);
+ 
    ros::spinOnce();
    loop_wait.sleep();//wait some
   }
@@ -79,15 +85,48 @@ void joystick_callback(const sensor_msgs::Joy &joy)
   button_trigger_state.data = joy.buttons[button_trigger]; //Gets value from button trigger
   button_pinky_trigger_state.data = joy.buttons[button_pinky_trigger];
 
- // button_h2_up_state.data = joy.buttons[button_h2_up];
- // button_h2_down_state.data = joy.buttons[button_h2_down];
+  
+  //handle the gimbal controls
+  //button H2 is split into x and y values to pair up/down, left/riight
+  //up and right increment the position, down and left decrememnt the position
+  if(joy.buttons[button_h2_up] == 1)
+  {
+    gimbal_x_value.data = 1;
+  }
 
-/*
-FIX ME PLEASE look like ^
- //buttons are stored in joy.buttons[]
+  else if(joy.buttons[button_h2_down] == 1)
+  {
+    gimbal_x_value.data = -1;
+  }
+
+  else
+  {
+    gimbal_x_value.data = 0;
+  }
+
+
+  if(joy.buttons[button_h2_right] == 1)
+  {
+    gimbal_y_value.data = 1;
+  }
+
+  else if(joy.buttons[button_h2_left] == 1)
+  {
+    gimbal_y_value.data = -1;
+  }
+
+  else
+  {
+    gimbal_y_value.data = 0;
+  } 
+
+ 
+  //buttons are stored in joy.buttons[]
   //axes are stored in joy.axis[]
 
   button_a_state.data = joy.buttons[button_a];
+
+/*
   button_b_state.data = joy.buttons[button_b];
   button_c_state.data = joy.buttons[button_c];
   button_d_state.data = joy.buttons[button_d];
