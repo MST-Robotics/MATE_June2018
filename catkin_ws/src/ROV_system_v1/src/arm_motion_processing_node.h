@@ -12,10 +12,6 @@
 
 #include "constants.h"
 
-#define XBOX_FORCE_X_MODIFIER 1 /*To Be Determined*/
-#define XBOX_FORCE_Y_MODIFIER 1 /*To Be Determined*/
-#define XBOX_MOMENT_MODIFIER 1 /*To Be Determined*/
-
 //Wrist bounds
 #define WRIST_HOME 90
 #define WRIST_MIN 0
@@ -44,17 +40,17 @@
 #define GIMBAL_MOVEMENT_SPEED 1
 #define movement_speed 1
 
-//we won't have motors, we will just have servos
+//messages for manipulator joints
 std_msgs::Int16 wrist_value;
 std_msgs::Int16 claw_value;
 std_msgs::Int16 elbow_value;
 
+//messages for gimbal joints
 std_msgs::Int16 gimbal_x_value;
 std_msgs::Int16 gimbal_y_value;
 
-void gimbal_home_cb(const std_msgs::Bool &msg);
-
 //Gimbal control
+void gimbal_home_cb(const std_msgs::Bool &msg);
 void gimbal_x_cb(const std_msgs::Int16 &msg);
 void gimbal_y_cb(const std_msgs::Int16 &msg);
 
