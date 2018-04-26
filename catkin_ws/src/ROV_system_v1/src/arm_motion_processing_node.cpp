@@ -110,10 +110,10 @@ void sw1_callback(const std_msgs::Bool &msg)
   // increment wrist
   if(msg.data == 1)
   {
-	if(pos_wrist < WRIST_MAX) {
-    	pos_wrist += movement_speed;
+	if(pos_elbow < ELBOW_MAX) {
+    	pos_elbow += movement_speed;
 	}
-	wrist_value.data = pos_wrist;
+	elbow_value.data = pos_elbow;
   }
 }
 void sw2_callback(const std_msgs::Bool &msg)
@@ -121,10 +121,10 @@ void sw2_callback(const std_msgs::Bool &msg)
   // decrement wrist
   if(msg.data == 1)
   {
-	if(pos_wrist > WRIST_MIN) {
-    	pos_wrist -= movement_speed;
+	if(pos_elbow > ELBOW_MIN) {
+    	pos_elbow -= movement_speed;
 	}
-	wrist_value.data = pos_wrist;
+	elbow_value.data = pos_elbow;
   }
 }
 void sw3_callback(const std_msgs::Bool &msg)
@@ -132,10 +132,10 @@ void sw3_callback(const std_msgs::Bool &msg)
   // increment elbow
   if(msg.data == 1)
   {
-	if(pos_elbow < ELBOW_MAX) {
-    	pos_elbow += movement_speed;
+	if(pos_wrist < WRIST_MAX) {
+    	pos_wrist += movement_speed;
 	}
-	elbow_value.data = pos_elbow;
+	wrist_value.data = pos_wrist;
   }
 }
 void sw4_callback(const std_msgs::Bool &msg)
@@ -143,10 +143,10 @@ void sw4_callback(const std_msgs::Bool &msg)
   // decrement elbow
   if(msg.data == 1)
   {
-	if(pos_elbow > ELBOW_MIN) {
-    	pos_elbow -= movement_speed;
+	if(pos_wrist > WRIST_MIN) {
+    	pos_wrist -= movement_speed;
 	}
-	elbow_value.data = pos_elbow;
+	wrist_value.data = pos_wrist;
   }
 }
 void sw5_callback(const std_msgs::Bool &msg)
