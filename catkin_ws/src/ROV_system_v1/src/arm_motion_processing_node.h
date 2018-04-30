@@ -28,12 +28,12 @@
 #define CLAW_MAX 180
 
 //Gimbal X bounds
-#define GIMBAL_X_HOME 92
+#define GIMBAL_X_HOME 87
 #define GIMBAL_X_MIN 35
 #define GIMBAL_X_MAX 160
 
 //Gimbal Y bounds
-#define GIMBAL_Y_HOME 88
+#define GIMBAL_Y_HOME 91
 #define GIMBAL_Y_MIN 45
 #define GIMBAL_Y_MAX 170
 

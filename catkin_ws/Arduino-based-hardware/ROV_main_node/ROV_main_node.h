@@ -76,6 +76,7 @@ void motor1_cb(const std_msgs::Int16 &msg)
 void motor2_cb(const std_msgs::Int16 &msg)
 {
   middle_left.writeMicroseconds(msg.data);
+  middle_right.writeMicroseconds(msg.data);
 }
 void motor3_cb(const std_msgs::Int16 &msg)
 {
@@ -87,7 +88,7 @@ void motor4_cb(const std_msgs::Int16 &msg)
 }
 void motor5_cb(const std_msgs::Int16 &msg)
 {
-  middle_right.writeMicroseconds(msg.data);
+  //middle_right.writeMicroseconds(msg.data);
 }
 void motor6_cb(const std_msgs::Int16 &msg)
 {
