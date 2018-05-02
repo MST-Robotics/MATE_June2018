@@ -109,8 +109,10 @@ void calc_motors()
   motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( -force_y - force_x + moment);// + Precision;
   motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( force_y - force_x - moment );//+ Precision);
   motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * normalize_400( force_y + force_x + moment);// + Precision;
+  
+  motor7_value.data = MOTOR_NEUTRAL;
 
-  motor2_value.data = motor5_value.data = motor7_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2));//Precision ;
+  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2));//Precision ;
 } 
 
 /* trigger_callback handles data recieved from the trigger_topic subscription

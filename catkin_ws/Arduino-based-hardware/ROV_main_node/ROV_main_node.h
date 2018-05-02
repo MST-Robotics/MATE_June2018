@@ -63,7 +63,7 @@ double roll_setpoint, roll_offset;
 
 //tuning variables for the PID control
 double aggKp=4, aggKi=0.2, aggKd=1;
-double consKp=1, consKi=0.05, consKd=0.25;
+double consKp=4, consKi=0.05, consKd=0.25;
 
 //create PID object
 PID roll_PID(&roll, &roll_offset, &roll_setpoint, consKp, consKi, consKd, DIRECT);
@@ -213,7 +213,7 @@ void process_imu(void)
   roll_PID.Compute();//calcualte the roll_output
   
   //check for minimum amount of motor adjustment
-  if(abs(roll_offset) < 35)//this number may be adjusted as well
+  if(abs(roll_offset) < 25)//this number may be adjusted as well
     roll_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
  
   //calculate pitch

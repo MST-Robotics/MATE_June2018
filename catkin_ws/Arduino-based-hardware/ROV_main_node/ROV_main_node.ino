@@ -25,7 +25,7 @@ void setup()
 {
   main_setup();//contains the declarations and hardware setup
   motor_setup();
-  roll_setpoint = 180;//when leveled, the value for roll is 180 degrees
+  roll_setpoint = 195;//when leveled, the value for roll is 180 degrees
   roll_PID.SetOutputLimits(-200, 200);//this range is an offset for motor7's speed
   roll_PID.SetMode(AUTOMATIC);
   
