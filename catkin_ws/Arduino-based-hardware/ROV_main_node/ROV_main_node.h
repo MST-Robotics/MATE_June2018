@@ -59,14 +59,14 @@ Servo back_middle;
 
 //variables for holding the pitch and roll for the PID
 double roll, pitch;
-double roll_setpoint, roll_output;
+double roll_setpoint, roll_offset;
 
 //tuning variables for the PID control
 double aggKp=4, aggKi=0.2, aggKd=1;
 double consKp=1, consKi=0.05, consKd=0.25;
 
 //create PID object
-PID rev_PID(&roll, &roll_output, &roll_setpoint, consKp, consKi, consKd, DIRECT);
+PID roll_PID(&roll, &roll_offset, &roll_setpoint, consKp, consKi, consKd, DIRECT);
 
 //These are the callback functions that control the motors
 void motor1_cb(const std_msgs::Int16 &msg)
@@ -95,7 +95,14 @@ void motor6_cb(const std_msgs::Int16 &msg)
 }
 void motor7_cb(const std_msgs::Int16 &msg)
 {
-  back_middle.writeMicroseconds(msg.data);
+  //update the motor's speed from controller input, and also correction offset from IMU
+  int motor_speed = msg.data + (int)roll_offset;
+  if(motor_speed > 1900)
+    motor_speed = 1900;//motors are at max, cannot correct
+  else if(motor_speed < 1100)
+    motor_speed = 1100;//motors are at min, cannot correct
+  
+  back_middle.writeMicroseconds(motor_speed);
 }
 
 //Callback functions for the arm servos
@@ -190,14 +197,28 @@ void process_imu(void)
   //calculate roll
   roll = (atan2(accelerometer_y, accelerometer_z));
   roll *= 180.0/PI;//convert to degrees
-
+  
+  //convert to positive angles only 0-360. Roll is ROV lengthwise rotation
+  if(roll < 0)
+    roll+=360;
+  
+  double roll_diff = abs(roll_setpoint - roll);//calcualte distance from setpoint
+  
+  //this function adjusts the PID tuning parameters. 
+  if(roll_diff < 25)
+    roll_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
+  else
+    roll_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
+  
+  roll_PID.Compute();//calcualte the roll_output
+  
+  //check for minimum amount of motor adjustment
+  if(abs(roll_output) < 35)//this number may be adjusted as well
+    roll_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
+ 
   //calculate pitch
   //pitch = atan2(-1*accelerometer_x, sqrt(accelerometer_y * accelerometer_y + accelerometer_z * accelerometer_z));
   //pitch *= 180.0/PI;//convert to degrees
-
-
-  //pid stuff here
-
   return;
 }
 
