@@ -35,6 +35,8 @@ void setup()
   nh.subscribe(motor4_sub);
   nh.subscribe(motor5_sub);
   nh.subscribe(motor6_sub);
+  nh.subscribe(motor7_sub);
+
   nh.subscribe(wrist_sub);
   nh.subscribe(claw_sub);
   nh.subscribe(elbow_sub);
@@ -42,8 +44,6 @@ void setup()
   nh.subscribe(gimbal_y_sub);
 
   //set up topic publishers
-  nh.advertise(accel_pub);
-  nh.advertise(mag_pub);
   nh.advertise(pixy_pub);
   nh.advertise(raw_temp_pub);
 }

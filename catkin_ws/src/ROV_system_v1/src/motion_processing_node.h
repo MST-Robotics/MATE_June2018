@@ -23,11 +23,8 @@ std_msgs::Int16 motor3_value;
 std_msgs::Int16 motor4_value;
 std_msgs::Int16 motor5_value;
 std_msgs::Int16 motor6_value;
+std_msgs::Int16 motor7_value;
 
-/*
-std_msgs::Int16 camera_one_value;
-std_msgs::Int16 camera_two_value;
-*/
 /* velocity_callback handles data recieved from the joystick_x_topic subscription
  * Pre: joystick_x_topic has to be initalized
  * Post: Any variables are updated to their current values for each itteration
@@ -59,7 +56,4 @@ void calc_motors();
 
 void axis_left_thruster_callback(const std_msgs::Float32 &msg);
 
-/*
-void button_h2_up_callback(const std_msgs::Bool &msg);
-void button_h2_down_callback(const std_msgs::Bool &msg);*/
 #endif

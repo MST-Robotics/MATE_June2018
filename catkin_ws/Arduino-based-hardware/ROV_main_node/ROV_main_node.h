@@ -19,6 +19,7 @@
 #define ROV_main_node_H
 
 #include <ROV_main_setup.h>
+#include <PID_v1.h>
 #include <ros.h>
 #include <Servo.h>
 
@@ -40,18 +41,6 @@
 ros::NodeHandle_<ArduinoHardware, 12, 5, 1024, 1024> nh;
 
 /*
- * Stores accelerometer data
- * x=x-axis y=y-axis z=z-axis
- */
-geometry_msgs::Vector3 accelerometer;
-
-/*
- * Stores magnetometer data
- * x=x-axis y=y-axis z=z-axis
- */
-geometry_msgs::Vector3 magnetometer;
-
-/*
  * Stores pixy data
  * x=signature y=width z=height
  */
@@ -66,7 +55,13 @@ Servo back_right;
 Servo back_left;
 Servo middle_left;
 Servo middle_right;
+Servo back_middle;
 
+//variables for holding the pitch and roll for the PID
+double roll, pitch;
+double roll_setpoint, roll_output;
+
+double aggKp=4, 
 
 //These are the callback functions that control the motors
 void motor1_cb(const std_msgs::Int16 &msg)
@@ -76,7 +71,6 @@ void motor1_cb(const std_msgs::Int16 &msg)
 void motor2_cb(const std_msgs::Int16 &msg)
 {
   middle_left.writeMicroseconds(msg.data);
-  middle_right.writeMicroseconds(msg.data);
 }
 void motor3_cb(const std_msgs::Int16 &msg)
 {
@@ -88,11 +82,15 @@ void motor4_cb(const std_msgs::Int16 &msg)
 }
 void motor5_cb(const std_msgs::Int16 &msg)
 {
-  //middle_right.writeMicroseconds(msg.data);
+  middle_right.writeMicroseconds(msg.data);
 }
 void motor6_cb(const std_msgs::Int16 &msg)
 {
   back_right.writeMicroseconds(msg.data);
+}
+void motor7_cb(const std_msgs::Int16 &msg)
+{
+  back_middle.writeMicroseconds(msg.data);
 }
 
 //Callback functions for the arm servos
@@ -129,6 +127,8 @@ ros::Subscriber<std_msgs::Int16> motor3_sub("motor3_topic", motor3_cb);
 ros::Subscriber<std_msgs::Int16> motor4_sub("motor4_topic", motor4_cb);
 ros::Subscriber<std_msgs::Int16> motor5_sub("motor5_topic", motor5_cb);
 ros::Subscriber<std_msgs::Int16> motor6_sub("motor6_topic", motor6_cb);
+ros::Subscriber<std_msgs::Int16> motor7_sub("motor7_topic", motor7_cb);
+
 ros::Subscriber<std_msgs::Int16> wrist_sub("arm_motor1_topic", wrist_cb);
 ros::Subscriber<std_msgs::Int16> claw_sub("arm_motor2_topic", claw_cb);
 ros::Subscriber<std_msgs::Int16> elbow_sub("arm_motor3_topic", elbow_cb);
@@ -137,9 +137,7 @@ ros::Subscriber<std_msgs::Int16> gimbal_x_sub("gimbal_x_topic", gimbal_x_cb);
 ros::Subscriber<std_msgs::Int16> gimbal_y_sub("gimbal_y_topic", gimbal_y_cb);
 
 //set up publishers
-ros::Publisher accel_pub("accel_topic", &accelerometer);
-ros::Publisher mag_pub("mag_topic", &magnetometer);
-ros::Publisher pixy_pub("pixy_data_topic", &pixy_data);//message for raw data from pixy
+ros::Publisher pixy_pub("pixy_data_topic", &pixy_data);
 ros::Publisher raw_temp_pub("raw_temp_topic", &raw_temp);
 
 //function for setting up the brushless motors
@@ -151,6 +149,7 @@ void motor_setup(void)
   back_left.attach(blt_pin);
   middle_right.attach(middle_right_pin);
   middle_left.attach(middle_left_pin);
+  back_middle.attach(back_pin);
 
   //start with the motors off
   front_right.writeMicroseconds(1500);
@@ -159,6 +158,7 @@ void motor_setup(void)
   middle_left.writeMicroseconds(1500);
   back_right.writeMicroseconds(1500);
   back_left.writeMicroseconds(1500);   
+  back_middle.writeMicroseconds(1500);
 
   return;
 }
@@ -175,27 +175,23 @@ void process_temperature(void)
 //function for reading and packaging and publishing the IMU data
 void process_imu(void)
 {
-  //update the data if it has changed
-  if(imu.gyroAvailable())
-    imu.readGyro();
-  if(imu.accelAvailable())
-    imu.readAccel();
-  if(imu.magAvailable())
-    imu.readMag();
+  imu.readAccel();
 
   //calcualte the accelerometer data
-  accelerometer.x = imu.calcAccel(imu.ax);
-  accelerometer.y = imu.calcAccel(imu.ay);
-  accelerometer.z = imu.calcAccel(imu.az);
+  float accelerometer_x = imu.calcAccel(imu.ax);
+  float accelerometer_y = imu.calcAccel(imu.ay);
+  float accelerometer_z = imu.calcAccel(imu.az);
 
-  //calcualte the magnetometer data
-  magnetometer.x = imu.calcMag(imu.mx);
-  magnetometer.y = imu.calcMag(imu.my);
-  magnetometer.z = imu.calcMag(imu.mz);
-  
-  //publish the data
-  accel_pub.publish(&accelerometer);
-  mag_pub.publish(&magnetometer);
+  //calculate roll
+  roll = (atan2(accelerometer_y, accelerometer_z));
+  roll *= 180.0/PI;//convert to degrees
+
+  //calculate pitch
+  //pitch = atan2(-1*accelerometer_x, sqrt(accelerometer_y * accelerometer_y + accelerometer_z * accelerometer_z));
+  //pitch *= 180.0/PI;//convert to degrees
+
+
+  //pid stuff here
 
   return;
 }

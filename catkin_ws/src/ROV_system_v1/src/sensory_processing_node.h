@@ -12,12 +12,6 @@
 #include "constants.h"
 
 /*
- * Stores orientation data
- * x=roll y=pitch z=heading
- */
-geometry_msgs::Vector3 orientation;
-
-/*
  * Stores pixy data
  * x=color y=width z=height
  */
@@ -28,11 +22,6 @@ std_msgs::String plane_type;
  */
 std_msgs::Float32 temp_F;
 
-//
-void accel_cb(const geometry_msgs::Vector3 &msg);
-
-//
-void mag_cb(const geometry_msgs::Vector3 &msg);
 
 //
 void pixy_cb(const geometry_msgs::Vector3 &msg);

@@ -41,8 +41,7 @@ int main(int argc, char **argv)
   ros::Publisher motor4_pub = n.advertise<std_msgs::Int16>("motor4_topic", 100);
   ros::Publisher motor5_pub = n.advertise<std_msgs::Int16>("motor5_topic", 100);
   ros::Publisher motor6_pub = n.advertise<std_msgs::Int16>("motor6_topic", 100);
-
- // ros::Subscriber orientation_topic = n.subscribe("orientation_topic", 1000, orientation_callback);
+  ros::Publisher motor7_pub = n.advertise<std_msgs::Int16>("motor7_topic", 100);
  
   ros::Rate loop_wait(20);//this is needed
   
@@ -56,6 +55,7 @@ int main(int argc, char **argv)
     motor4_pub.publish(motor4_value);
     motor5_pub.publish(motor5_value);
     motor6_pub.publish(motor6_value);
+    motor7_pub.publish(motor7_value);
 
     ros::spinOnce();
     loop_wait.sleep();//wait some
@@ -110,7 +110,7 @@ void calc_motors()
   motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( force_y - force_x - moment );//+ Precision);
   motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * normalize_400( force_y + force_x + moment);// + Precision;
 
-  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2));//Precision ;
+  motor2_value.data = motor5_value.data = motor7_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2));//Precision ;
 } 
 
 /* trigger_callback handles data recieved from the trigger_topic subscription
