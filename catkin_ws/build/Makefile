@@ -2233,19 +2233,6 @@ _beginner_tutorials_generate_messages_check_deps_AddTwoInts/fast:
 .PHONY : _beginner_tutorials_generate_messages_check_deps_AddTwoInts/fast
 
 #=============================================================================
-# Target rules for targets named sensory_processing_node
-
-# Build rule for target.
-sensory_processing_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensory_processing_node
-.PHONY : sensory_processing_node
-
-# fast build rule for target.
-sensory_processing_node/fast:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
-.PHONY : sensory_processing_node/fast
-
-#=============================================================================
 # Target rules for targets named diagnostic_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -2337,17 +2324,17 @@ motion_processing_node/fast:
 .PHONY : motion_processing_node/fast
 
 #=============================================================================
-# Target rules for targets named xbox_processing_node
+# Target rules for targets named sensory_processing_node
 
 # Build rule for target.
-xbox_processing_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 xbox_processing_node
-.PHONY : xbox_processing_node
+sensory_processing_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensory_processing_node
+.PHONY : sensory_processing_node
 
 # fast build rule for target.
-xbox_processing_node/fast:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build.make ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build
-.PHONY : xbox_processing_node/fast
+sensory_processing_node/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
+.PHONY : sensory_processing_node/fast
 
 #=============================================================================
 # Target rules for targets named diagnostic_msgs_generate_messages_lisp
@@ -4276,7 +4263,6 @@ help:
 	@echo "... _beginner_tutorials_generate_messages_check_deps_Num"
 	@echo "... listener"
 	@echo "... _beginner_tutorials_generate_messages_check_deps_AddTwoInts"
-	@echo "... sensory_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_nodejs"
 	@echo "... diagnostic_msgs_generate_messages_eus"
 	@echo "... thruster_processing_node"
@@ -4284,7 +4270,7 @@ help:
 	@echo "... diagnostic_msgs_generate_messages_cpp"
 	@echo "... joystick_processing_node"
 	@echo "... motion_processing_node"
-	@echo "... xbox_processing_node"
+	@echo "... sensory_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_lisp"
 	@echo "... arm_motion_processing_node"
 	@echo "... practice_node"

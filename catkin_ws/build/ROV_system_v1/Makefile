@@ -166,21 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
-.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
-
-# Convenience name for target.
-sensory_processing_node: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
-
-.PHONY : sensory_processing_node
-
-# fast build rule for target.
-sensory_processing_node/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
-.PHONY : sensory_processing_node/fast
-
-# Convenience name for target.
 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
 .PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
@@ -286,19 +271,19 @@ motion_processing_node/fast:
 .PHONY : motion_processing_node/fast
 
 # Convenience name for target.
-ROV_system_v1/CMakeFiles/xbox_processing_node.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/xbox_processing_node.dir/rule
-.PHONY : ROV_system_v1/CMakeFiles/xbox_processing_node.dir/rule
+ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
 
 # Convenience name for target.
-xbox_processing_node: ROV_system_v1/CMakeFiles/xbox_processing_node.dir/rule
+sensory_processing_node: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
 
-.PHONY : xbox_processing_node
+.PHONY : sensory_processing_node
 
 # fast build rule for target.
-xbox_processing_node/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build.make ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build
-.PHONY : xbox_processing_node/fast
+sensory_processing_node/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
+.PHONY : sensory_processing_node/fast
 
 # Convenience name for target.
 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
@@ -465,33 +450,6 @@ src/thruster_processing_node.cpp.s:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/thruster_processing_node.dir/build.make ROV_system_v1/CMakeFiles/thruster_processing_node.dir/src/thruster_processing_node.cpp.s
 .PHONY : src/thruster_processing_node.cpp.s
 
-src/xbox_processing_node.o: src/xbox_processing_node.cpp.o
-
-.PHONY : src/xbox_processing_node.o
-
-# target to build an object file
-src/xbox_processing_node.cpp.o:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build.make ROV_system_v1/CMakeFiles/xbox_processing_node.dir/src/xbox_processing_node.cpp.o
-.PHONY : src/xbox_processing_node.cpp.o
-
-src/xbox_processing_node.i: src/xbox_processing_node.cpp.i
-
-.PHONY : src/xbox_processing_node.i
-
-# target to preprocess a source file
-src/xbox_processing_node.cpp.i:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build.make ROV_system_v1/CMakeFiles/xbox_processing_node.dir/src/xbox_processing_node.cpp.i
-.PHONY : src/xbox_processing_node.cpp.i
-
-src/xbox_processing_node.s: src/xbox_processing_node.cpp.s
-
-.PHONY : src/xbox_processing_node.s
-
-# target to generate assembly for a file
-src/xbox_processing_node.cpp.s:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/xbox_processing_node.dir/build.make ROV_system_v1/CMakeFiles/xbox_processing_node.dir/src/xbox_processing_node.cpp.s
-.PHONY : src/xbox_processing_node.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -502,7 +460,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... install/local"
-	@echo "... sensory_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_nodejs"
 	@echo "... diagnostic_msgs_generate_messages_eus"
 	@echo "... thruster_processing_node"
@@ -511,7 +468,7 @@ help:
 	@echo "... diagnostic_msgs_generate_messages_cpp"
 	@echo "... joystick_processing_node"
 	@echo "... motion_processing_node"
-	@echo "... xbox_processing_node"
+	@echo "... sensory_processing_node"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... diagnostic_msgs_generate_messages_lisp"
@@ -531,9 +488,6 @@ help:
 	@echo "... src/thruster_processing_node.o"
 	@echo "... src/thruster_processing_node.i"
 	@echo "... src/thruster_processing_node.s"
-	@echo "... src/xbox_processing_node.o"
-	@echo "... src/xbox_processing_node.i"
-	@echo "... src/xbox_processing_node.s"
 .PHONY : help
 
 

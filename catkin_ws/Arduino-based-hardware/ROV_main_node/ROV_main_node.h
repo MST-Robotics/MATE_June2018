@@ -38,7 +38,7 @@
 
 //use this version of to increase the buffer size 
 //12 subscribers, 5 publishers 1024 bytes per buffer
-ros::NodeHandle_<ArduinoHardware, 12, 5, 1024, 1024> nh;
+ros::NodeHandle_<ArduinoHardware, 15, 5, 1024, 1024> nh;
 
 /*
  * Stores pixy data
@@ -213,7 +213,7 @@ void process_imu(void)
   roll_PID.Compute();//calcualte the roll_output
   
   //check for minimum amount of motor adjustment
-  if(abs(roll_output) < 35)//this number may be adjusted as well
+  if(abs(roll_offset) < 35)//this number may be adjusted as well
     roll_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
  
   //calculate pitch

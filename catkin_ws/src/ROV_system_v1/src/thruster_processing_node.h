@@ -27,7 +27,7 @@ std_msgs::Bool button_sw6_state; // claw opens
 std_msgs::Bool button_tgl1_up_state; //extends
 std_msgs::Bool button_tgl1_down_state; //goes into the shell
 
-std_msgs::Bool axis_left_thruster_value;
+std_msgs::Float32 axis_left_thruster_value;
 
 /* thruster_callback handles data recieved from the thruster topic
  * Pre: thruster_topic has to be running

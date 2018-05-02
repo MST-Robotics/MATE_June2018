@@ -34,7 +34,7 @@ int main(int argc, char **argv)
   ros::Publisher tgl1_up_pub = n.advertise<std_msgs::Bool>("tgl1_up_topic", 1000);
   ros::Publisher tgl1_down_pub = n.advertise<std_msgs::Bool>("tgl1_down_topic", 1000);
 
-  ros::Publisher axis_left_thruster_pub = n.advertise<std_msgs::Bool>("axis_left_thruster_topic", 1000);
+  ros::Publisher axis_left_thruster_pub = n.advertise<std_msgs::Float32>("axis_left_thruster_topic", 1000);
 
   ros::Rate loop_wait(30);//this is needed
   

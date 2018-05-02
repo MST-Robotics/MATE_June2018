@@ -202,9 +202,6 @@ include_directories(
 add_executable(joystick_processing_node src/joystick_processing_node.cpp)
 target_link_libraries(joystick_processing_node ${catkin_LIBRARIES})
 
-add_executable(xbox_processing_node src/xbox_processing_node.cpp)
-target_link_libraries(xbox_processing_node ${catkin_LIBRARIES})
-
 add_executable(thruster_processing_node src/thruster_processing_node.cpp)
 target_link_libraries(thruster_processing_node ${catkin_LIBRARIES})
 
