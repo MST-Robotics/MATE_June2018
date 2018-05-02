@@ -15,6 +15,7 @@ float magnitude = 0.0;
 float angle = 0.0;
 float moment = 0.0;
 char vertical = 0;
+float Precision = 0.0;
 
 std_msgs::Int16 motor1_value;
 std_msgs::Int16 motor2_value;
@@ -55,6 +56,9 @@ void orientation_callback(const geometry_msgs::Vector3 &msg);
 
 void twist_callback(const std_msgs::Float32 &msg);
 void calc_motors();
+
+void axis_left_thruster_callback(const std_msgs::Float32 &msg);
+
 /*
 void button_h2_up_callback(const std_msgs::Bool &msg);
 void button_h2_down_callback(const std_msgs::Bool &msg);*/

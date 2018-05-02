@@ -33,6 +33,7 @@ int main(int argc, char **argv)
   ros::Subscriber trigger_topic = n.subscribe("trigger_topic", 100, trigger_callback);
   ros::Subscriber button_pinky_trigger_topic = n.subscribe("pinky_trigger_topic", 100, button_pinky_trigger_callback);
 
+  ros::Subscriber axis_left_thruster_topic = n.subscribe("axis_left_thruster_topic", 100, axis_left_thruster_callback);
 
   ros::Publisher motor1_pub = n.advertise<std_msgs::Int16>("motor1_topic", 100);
   ros::Publisher motor2_pub = n.advertise<std_msgs::Int16>("motor2_topic", 100);
@@ -104,13 +105,13 @@ void calc_motors()
   float force_x = FORCE_X_MODIFIER * magnitude * cos(angle * M_PI / 180);
   float force_y = FORCE_Y_MODIFIER * magnitude * sin(angle * M_PI / 180);
   
-  motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400(-force_y + force_x - moment);
-  motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( -force_y - force_x + moment);
-  motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( force_y - force_x - moment);
-  motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * normalize_400( force_y + force_x + moment);
+  motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400(-force_y + force_x - moment) + Precision;
+  motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( -force_y - force_x + moment) + Precision;
+  motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * normalize_400( force_y - force_x - moment + Precision);
+  motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * normalize_400( force_y + force_x + moment) + Precision;
 
-  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2));
-}
+  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2)) + Precision ;
+} 
 
 /* trigger_callback handles data recieved from the trigger_topic subscription
  * Pre: trigger_topic has to be initalized
@@ -131,3 +132,17 @@ void button_pinky_trigger_callback(const std_msgs::Bool &msg)
 {
   msg.data ? (vertical |= 1) : (vertical &= (~1));
 }
+
+void axis_left_thruster_callback(const std_msgs::Float32 &msg)
+{
+  Precision = msg.data;
+  if(msg.data < .20 && msg.data > .20)
+  {
+    Precision = 0;
+  }
+  else
+  {
+    Precision = msg.data*(magnitude);
+  }
+}
+

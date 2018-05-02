@@ -34,6 +34,8 @@ int main(int argc, char **argv)
   ros::Publisher tgl1_up_pub = n.advertise<std_msgs::Bool>("tgl1_up_topic", 1000);
   ros::Publisher tgl1_down_pub = n.advertise<std_msgs::Bool>("tgl1_down_topic", 1000);
 
+  ros::Publisher axis_left_thruster_pub = n.advertise<std_msgs::Bool>("axis_left_thruster_topic", 1000);
+
   ros::Rate loop_wait(30);//this is needed
   
   while(ros::ok()) //ctrl-c makes ok() return false, thus ending the program
@@ -51,6 +53,8 @@ int main(int argc, char **argv)
 
    tgl1_up_pub.publish(button_tgl1_up_state);
    tgl1_down_pub.publish(button_tgl1_down_state);
+
+   axis_left_thruster_pub.publish(axis_left_thruster_value);
  
    ros::spinOnce();
 
@@ -77,6 +81,9 @@ void thruster_callback(const sensor_msgs::Joy &joy)
   
   button_tgl1_up_state.data = joy.buttons[button_tgl1_up];
   button_tgl1_down_state.data = joy.buttons[button_tgl1_down];
+
+  axis_left_thruster_value.data = joy.axes[axis_left_thruster];
+
 /* 
   Done
   //buttons are stored in joy.buttons[]
@@ -123,7 +130,7 @@ void thruster_callback(const sensor_msgs::Joy &joy)
 
   rotary_4_value.data = joy.axes[axis_base_rotary_4];
   rotary_3_value.data = joy.axes[axis_base_rotary_3];
-  axis_left_thruster_value.data = joy.axes[axis_left_thruster];
+
   axis_right_thruster_value.data = joy.axes[axis_right_thruster];
 
   axis_rotary_f_value.data = joy.axes[axis_rotary_f];
