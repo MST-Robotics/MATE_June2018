@@ -61,7 +61,12 @@ Servo back_middle;
 double roll, pitch;
 double roll_setpoint, roll_output;
 
-double aggKp=4, 
+//tuning variables for the PID control
+double aggKp=4, aggKi=0.2, aggKd=1;
+double consKp=1, consKi=0.05, consKd=0.25;
+
+//create PID object
+PID rev_PID(&roll, &roll_output, &roll_setpoint, consKp, consKi, consKd, DIRECT);
 
 //These are the callback functions that control the motors
 void motor1_cb(const std_msgs::Int16 &msg)
