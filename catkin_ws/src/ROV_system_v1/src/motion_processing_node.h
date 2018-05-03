@@ -10,12 +10,13 @@
 #define motion_processing_node_H
 
 #include "constants.h"
+#define MIN_PRECISION_SCALE 0.2
 
 float magnitude = 0.0;
 float angle = 0.0;
 float moment = 0.0;
 char vertical = 0;
-float Precision = 0.0;
+float precision = 1.0;
 
 std_msgs::Int16 motor1_value;
 std_msgs::Int16 motor2_value;
@@ -49,11 +50,26 @@ void trigger_callback(const std_msgs::Bool &msg);
  */
 void button_pinky_trigger_callback(const std_msgs::Bool &msg);
 
-void orientation_callback(const geometry_msgs::Vector3 &msg);
-
+/* twist_callback handles data from the "" subscription (the one that handles the twisting of the joystick)
+ * Pre: "" has to be initialized
+ * Post: Any variables are updated to their current values for each itteration
+ */
 void twist_callback(const std_msgs::Float32 &msg);
+
+/* calc_motors handles data from velocity_callback, angle_callback, and twist_callback to calculate ROV motor movement
+ * Pre: magnitude, angle, and moment are initialized
+ * Post: Any variables are updated to their current values for each itteration
+ */
 void calc_motors();
 
+//this function calcualtes the precision scale for the movement controls from the throttle
+/* axis_left_thruster_callback calcualtes the precision scale for the movement controls from the throttle
+ * Pre: axis_left_thruster_topic has to be initialized
+ * Post: The range -1.0 to 1.0 is mapped to MIN_PRECISION_SCALE to 1
+ */
 void axis_left_thruster_callback(const std_msgs::Float32 &msg);
+
+//function used for mapping float values
+float mapf(float x, float in_min, float in_max, float out_min, float out_max);
 
 #endif

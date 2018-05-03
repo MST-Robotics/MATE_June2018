@@ -24,8 +24,8 @@
 void setup()
 {
   main_setup();//contains the declarations and hardware setup
-  motor_setup();
-  roll_setpoint = 195;//when leveled, the value for roll is 180 degrees
+  motor_setup();//sets up the speed controlls and sets the motors to off
+
   roll_PID.SetOutputLimits(-200, 200);//this range is an offset for motor7's speed
   roll_PID.SetMode(AUTOMATIC);
   
@@ -39,6 +39,8 @@ void setup()
   nh.subscribe(motor5_sub);
   nh.subscribe(motor6_sub);
   nh.subscribe(motor7_sub);
+  nh.subscribe(pid_enable_sub);
+  nh.subscribe(setpoint_sub);
 
   nh.subscribe(wrist_sub);
   nh.subscribe(claw_sub);
@@ -49,12 +51,13 @@ void setup()
   //set up topic publishers
   nh.advertise(pixy_pub);
   nh.advertise(raw_temp_pub);
+  nh.advertise(orientation_pub);
 }
 
 void loop()
 {
   nh.spinOnce();//run ros once
-  process_temperature();//update the temperature data
+  process_temperature();//update the temperature data 
   process_imu();//update imu data
   //wing_detection_data();//update image recognition data
 }

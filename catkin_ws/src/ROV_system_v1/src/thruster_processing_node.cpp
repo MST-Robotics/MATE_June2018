@@ -30,35 +30,31 @@ int main(int argc, char **argv)
   ros::Publisher sw4_pub = n.advertise<std_msgs::Bool>("sw4_topic", 1000);
   ros::Publisher sw5_pub = n.advertise<std_msgs::Bool>("sw5_topic", 1000);
   ros::Publisher sw6_pub = n.advertise<std_msgs::Bool>("sw6_topic", 1000);
-
-  ros::Publisher tgl1_up_pub = n.advertise<std_msgs::Bool>("tgl1_up_topic", 1000);
-  ros::Publisher tgl1_down_pub = n.advertise<std_msgs::Bool>("tgl1_down_topic", 1000);
+  ros::Publisher m1_pub = n.advertise<std_msgs::Bool>("m1_topic", 1000);
 
   ros::Publisher axis_left_thruster_pub = n.advertise<std_msgs::Float32>("axis_left_thruster_topic", 1000);
+  ros::Publisher setpoint_pub = n.advertise<std_msgs::Int16>("setpoint_topic", 100);
 
   ros::Rate loop_wait(30);//this is needed
   
   while(ros::ok()) //ctrl-c makes ok() return false, thus ending the program
   {  
-    //publish everything once per loop
-  
-   throttle_publisher.publish(throttle_value);
-   
-   sw1_pub.publish(button_sw1_state);
-   sw2_pub.publish(button_sw2_state);
-   sw3_pub.publish(button_sw3_state);
-   sw4_pub.publish(button_sw4_state);
-   sw5_pub.publish(button_sw5_state);
-   sw6_pub.publish(button_sw6_state);
+    //publish everything once per loop 
+    sw1_pub.publish(button_sw1_state);
+    sw2_pub.publish(button_sw2_state);
+    sw3_pub.publish(button_sw3_state);
+    sw4_pub.publish(button_sw4_state);
+    sw5_pub.publish(button_sw5_state);
+    sw6_pub.publish(button_sw6_state);
+    setpoint_pub.publish(setpoint_value);
+    
+    m1_pub.publish(button_m1_state);
 
-   tgl1_up_pub.publish(button_tgl1_up_state);
-   tgl1_down_pub.publish(button_tgl1_down_state);
-
-   axis_left_thruster_pub.publish(axis_left_thruster_value);
+    axis_left_thruster_pub.publish(axis_left_thruster_value);
  
-   ros::spinOnce();
+    ros::spinOnce();
 
-   loop_wait.sleep();//wait some
+    loop_wait.sleep();//wait some
   }
   return 0;
 }
@@ -69,20 +65,21 @@ int main(int argc, char **argv)
  * Post: Thruster values are updated
  */
 void thruster_callback(const sensor_msgs::Joy &joy)
-{
-  throttle_value.data = joy.axes[axis_left_thruster];
-  
+{  
   button_sw1_state.data = joy.buttons[button_sw1];
   button_sw2_state.data = joy.buttons[button_sw2];
   button_sw3_state.data = joy.buttons[button_sw3];
   button_sw4_state.data = joy.buttons[button_sw4];
   button_sw5_state.data = joy.buttons[button_sw5];
   button_sw6_state.data = joy.buttons[button_sw6];
-  
-  button_tgl1_up_state.data = joy.buttons[button_tgl1_up];
-  button_tgl1_down_state.data = joy.buttons[button_tgl1_down];
 
   axis_left_thruster_value.data = joy.axes[axis_left_thruster];
+  
+  button_m1_state.data = joy.buttons[button_m1];
+
+
+  //the setpoint for the PID is determined here by rty4
+  setpoint_value.data = (int)mapf(joy.axes[axis_base_rotary_4], -1.0, 1.0, 200.0, 160.0);
 
 /* 
   Done
@@ -139,5 +136,11 @@ void thruster_callback(const sensor_msgs::Joy &joy)
   axis_thruster_thumb_stick_x_value.data = joy.axes[axis_thruster_thumb_stick_x];
   axis_thruster_thumb_stick_y_value.data = joy.axes[axis_thruster_thumb_stick_y];
 */
+}
+
+//this funciton maps a range of floats to another range of floats
+float mapf(float x, float in_min, float in_max, float out_min, float out_max)
+{
+ return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 

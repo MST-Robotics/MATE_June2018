@@ -46,6 +46,13 @@ ros::NodeHandle_<ArduinoHardware, 15, 5, 1024, 1024> nh;
  */
 geometry_msgs::Vector3 pixy_data;
 
+
+/*
+ * Stores orientation data
+ * x=roll y=pitch z=roll_offset
+ */
+geometry_msgs::Vector3 orientation;
+
 //Stores raw adc value for temp sensor
 std_msgs::Float32 raw_temp;
 
@@ -56,6 +63,8 @@ Servo back_left;
 Servo middle_left;
 Servo middle_right;
 Servo back_middle;
+
+bool pid_enable = 0;
 
 //variables for holding the pitch and roll for the PID
 double roll, pitch;
@@ -96,7 +105,7 @@ void motor6_cb(const std_msgs::Int16 &msg)
 void motor7_cb(const std_msgs::Int16 &msg)
 {
   //update the motor's speed from controller input, and also correction offset from IMU
-  int motor_speed = msg.data + (int)roll_offset;
+  int motor_speed = msg.data + (int)roll_offset; 
   if(motor_speed > 1900)
     motor_speed = 1900;//motors are at max, cannot correct
   else if(motor_speed < 1100)
@@ -131,6 +140,18 @@ void gimbal_y_cb(const std_msgs::Int16 &msg)
   pwm_primary.writeMicroseconds(gimbal_y, microseconds);
 }
 
+//This function uses the state of M1 on the throttle to enable/disable the PID adjustments
+void pid_enable_cb(const std_msgs::Bool &msg)
+{
+  pid_enable = msg.data;
+}
+
+//This function uses the state of M1 on the throttle to enable/disable the PID adjustments
+void setpoint_cb(const std_msgs::Int16 &msg)
+{
+  roll_setpoint = (double)msg.data;//when leveled, the value for roll is 180 degrees
+}
+
 //set up subscriptions
 //ros::Subscriber<std_msgs::Bool> e_button_sub("e_button_topic", button_e_cb);
 ros::Subscriber<std_msgs::Int16> motor1_sub("motor1_topic", motor1_cb);
@@ -148,9 +169,13 @@ ros::Subscriber<std_msgs::Int16> elbow_sub("arm_motor3_topic", elbow_cb);
 ros::Subscriber<std_msgs::Int16> gimbal_x_sub("gimbal_x_topic", gimbal_x_cb);
 ros::Subscriber<std_msgs::Int16> gimbal_y_sub("gimbal_y_topic", gimbal_y_cb);
 
+ros::Subscriber<std_msgs::Bool> pid_enable_sub("m1_topic", pid_enable_cb);
+ros::Subscriber<std_msgs::Int16> setpoint_sub("setpoint_topic", setpoint_cb);
+
 //set up publishers
 ros::Publisher pixy_pub("pixy_data_topic", &pixy_data);
 ros::Publisher raw_temp_pub("raw_temp_topic", &raw_temp);
+ros::Publisher orientation_pub("orientation_topic", &orientation);
 
 //function for setting up the brushless motors
 void motor_setup(void)
@@ -201,24 +226,36 @@ void process_imu(void)
   //convert to positive angles only 0-360. Roll is ROV lengthwise rotation
   if(roll < 0)
     roll+=360;
-  
-  double roll_diff = abs(roll_setpoint - roll);//calcualte distance from setpoint
-  
-  //this function adjusts the PID tuning parameters. 
-  if(roll_diff < 25)
-    roll_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
-  else
-    roll_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
-  
-  roll_PID.Compute();//calcualte the roll_output
-  
-  //check for minimum amount of motor adjustment
-  if(abs(roll_offset) < 25)//this number may be adjusted as well
-    roll_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
- 
+
   //calculate pitch
   //pitch = atan2(-1*accelerometer_x, sqrt(accelerometer_y * accelerometer_y + accelerometer_z * accelerometer_z));
   //pitch *= 180.0/PI;//convert to degrees
+  orientation.x = roll;  
+  orientation.y = pitch;  
+
+  if(pid_enable)
+  {
+    double roll_diff = abs(roll_setpoint - roll);//calcualte distance from setpoint
+    
+    //this function adjusts the PID tuning parameters. 
+    if(roll_diff < 25)
+      roll_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
+    else
+      roll_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
+    
+    roll_PID.Compute();//calcualte the roll_output
+    
+    //check for minimum amount of motor adjustment
+    if(abs(roll_offset) < 25)//this number may be adjusted as well
+      roll_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
+
+    orientation.z = roll_offset;
+  }
+
+  else
+    roll_offset = 0;
+
+  orientation_pub.publish(&orientation);
   return;
 }
 
