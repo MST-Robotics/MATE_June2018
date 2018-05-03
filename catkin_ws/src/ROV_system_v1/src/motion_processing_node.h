@@ -10,7 +10,8 @@
 #define motion_processing_node_H
 
 #include "constants.h"
-#define MIN_PRECISION_SCALE 0.2
+#define MIN_PRECISION_SCALE 0.25
+#define MAX_PRECISION_SCALE 0.85
 
 float magnitude = 0.0;
 float angle = 0.0;

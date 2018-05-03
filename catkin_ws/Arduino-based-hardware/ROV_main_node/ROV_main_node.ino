@@ -58,6 +58,6 @@ void loop()
 {
   nh.spinOnce();//run ros once
   process_temperature();//update the temperature data 
-  process_imu();//update imu data
+  process_imu();//handle all pid control for the vertical thrusters
   //wing_detection_data();//update image recognition data
 }

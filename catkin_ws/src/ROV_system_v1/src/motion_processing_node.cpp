@@ -144,7 +144,7 @@ void button_pinky_trigger_callback(const std_msgs::Bool &msg)
  */
 void axis_left_thruster_callback(const std_msgs::Float32 &msg)
 {
-  precision = mapf(msg.data, -1.0, 1.0, MIN_PRECISION_SCALE, 1);
+  precision = mapf(msg.data, -1.0, 1.0, MIN_PRECISION_SCALE, MAX_PRECISION_SCALE);
 }
 
 //this funciton maps a range of floats to another range of floats

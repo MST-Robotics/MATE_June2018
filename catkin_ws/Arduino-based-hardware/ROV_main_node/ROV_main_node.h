@@ -1,20 +1,3 @@
-/*
- * Author: Vinnie Marco
- * Email: vgmcn3@mst,edu
- * Date: 4-14-2017
- *
- * Code for basic implementation of rosserial
- *
- * To start the system, run from terminal:
- * Terminal 1:
- *    roscore
- *
- * Terminal 2:
- *    cd ~/MATE_June2018/catkin_ws
- *    source devel/setup.bash
- *    roslaunch ROV_system_v1 rov_system.launch
- */
-
 #ifndef ROV_main_node_H
 #define ROV_main_node_H
 
