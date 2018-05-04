@@ -28,6 +28,10 @@ void setup()
 
   roll_PID.SetOutputLimits(-200, 200);//this range is an offset for motor7's speed
   roll_PID.SetMode(AUTOMATIC);
+
+  pitch_setpoint = 3;
+  pitch_PID.SetOutputLimits(-200, 200);//this range is an offset for motor7's speed
+  pitch_PID.SetMode(AUTOMATIC);
   
   nh.initNode();//initialize the node
 

@@ -19,6 +19,12 @@
 #include <geometry_msgs/Vector3.h>
 
 
+#define PITCH_OFFSET_THRESHOLD 25
+#define ROLL_OFFSET_THRESHOLD 30
+
+#define PITCH_THRESHOLD 30
+#define ROLL_THRESHOLD 35
+
 //use this version of to increase the buffer size 
 //12 subscribers, 5 publishers 1024 bytes per buffer
 ros::NodeHandle_<ArduinoHardware, 15, 5, 1024, 1024> nh;
@@ -50,8 +56,9 @@ Servo back_middle;
 bool pid_enable = 0;
 
 //variables for holding the pitch and roll for the PID
-double roll, pitch;
-double roll_setpoint, roll_offset;
+double roll, roll_setpoint, roll_offset;
+double pitch, pitch_setpoint, pitch_offset;
+
 
 //tuning variables for the PID control
 double aggKp=4, aggKi=0.2, aggKd=1;
@@ -59,15 +66,12 @@ double consKp=4, consKi=0.05, consKd=0.25;
 
 //create PID object
 PID roll_PID(&roll, &roll_offset, &roll_setpoint, consKp, consKi, consKd, DIRECT);
+PID pitch_PID(&pitch, &pitch_offset, &pitch_setpoint, consKp, consKi, consKd, DIRECT);
 
 //These are the callback functions that control the motors
 void motor1_cb(const std_msgs::Int16 &msg)
 {
   front_left.writeMicroseconds(msg.data);
-}
-void motor2_cb(const std_msgs::Int16 &msg)
-{
-  middle_left.writeMicroseconds(msg.data);
 }
 void motor3_cb(const std_msgs::Int16 &msg)
 {
@@ -77,17 +81,50 @@ void motor4_cb(const std_msgs::Int16 &msg)
 {
   front_right.writeMicroseconds(msg.data);
 }
-void motor5_cb(const std_msgs::Int16 &msg)
-{
-  middle_right.writeMicroseconds(msg.data);
-}
 void motor6_cb(const std_msgs::Int16 &msg)
 {
   back_right.writeMicroseconds(msg.data);
 }
+/*
+ * This motor is the left middle motor for controlling roll
+ * It's PID is paired with the middle right motor.
+ * The middle right motor adjusts in the opposite direction of this motor
+ */
+void motor2_cb(const std_msgs::Int16 &msg)
+{
+  //update the motor's speed from contpitcher input, and also correction offset from IMU
+  int motor_speed = msg.data - (int)pitch_offset; 
+  if(motor_speed > 1900)
+    motor_speed = 1900;//motors are at max, cannot correct
+  else if(motor_speed < 1100)
+    motor_speed = 1100;//motors are at min, cannot correct
+  middle_left.writeMicroseconds(motor_speed);
+}
+
+/*
+ * This motor is the middle right motor for controlling roll
+ * It's PID is paired with the middle left motor.
+ * The middle right left adjusts in the opposite direction of this motor
+ */
+void motor5_cb(const std_msgs::Int16 &msg)
+{
+  //update the motor's speed from contpitcher input, and also correction offset from IMU
+  int motor_speed = msg.data + (int)pitch_offset; 
+  if(motor_speed > 1900)
+    motor_speed = 1900;//motors are at max, cannot correct
+  else if(motor_speed < 1100)
+    motor_speed = 1100;//motors are at min, cannot correct
+
+  middle_right.writeMicroseconds(motor_speed);
+}
+
+/*
+ * This motor is the middle back motor for controlling pitch
+ * It's PID runs independly of the other middle two motors 
+ */
 void motor7_cb(const std_msgs::Int16 &msg)
 {
-  //update the motor's speed from controller input, and also correction offset from IMU
+  //update the motor's speed from contpitcher input, and also correction offset from IMU
   int motor_speed = msg.data + (int)roll_offset; 
   if(motor_speed > 1900)
     motor_speed = 1900;//motors are at max, cannot correct
@@ -211,8 +248,8 @@ void process_imu(void)
     roll+=360;
 
   //calculate pitch
-  //pitch = atan2(-1*accelerometer_x, sqrt(accelerometer_y * accelerometer_y + accelerometer_z * accelerometer_z));
-  //pitch *= 180.0/PI;//convert to degrees
+  pitch = atan2(-1*accelerometer_x, sqrt(accelerometer_y * accelerometer_y + accelerometer_z * accelerometer_z));
+  pitch *= 180.0/PI;//convert to degrees
   orientation.x = roll;  
   orientation.y = pitch;  
 
@@ -221,7 +258,7 @@ void process_imu(void)
     double roll_diff = abs(roll_setpoint - roll);//calcualte distance from setpoint
     
     //this function adjusts the PID tuning parameters. 
-    if(roll_diff < 25)
+    if(roll_diff < ROLL_THRESHOLD)
       roll_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
     else
       roll_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
@@ -229,14 +266,32 @@ void process_imu(void)
     roll_PID.Compute();//calcualte the roll_output
     
     //check for minimum amount of motor adjustment
-    if(abs(roll_offset) < 25)//this number may be adjusted as well
+    if(abs(roll_offset) < ROLL_OFFSET_THRESHOLD)//this number may be adjusted as well
       roll_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
 
+    double pitch_diff = abs(pitch_setpoint - pitch);//calcualte distance from setpoint
+    //this function adjusts the PID tuning parameters. 
+    if(pitch_diff < PITCH_THRESHOLD)
+      pitch_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
+    else
+      pitch_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
+    
+    pitch_PID.Compute();//calcualte the pitch_output
+    
+    //check for minimum amount of motor adjustment
+    if(abs(pitch_offset) < PITCH_OFFSET_THRESHOLD)//this number may be adjusted as well
+      pitch_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
+
+
+    
     orientation.z = roll_offset;
   }
 
   else
+  {
     roll_offset = 0;
+    pitch_offset = 0;
+  }
 
   orientation_pub.publish(&orientation);
   return;

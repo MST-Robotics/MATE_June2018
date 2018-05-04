@@ -110,10 +110,7 @@ void calc_motors()
   motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * precision * normalize_400( force_y - force_x - moment );
   motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * precision * normalize_400( force_y + force_x + moment);
   
-
-//fix this stuff when time for pid....
-  motor7_value.data = MOTOR_NEUTRAL;
-  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2));
+  motor2_value.data = motor5_value.data = motor7_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2));
 } 
 
 /* trigger_callback handles data recieved from the trigger_topic subscription
