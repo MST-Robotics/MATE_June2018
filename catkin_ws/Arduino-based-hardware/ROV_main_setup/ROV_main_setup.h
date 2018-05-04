@@ -11,12 +11,8 @@
 
 #include <Arduino.h>
 
-#include <SPI.h>
-#include <Pixy.h>
 #include "LSM9DS1.h"
 #include "PWMcontroller.h"
-
-Pixy pixy;
 
 LSM9DS1 imu;//imu object
 
@@ -43,9 +39,6 @@ bool main_setup(void)
   //external servo controller setup
   pwm_primary.begin();
   pwm_secondary.begin();
-  
-  //intialize pixy camera
-  pixy.init();
 
   return error_flag;
 }

@@ -12,7 +12,7 @@
 #define FORCE_X_MODIFIER 1 /*To Be Determined*/
 #define FORCE_Y_MODIFIER 1 /*To Be Determined*/
 #define MOTOR_NEUTRAL 1500
-#define VERTICAL_SCALE 400
+#define VERTICAL_SCALE 400*.8//80% of max speed
 #define MOTOR_RAMP -400 /*Make sure this is negative*/
 
 /*This is our main function

@@ -26,10 +26,12 @@ void setup()
   main_setup();//contains the declarations and hardware setup
   motor_setup();//sets up the speed controlls and sets the motors to off
 
+  //Roll is robot's rotation width-wise
+  roll_setpoint = 3;
   roll_PID.SetOutputLimits(-200, 200);//this range is an offset for motor7's speed
   roll_PID.SetMode(AUTOMATIC);
 
-  pitch_setpoint = 3;
+  //Pitch is robot's rotation length-wise
   pitch_PID.SetOutputLimits(-200, 200);//this range is an offset for motor7's speed
   pitch_PID.SetMode(AUTOMATIC);
   
@@ -53,7 +55,6 @@ void setup()
   nh.subscribe(gimbal_y_sub);
 
   //set up topic publishers
-  nh.advertise(pixy_pub);
   nh.advertise(raw_temp_pub);
   nh.advertise(orientation_pub);
 }

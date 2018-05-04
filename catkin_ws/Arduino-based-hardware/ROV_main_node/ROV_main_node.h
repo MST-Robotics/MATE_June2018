@@ -18,27 +18,29 @@
 #include <std_msgs/Int16.h> 
 #include <geometry_msgs/Vector3.h>
 
+/*
+ * These constants are the thresholds for switching tuning values for the PID
+ * If the robot is above this angle from setpoint, use more aggressive tuning values
+ */
+#define PITCH_THRESHOLD 35
+#define ROLL_THRESHOLD 35
 
-#define PITCH_OFFSET_THRESHOLD 25
+/*
+ * These constants are the minimum correction value that will be added to the motors
+ * This prevents the motors from twitching or barely moving when very small offsets are generated
+ */
+#define PITCH_OFFSET_THRESHOLD 30
 #define ROLL_OFFSET_THRESHOLD 30
 
-#define PITCH_THRESHOLD 30
-#define ROLL_THRESHOLD 35
+
 
 //use this version of to increase the buffer size 
 //12 subscribers, 5 publishers 1024 bytes per buffer
 ros::NodeHandle_<ArduinoHardware, 15, 5, 1024, 1024> nh;
 
 /*
- * Stores pixy data
- * x=signature y=width z=height
- */
-geometry_msgs::Vector3 pixy_data;
-
-
-/*
  * Stores orientation data
- * x=roll y=pitch z=roll_offset
+ * x=pitch y=roll z=pitch_offset
  */
 geometry_msgs::Vector3 orientation;
 
@@ -93,7 +95,7 @@ void motor6_cb(const std_msgs::Int16 &msg)
 void motor2_cb(const std_msgs::Int16 &msg)
 {
   //update the motor's speed from contpitcher input, and also correction offset from IMU
-  int motor_speed = msg.data - (int)pitch_offset; 
+  int motor_speed = msg.data - (int)roll_offset; 
   if(motor_speed > 1900)
     motor_speed = 1900;//motors are at max, cannot correct
   else if(motor_speed < 1100)
@@ -109,7 +111,7 @@ void motor2_cb(const std_msgs::Int16 &msg)
 void motor5_cb(const std_msgs::Int16 &msg)
 {
   //update the motor's speed from contpitcher input, and also correction offset from IMU
-  int motor_speed = msg.data + (int)pitch_offset; 
+  int motor_speed = msg.data + (int)roll_offset; 
   if(motor_speed > 1900)
     motor_speed = 1900;//motors are at max, cannot correct
   else if(motor_speed < 1100)
@@ -125,7 +127,7 @@ void motor5_cb(const std_msgs::Int16 &msg)
 void motor7_cb(const std_msgs::Int16 &msg)
 {
   //update the motor's speed from contpitcher input, and also correction offset from IMU
-  int motor_speed = msg.data + (int)roll_offset; 
+  int motor_speed = msg.data - (int)pitch_offset; 
   if(motor_speed > 1900)
     motor_speed = 1900;//motors are at max, cannot correct
   else if(motor_speed < 1100)
@@ -169,7 +171,7 @@ void pid_enable_cb(const std_msgs::Bool &msg)
 //This function uses the state of M1 on the throttle to enable/disable the PID adjustments
 void setpoint_cb(const std_msgs::Int16 &msg)
 {
-  roll_setpoint = (double)msg.data;//when leveled, the value for roll is 180 degrees
+  pitch_setpoint = (double)msg.data;//when leveled, the value for roll is 180 degrees
 }
 
 //set up subscriptions
@@ -193,7 +195,6 @@ ros::Subscriber<std_msgs::Bool> pid_enable_sub("m1_topic", pid_enable_cb);
 ros::Subscriber<std_msgs::Int16> setpoint_sub("setpoint_topic", setpoint_cb);
 
 //set up publishers
-ros::Publisher pixy_pub("pixy_data_topic", &pixy_data);
 ros::Publisher raw_temp_pub("raw_temp_topic", &raw_temp);
 ros::Publisher orientation_pub("orientation_topic", &orientation);
 
@@ -239,36 +240,25 @@ void process_imu(void)
   float accelerometer_y = imu.calcAccel(imu.ay);
   float accelerometer_z = imu.calcAccel(imu.az);
 
-  //calculate roll
-  roll = (atan2(accelerometer_y, accelerometer_z));
-  roll *= 180.0/PI;//convert to degrees
-  
-  //convert to positive angles only 0-360. Roll is ROV lengthwise rotation
-  if(roll < 0)
-    roll+=360;
-
   //calculate pitch
-  pitch = atan2(-1*accelerometer_x, sqrt(accelerometer_y * accelerometer_y + accelerometer_z * accelerometer_z));
+  pitch = (atan2(accelerometer_y, accelerometer_z));
   pitch *= 180.0/PI;//convert to degrees
-  orientation.x = roll;  
-  orientation.y = pitch;  
+  
+  //convert to positive angles only 0-360. Pitch is ROV lengthwise rotation
+  if(pitch < 0)
+    pitch+=360;
+
+  //calculate roll
+  roll = atan2(-1*accelerometer_x, sqrt(accelerometer_y * accelerometer_y + accelerometer_z * accelerometer_z));
+  roll *= 180.0/PI;//convert to degrees
+
+
+  orientation.x = pitch;  
+  orientation.y = roll;  
 
   if(pid_enable)
   {
-    double roll_diff = abs(roll_setpoint - roll);//calcualte distance from setpoint
-    
-    //this function adjusts the PID tuning parameters. 
-    if(roll_diff < ROLL_THRESHOLD)
-      roll_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
-    else
-      roll_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
-    
-    roll_PID.Compute();//calcualte the roll_output
-    
-    //check for minimum amount of motor adjustment
-    if(abs(roll_offset) < ROLL_OFFSET_THRESHOLD)//this number may be adjusted as well
-      roll_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
-
+    //Calculate PID for pitch
     double pitch_diff = abs(pitch_setpoint - pitch);//calcualte distance from setpoint
     //this function adjusts the PID tuning parameters. 
     if(pitch_diff < PITCH_THRESHOLD)
@@ -283,8 +273,21 @@ void process_imu(void)
       pitch_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
 
 
+    //calcualte PID for roll
+    double roll_diff = abs(roll_setpoint - roll);//calcualte distance from setpoint
+    //this function adjusts the PID tuning parameters. 
+    if(roll_diff < ROLL_THRESHOLD)
+      roll_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
+    else
+      roll_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
     
-    orientation.z = roll_offset;
+    roll_PID.Compute();//calcualte the roll_output
+    
+    //check for minimum amount of motor adjustment
+    if(abs(roll_offset) < ROLL_OFFSET_THRESHOLD)//this number may be adjusted as well
+      roll_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
+    
+    orientation.z = pitch_offset;
   }
 
   else
@@ -294,37 +297,6 @@ void process_imu(void)
   }
 
   orientation_pub.publish(&orientation);
-  return;
-}
-
-//function for reading the pixy camera and publishing its data 
-void wing_detection_data()
-{
-  static int frame = 0;
-  int j;
-  uint16_t blocks;
-  char buf[32];
-
-  // grab blocks
-  blocks = pixy.getBlocks();
-
-  if (blocks)
-  {
-    frame++;
-
-    // run every 50 frames
-    if (frame%50==0)
-    {
-      for (j=0; j<blocks; j++)
-      {
-        pixy_data.x = pixy.blocks[j].signature;
-        pixy_data.y = pixy.blocks[j].width;
-        pixy_data.z = pixy.blocks[j].height;
-        pixy_pub.publish(&pixy_data);//publish each frame
-      }
-    }
-  }
-
   return;
 }
 
