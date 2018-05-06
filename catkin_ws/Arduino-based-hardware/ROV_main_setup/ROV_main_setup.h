@@ -28,6 +28,8 @@ bool main_setup(void)
   analogReference(EXTERNAL);
   bool error_flag = 0;
 
+  Serial2.begin(9600);//set up the hardware uart2 for communication with manipulator arduino.
+
   //IMU setup
   imu.settings.device.commInterface = IMU_MODE_I2C;
   imu.settings.device.mAddress = LSM9DS1_M;

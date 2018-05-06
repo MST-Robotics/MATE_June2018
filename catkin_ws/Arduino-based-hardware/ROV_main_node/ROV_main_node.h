@@ -61,10 +61,13 @@ bool pid_enable = 0;
 double roll, roll_setpoint, roll_offset;
 double pitch, pitch_setpoint, pitch_offset;
 
-
 //tuning variables for the PID control
 double aggKp=4, aggKi=0.2, aggKd=1;
 double consKp=4, consKi=0.05, consKd=0.25;
+
+//this array stores the manipulator motor values
+//elbow, wirst, claw
+char manipulator_data[5] = {'M', 0, 0, 0, '\n');
 
 //create PID object
 PID roll_PID(&roll, &roll_offset, &roll_setpoint, consKp, consKi, consKd, DIRECT);
@@ -136,18 +139,19 @@ void motor7_cb(const std_msgs::Int16 &msg)
   back_middle.writeMicroseconds(motor_speed);
 }
 
-//Callback functions for the arm servos
+//Callback function for the manipulator joints
+//These functions poopulate an array of data that is sent via Serial2 to another arduino
+void elbow_cb(const std_msgs::Int16 &msg)
+{
+  manipulator_data[1] = msg.data;//second index gets elbow value
+}
 void wrist_cb(const std_msgs::Int16 &msg)
 {
-  pwm_secondary.writeMicroseconds(elbow_servo, msg.data);
+  manipulator_data[2] = msg.data;//thrid index gets wirst value
 }
 void claw_cb(const std_msgs::Int16 &msg)
 {
-  pwm_secondary.writeMicroseconds(claw_servo, msg.data);
-}
-void elbow_cb(const std_msgs::Int16 &msg)
-{
-  pwm_secondary.writeMicroseconds(elbow_servo, msg.data);
+  manipulator_data[3] = msg.data;//fourth index gets claw value
 }
 
 void gimbal_x_cb(const std_msgs::Int16 &msg)
@@ -221,13 +225,15 @@ void motor_setup(void)
   return;
 }
 
-//function for reading and calculating the temperature
-void process_temperature(void)
+/*
+ * This function sends the packaged manipulator data ocne per loop
+ * In this order: 'M' elbow_value wrist_value claw_value '\n'
+ */
+void send_manipulator_data(void)
 {
-  raw_temp.data = analogRead(temp_pin);//read the temperature sensor
- 
-  raw_temp_pub.publish(&raw_temp);//publish the temperature data
-  return;
+  for(int i = 0; i < 5; i++)
+    Serial2.write(manipulator_data[i];
+ return;  
 }
 
 //function for reading and packaging and publishing the IMU data
@@ -299,5 +305,16 @@ void process_imu(void)
   orientation_pub.publish(&orientation);
   return;
 }
+
+//function for reading and calculating the temperature
+void process_temperature(void)
+{
+  raw_temp.data = analogRead(temp_pin);//read the temperature sensor
+ 
+  raw_temp_pub.publish(&raw_temp);//publish the temperature data
+  return;
+}
+
+
 
 #endif
