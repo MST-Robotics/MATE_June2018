@@ -41,9 +41,9 @@
 #define movement_speed 1
 
 //messages for manipulator joints
-std_msgs::Int16 wrist_value;
-std_msgs::Int16 claw_value;
-std_msgs::Int16 elbow_value;
+std_msgs::UInt8 wrist_value;
+std_msgs::UInt8 claw_value;
+std_msgs::UInt8 elbow_value;
 
 //messages for gimbal joints
 std_msgs::Int16 gimbal_x_value;

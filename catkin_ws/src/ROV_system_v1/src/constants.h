@@ -20,6 +20,7 @@
 #include <std_msgs/Int16.h>
 #include <geometry_msgs/Vector3.h>
 #include <std_msgs/String.h>
+#include <std_msgs/UInt8.h>
 
 #include <math.h>
 

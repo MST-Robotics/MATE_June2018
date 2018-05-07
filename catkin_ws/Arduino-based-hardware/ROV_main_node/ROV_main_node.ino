@@ -21,6 +21,7 @@
 #include "ROV_main_node.h"
 
 //Arduino setup
+unsigned long  prev_millis = 0;
 void setup()
 {
   main_setup();//contains the declarations and hardware setup
@@ -64,5 +65,10 @@ void loop()
   nh.spinOnce();//run ros once
   process_temperature();//update the temperature data 
   process_imu();//handle all pid control for the vertical thrusters
-  send_manipulator_data();
+  
+  if(millis() - prev_millis >= 50)
+  {
+    send_manipulator_data();
+    prev_millis = millis();
+  }
 }

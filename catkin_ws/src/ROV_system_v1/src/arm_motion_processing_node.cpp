@@ -35,9 +35,9 @@ int main(int argc, char **argv)
   ros::Subscriber gimbal_xpos_topic = n.subscribe("gimbal_xpos_topic", 1000, gimbal_x_cb);
   ros::Subscriber gimbal_ypos_topic = n.subscribe("gimbal_ypos_topic", 1000, gimbal_y_cb);
 
-  ros::Publisher wrist_pub = n.advertise<std_msgs::Int16>("wrist_topic", 1000);
-  ros::Publisher claw_pub = n.advertise<std_msgs::Int16>("claw_topic", 1000);
-  ros::Publisher elbow_pub = n.advertise<std_msgs::Int16>("elbow_topic", 1000);
+  ros::Publisher wrist_pub = n.advertise<std_msgs::UInt8>("wrist_topic", 1000);
+  ros::Publisher claw_pub = n.advertise<std_msgs::UInt8>("claw_topic", 1000);
+  ros::Publisher elbow_pub = n.advertise<std_msgs::UInt8>("elbow_topic", 1000);
 
   ros::Publisher gimbal_x_pub = n.advertise<std_msgs::Int16>("gimbal_x_topic", 1000);
   ros::Publisher gimbal_y_pub = n.advertise<std_msgs::Int16>("gimbal_y_topic", 1000);

@@ -16,7 +16,7 @@
 
 LSM9DS1 imu;//imu object
 
-PWMcontroller pwm_primary = PWMcontroller(0x40);//pwm controller object
+PWMcontroller pwm_primary = PWMcontroller(0x7f);//pwm controller object
 PWMcontroller pwm_secondary = PWMcontroller(0x41);
 
 

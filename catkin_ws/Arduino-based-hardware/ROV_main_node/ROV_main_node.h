@@ -16,6 +16,7 @@
 #include <std_msgs/Float32.h>
 #include <std_msgs/Float64.h>
 #include <std_msgs/Int16.h> 
+#include <std_msgs/UInt8.h>
 #include <geometry_msgs/Vector3.h>
 
 /*
@@ -67,7 +68,7 @@ double consKp=4, consKi=0.05, consKd=0.25;
 
 //this array stores the manipulator motor values
 //elbow, wirst, claw
-char manipulator_data[5] = {'M', 0, 0, 0, '\n');
+uint8_t manipulator_data[3] = {0, 0, 0};
 
 //create PID object
 PID roll_PID(&roll, &roll_offset, &roll_setpoint, consKp, consKi, consKd, DIRECT);
@@ -141,17 +142,17 @@ void motor7_cb(const std_msgs::Int16 &msg)
 
 //Callback function for the manipulator joints
 //These functions poopulate an array of data that is sent via Serial2 to another arduino
-void elbow_cb(const std_msgs::Int16 &msg)
+void elbow_cb(const std_msgs::UInt8 &msg)
 {
-  manipulator_data[1] = msg.data;//second index gets elbow value
+  manipulator_data[0] = msg.data;//second index gets elbow value
 }
-void wrist_cb(const std_msgs::Int16 &msg)
+void wrist_cb(const std_msgs::UInt8 &msg)
 {
-  manipulator_data[2] = msg.data;//thrid index gets wirst value
+  manipulator_data[1] = msg.data;//thrid index gets wirst value
 }
-void claw_cb(const std_msgs::Int16 &msg)
+void claw_cb(const std_msgs::UInt8 &msg)
 {
-  manipulator_data[3] = msg.data;//fourth index gets claw value
+  manipulator_data[2] = msg.data;//fourth index gets claw value
 }
 
 void gimbal_x_cb(const std_msgs::Int16 &msg)
@@ -188,9 +189,9 @@ ros::Subscriber<std_msgs::Int16> motor5_sub("motor5_topic", motor5_cb);
 ros::Subscriber<std_msgs::Int16> motor6_sub("motor6_topic", motor6_cb);
 ros::Subscriber<std_msgs::Int16> motor7_sub("motor7_topic", motor7_cb);
 
-ros::Subscriber<std_msgs::Int16> wrist_sub("arm_motor1_topic", wrist_cb);
-ros::Subscriber<std_msgs::Int16> claw_sub("arm_motor2_topic", claw_cb);
-ros::Subscriber<std_msgs::Int16> elbow_sub("arm_motor3_topic", elbow_cb);
+ros::Subscriber<std_msgs::UInt8> wrist_sub("wrist_topic", wrist_cb);
+ros::Subscriber<std_msgs::UInt8> claw_sub("claw_topic", claw_cb);
+ros::Subscriber<std_msgs::UInt8> elbow_sub("elbow_topic", elbow_cb);
 
 ros::Subscriber<std_msgs::Int16> gimbal_x_sub("gimbal_x_topic", gimbal_x_cb);
 ros::Subscriber<std_msgs::Int16> gimbal_y_sub("gimbal_y_topic", gimbal_y_cb);
@@ -231,8 +232,10 @@ void motor_setup(void)
  */
 void send_manipulator_data(void)
 {
-  for(int i = 0; i < 5; i++)
-    Serial2.write(manipulator_data[i];
+  Serial2.print('M');
+  for(int i = 0; i < 3; i++)
+    Serial2.print(manipulator_data[i]);
+  Serial.println();  
  return;  
 }
 

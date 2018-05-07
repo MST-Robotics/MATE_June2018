@@ -65,6 +65,7 @@ ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/src/arm_motion_processin
 ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/src/arm_motion_processing_node.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/src/arm_motion_processing_node.cpp.o: /opt/ros/kinetic/include/std_msgs/Int16.h
 ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/src/arm_motion_processing_node.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
+ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/src/arm_motion_processing_node.cpp.o: /opt/ros/kinetic/include/std_msgs/UInt8.h
 ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/src/arm_motion_processing_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/src/arm_motion_processing_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 
