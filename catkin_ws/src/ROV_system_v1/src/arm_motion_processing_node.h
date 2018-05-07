@@ -49,6 +49,10 @@ std_msgs::UInt8 elbow_value;
 std_msgs::Int16 gimbal_x_value;
 std_msgs::Int16 gimbal_y_value;
 
+//message for leveler controls
+//use tgl 1 and rty3 for this
+std_msgs::UInt8 leveler_value;
+
 //Gimbal control
 void gimbal_home_cb(const std_msgs::Bool &msg);
 void gimbal_x_cb(const std_msgs::Int16 &msg);

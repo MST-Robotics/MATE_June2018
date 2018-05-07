@@ -20,8 +20,6 @@ int main(int argc, char **argv)
   //necessary ros things
   ros::init(argc, argv,"arm_motion_processing");
   ros::NodeHandle n;
- 
-  //ros::Subscriber button_A_topic = n.subscribe("button_A_topic", 1000, button_A_callback);
 
   ros::Subscriber sw1_topic = n.subscribe("sw1_topic", 1000, sw1_callback);
   ros::Subscriber sw2_topic = n.subscribe("sw2_topic", 1000, sw2_callback);
@@ -29,7 +27,6 @@ int main(int argc, char **argv)
   ros::Subscriber sw4_topic = n.subscribe("sw4_topic", 1000, sw4_callback);
   ros::Subscriber sw5_topic = n.subscribe("sw5_topic", 1000, sw5_callback);
   ros::Subscriber sw6_topic = n.subscribe("sw6_topic", 1000, sw6_callback);
-
 
   ros::Subscriber gimbal_home_topic = n.subscribe("button_a_topic", 1000, gimbal_home_cb);
   ros::Subscriber gimbal_xpos_topic = n.subscribe("gimbal_xpos_topic", 1000, gimbal_x_cb);

@@ -87,7 +87,7 @@ void angle_callback(const std_msgs::Float32 &msg)
  */
 void twist_callback(const std_msgs::Float32 &msg)
 {
-  moment = precision * msg.data; //Neutral: moment = 0 = msg.data;
+  moment = msg.data; //Neutral: moment = 0 = msg.data;
 }
 
 //This exists.
@@ -110,7 +110,9 @@ void calc_motors()
   motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * precision * normalize_400( force_y - force_x - moment );
   motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * precision * normalize_400( force_y + force_x + moment);
   
-  motor2_value.data = motor5_value.data = motor7_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * ((vertical&1) - (vertical&2));
+  motor7_value.data = 1500;
+
+  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + (VERTICAL_SCALE * precision * ((vertical&1) - (vertical&2)));
 } 
 
 /* trigger_callback handles data recieved from the trigger_topic subscription

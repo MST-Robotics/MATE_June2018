@@ -70,6 +70,10 @@ double consKp=4, consKi=0.05, consKd=0.25;
 //elbow, wirst, claw
 uint8_t manipulator_data[3] = {0, 0, 0};
 
+
+//initialize this value to off
+uint8_t leveler_data = 127;
+
 //create PID object
 PID roll_PID(&roll, &roll_offset, &roll_setpoint, consKp, consKi, consKd, DIRECT);
 PID pitch_PID(&pitch, &pitch_offset, &pitch_setpoint, consKp, consKi, consKd, DIRECT);
@@ -179,6 +183,11 @@ void setpoint_cb(const std_msgs::Int16 &msg)
   pitch_setpoint = (double)msg.data;//when leveled, the value for roll is 180 degrees
 }
 
+void leveler_cb(const std_msgs::UInt8 &msg)
+{
+  leveler_data = msg.data;
+}
+
 //set up subscriptions
 //ros::Subscriber<std_msgs::Bool> e_button_sub("e_button_topic", button_e_cb);
 ros::Subscriber<std_msgs::Int16> motor1_sub("motor1_topic", motor1_cb);
@@ -198,6 +207,7 @@ ros::Subscriber<std_msgs::Int16> gimbal_y_sub("gimbal_y_topic", gimbal_y_cb);
 
 ros::Subscriber<std_msgs::Bool> pid_enable_sub("m1_topic", pid_enable_cb);
 ros::Subscriber<std_msgs::Int16> setpoint_sub("setpoint_topic", setpoint_cb);
+ros::Subscriber<std_msgs::UInt8> leveler_sub("leveler_topic", leveler_cb);
 
 //set up publishers
 ros::Publisher raw_temp_pub("raw_temp_topic", &raw_temp);
@@ -230,13 +240,23 @@ void motor_setup(void)
  * This function sends the packaged manipulator data ocne per loop
  * In this order: 'M' elbow_value wrist_value claw_value '\n'
  */
+void send_leveler_data(void)
+{
+  Serial2.print('L');
+  Serial2.print(leveler_data);
+ return;  
+}
+
+/*
+ * This function sends the packaged manipulator data ocne per loop
+ * In this order: 'M' elbow_value wrist_value claw_value '\n'
+ */
 void send_manipulator_data(void)
 {
   Serial2.print('M');
   for(int i = 0; i < 3; i++)
     Serial2.print(manipulator_data[i]);
-  Serial.println();  
- return;  
+  return;  
 }
 
 //function for reading and packaging and publishing the IMU data
