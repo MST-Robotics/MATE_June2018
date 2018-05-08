@@ -87,7 +87,7 @@ void angle_callback(const std_msgs::Float32 &msg)
  */
 void twist_callback(const std_msgs::Float32 &msg)
 {
-  moment = msg.data; //Neutral: moment = 0 = msg.data;
+  moment = msg.data*TWIST_SCALE*precision; //Neutral: moment = 0 = msg.data;
 }
 
 //This exists.

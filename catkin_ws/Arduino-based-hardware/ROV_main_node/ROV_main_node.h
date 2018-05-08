@@ -23,15 +23,15 @@
  * These constants are the thresholds for switching tuning values for the PID
  * If the robot is above this angle from setpoint, use more aggressive tuning values
  */
-#define PITCH_THRESHOLD 35
-#define ROLL_THRESHOLD 35
+#define PITCH_THRESHOLD 1
+#define ROLL_THRESHOLD 1
 
 /*
  * These constants are the minimum correction value that will be added to the motors
  * This prevents the motors from twitching or barely moving when very small offsets are generated
  */
-#define PITCH_OFFSET_THRESHOLD 30
-#define ROLL_OFFSET_THRESHOLD 30
+#define PITCH_OFFSET_THRESHOLD 1
+#define ROLL_OFFSET_THRESHOLD 1
 
 //use this version of to increase the buffer size 
 //12 subscribers, 5 publishers 1024 bytes per buffer
@@ -45,7 +45,7 @@ geometry_msgs::Vector3 orientation;
 
 //Stores raw adc value for temp sensor
 std_msgs::Float32 raw_temp;
-
+ 
 Servo front_right;
 Servo front_left;
 Servo back_right;
@@ -54,19 +54,19 @@ Servo middle_left;
 Servo middle_right;
 Servo back_middle;
 
-bool pid_enable = 0;
+bool pid_enable = 1;
 
 //variables for holding the pitch and roll for the PID
 double roll, roll_setpoint, roll_offset;
 double pitch, pitch_setpoint, pitch_offset;
 
 //tuning variables for the PID control
+double consKp=1, consKi=0.1, consKd=.25;
 double aggKp=4, aggKi=0.2, aggKd=1;
-double consKp=4, consKi=0.05, consKd=0.25;
 
 //this array stores the manipulator motor values
 //elbow, wirst, claw
-uint8_t manipulator_data[3] = {0, 0, 0};
+uint8_t manipulator_data[4] = {0, 0, 0, 128};
 
 
 //initialize this value to off
@@ -146,15 +146,15 @@ void motor7_cb(const std_msgs::Int16 &msg)
 //These functions poopulate an array of data that is sent via Serial2 to another arduino
 void elbow_cb(const std_msgs::UInt8 &msg)
 {
-  manipulator_data[0] = msg.data;//second index gets elbow value
+  manipulator_data[1] = msg.data;//second index gets elbow value
 }
 void wrist_cb(const std_msgs::UInt8 &msg)
 {
-  manipulator_data[1] = msg.data;//thrid index gets wirst value
+  manipulator_data[2] = msg.data;//thrid index gets wirst value
 }
 void claw_cb(const std_msgs::UInt8 &msg)
 {
-  manipulator_data[2] = msg.data;//fourth index gets claw value
+  manipulator_data[0] = msg.data;//fourth index gets claw value
 }
 
 void gimbal_x_cb(const std_msgs::Int16 &msg)
@@ -183,7 +183,7 @@ void setpoint_cb(const std_msgs::Int16 &msg)
 
 void leveler_cb(const std_msgs::UInt8 &msg)
 {
-  leveler_data = msg.data;
+  manipulator_data[3] = msg.data;
 }
 
 //set up subscriptions
@@ -236,12 +236,11 @@ void motor_setup(void)
 
 /*
  * This function sends the packaged manipulator data ocne per loop
- * In this order: 'M' elbow_value wrist_value claw_value '\n'
+ * In this order: 'L' Data
  */
 void send_leveler_data(void)
 {
-  Serial2.print('L');
-  Serial2.print(leveler_data);
+  Serial2.print('L'+String(leveler_data)+'\n');
  return;  
 }
 
@@ -252,8 +251,13 @@ void send_leveler_data(void)
 void send_manipulator_data(void)
 {
   Serial2.print('M');
-  for(int i = 0; i < 3; i++)
+  for(int i = 0; i < 4; i++)
+  {
     Serial2.print(manipulator_data[i]);
+    Serial2.print(',');
+  }
+  Serial2.println();   
+  
   return;  
 }
 
@@ -288,9 +292,9 @@ void process_imu(void)
     //Calculate PID for pitch
     double pitch_diff = abs(pitch_setpoint - pitch);//calcualte distance from setpoint
     //this function adjusts the PID tuning parameters. 
-    if(pitch_diff < PITCH_THRESHOLD)
-      pitch_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
-    else
+    //if(pitch_diff < PITCH_THRESHOLD)
+      //pitch_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
+    //else
       pitch_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
     
     pitch_PID.Compute();//calcualte the pitch_output
@@ -303,9 +307,9 @@ void process_imu(void)
     //calcualte PID for roll
     double roll_diff = abs(roll_setpoint - roll);//calcualte distance from setpoint
     //this function adjusts the PID tuning parameters. 
-    if(roll_diff < ROLL_THRESHOLD)
-      roll_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
-    else
+    //if(roll_diff < ROLL_THRESHOLD)
+      //roll_PID.SetTunings(consKp, consKi, consKd);//if close to setpoint, motor will ramp slower
+    //else
       roll_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
     
     roll_PID.Compute();//calcualte the roll_output

@@ -83,7 +83,7 @@ void thruster_callback(const sensor_msgs::Joy &joy)
 
 
   //the setpoint for the PID is determined here by rty4
-  setpoint_value.data = (int)mapf(joy.axes[axis_base_rotary_4], -1.0, 1.0, 200.0, 160.0);
+  setpoint_value.data = (int)mapf(joy.axes[axis_base_rotary_4], -1.0, 1.0, 210.0, 150.0);
 
   
   if(joy.buttons[button_tgl1_up] == 1)

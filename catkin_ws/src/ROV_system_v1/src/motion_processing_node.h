@@ -12,6 +12,7 @@
 #include "constants.h"
 #define MIN_PRECISION_SCALE 0.25
 #define MAX_PRECISION_SCALE 0.85
+#define TWIST_SCALE 1.0
 
 float magnitude = 0.0;
 float angle = 0.0;

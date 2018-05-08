@@ -13,19 +13,19 @@
 #include "constants.h"
 
 //Wrist bounds
-#define WRIST_HOME 90
-#define WRIST_MIN 0
-#define WRIST_MAX 180
+#define WRIST_HOME 96
+#define WRIST_MIN 20
+#define WRIST_MAX 160
 
 //Elbow bounds
-#define ELBOW_HOME 90
-#define ELBOW_MIN 0
-#define ELBOW_MAX 180
+#define ELBOW_HOME 154
+#define ELBOW_MIN 20
+#define ELBOW_MAX 160
 
 //Claw bounds
-#define CLAW_HOME 90
-#define CLAW_MIN 0
-#define CLAW_MAX 180
+#define CLAW_HOME 158
+#define CLAW_MIN 20
+#define CLAW_MAX 160
 
 //Gimbal X bounds
 #define GIMBAL_X_HOME 87
@@ -40,6 +40,7 @@
 #define GIMBAL_MOVEMENT_SPEED 1
 #define movement_speed 1
 
+#define LEVELER_SPEED 127
 //messages for manipulator joints
 std_msgs::UInt8 wrist_value;
 std_msgs::UInt8 claw_value;

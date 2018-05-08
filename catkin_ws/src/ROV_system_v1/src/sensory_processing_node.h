@@ -12,19 +12,9 @@
 #include "constants.h"
 
 /*
- * Stores pixy data
- * x=color y=width z=height
- */
-std_msgs::String plane_type;
-
-/*
  * Stores temperature data
  */
 std_msgs::Float32 temp_F;
-
-
-//
-void pixy_cb(const geometry_msgs::Vector3 &msg);
 
 //
 void raw_temp_cb(const std_msgs::Float32 &msg);

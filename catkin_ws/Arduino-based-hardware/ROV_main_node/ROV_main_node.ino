@@ -28,7 +28,7 @@ void setup()
   motor_setup();//sets up the speed controlls and sets the motors to off
 
   //Roll is robot's rotation width-wise
-  roll_setpoint = 3;
+  roll_setpoint = 1;
   roll_PID.SetOutputLimits(-200, 200);//this range is an offset for motor7's speed
   roll_PID.SetMode(AUTOMATIC);
 
@@ -54,6 +54,8 @@ void setup()
   nh.subscribe(elbow_sub);
   nh.subscribe(gimbal_x_sub);
   nh.subscribe(gimbal_y_sub);
+  nh.subscribe(leveler_sub);
+
 
   //set up topic publishers
   nh.advertise(raw_temp_pub);
@@ -66,9 +68,10 @@ void loop()
   process_temperature();//update the temperature data 
   process_imu();//handle all pid control for the vertical thrusters
   
-  if(millis() - prev_millis >= 50)
+  if(millis() - prev_millis >= 10)
   {
     send_manipulator_data();
+    //send_leveler_data();
     prev_millis = millis();
   }
 }
