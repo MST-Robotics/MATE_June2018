@@ -50,7 +50,6 @@ std_msgs::Int16 gimbal_x_value;
 std_msgs::Int16 gimbal_y_value;
 
 //message for leveler controls
-//use tgl 1 and rty3 for this
 std_msgs::UInt8 leveler_value;
 
 //Gimbal control
@@ -69,5 +68,7 @@ void sw4_callback(const std_msgs::Bool &msg);//decrement
 //Claw control
 void sw5_callback(const std_msgs::Bool &msg);//increment
 void sw6_callback(const std_msgs::Bool &msg);//decrement
+
+void tgl1_callback(const std_msgs::Int16 &msg);//used for controlling the leveler
 
 #endif

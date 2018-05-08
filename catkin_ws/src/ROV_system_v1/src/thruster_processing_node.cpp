@@ -34,6 +34,8 @@ int main(int argc, char **argv)
 
   ros::Publisher axis_left_thruster_pub = n.advertise<std_msgs::Float32>("axis_left_thruster_topic", 1000);
   ros::Publisher setpoint_pub = n.advertise<std_msgs::Int16>("setpoint_topic", 100);
+  
+  ros::Publisher tgl1_pub = n.advertise<std_msgs::Int16>("tgl1_topic", 1000);
 
   ros::Rate loop_wait(30);//this is needed
   
@@ -51,6 +53,8 @@ int main(int argc, char **argv)
     m1_pub.publish(button_m1_state);
 
     axis_left_thruster_pub.publish(axis_left_thruster_value);
+	
+	tgl1_pub.publish(button_tgl1_value);
  
     ros::spinOnce();
 
@@ -81,6 +85,21 @@ void thruster_callback(const sensor_msgs::Joy &joy)
   //the setpoint for the PID is determined here by rty4
   setpoint_value.data = (int)mapf(joy.axes[axis_base_rotary_4], -1.0, 1.0, 200.0, 160.0);
 
+  
+  if(joy.buttons[button_tgl1_up] == 1)
+  {
+    button_tgl1_value.data = 1;
+  }
+
+  else if(joy.buttons[button_tgl1_down] == 1)
+  {
+    button_tgl1_value.data = -1;
+  }
+
+  else
+  {
+    button_tgl1_value.data = 0;
+  }
 /* 
   Done
   //buttons are stored in joy.buttons[]

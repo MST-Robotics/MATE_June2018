@@ -26,6 +26,8 @@ std_msgs::Bool button_sw6_state; // claw opens
 
 std_msgs::Bool button_m1_state;//used for enabling/disabling PID adjustments
 
+std_msgs::Int16 button_tgl_value;//used for controlling the leveler
+
 std_msgs::Float32 axis_left_thruster_value;//used a precision scaler for the motor speeds
 std_msgs::Int16 setpoint_value;//used to store the setpoint
 

@@ -33,8 +33,6 @@
 #define PITCH_OFFSET_THRESHOLD 30
 #define ROLL_OFFSET_THRESHOLD 30
 
-
-
 //use this version of to increase the buffer size 
 //12 subscribers, 5 publishers 1024 bytes per buffer
 ros::NodeHandle_<ArduinoHardware, 15, 5, 1024, 1024> nh;

@@ -32,12 +32,5 @@
 // http://www.ngdc.noaa.gov/geomag-web/#declination
 #define DECLINATION 0.116667 // in Rolla, MO
 
-//Pixy camera variables
-#define red 1
-#define blue 2
-#define yellow 3
-#define tolerance 1 //add a tolerance for the ratio of the object to counteract camera inaccuracy
-#define rectangle_ratio 6.666 //predetermined ratios of shapes on the wings
-#define triangle_ratio 1.666
 
 #endif

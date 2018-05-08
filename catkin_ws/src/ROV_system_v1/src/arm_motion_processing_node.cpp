@@ -31,6 +31,8 @@ int main(int argc, char **argv)
   ros::Subscriber gimbal_home_topic = n.subscribe("button_a_topic", 1000, gimbal_home_cb);
   ros::Subscriber gimbal_xpos_topic = n.subscribe("gimbal_xpos_topic", 1000, gimbal_x_cb);
   ros::Subscriber gimbal_ypos_topic = n.subscribe("gimbal_ypos_topic", 1000, gimbal_y_cb);
+  
+  ros::Subscriber tgl1_topic = n.subscribe("tgl1_topic", 1000, tg1l_callback);
 
   ros::Publisher wrist_pub = n.advertise<std_msgs::UInt8>("wrist_topic", 1000);
   ros::Publisher claw_pub = n.advertise<std_msgs::UInt8>("claw_topic", 1000);
@@ -38,6 +40,8 @@ int main(int argc, char **argv)
 
   ros::Publisher gimbal_x_pub = n.advertise<std_msgs::Int16>("gimbal_x_topic", 1000);
   ros::Publisher gimbal_y_pub = n.advertise<std_msgs::Int16>("gimbal_y_topic", 1000);
+  ros::Publisher leveler_pub = n.advertise<std_msgs::Int16>("levler_topic", 1000);
+ 
 
   ros::Rate loop_wait(20);//this is needed
   
@@ -50,12 +54,25 @@ int main(int argc, char **argv)
 
     gimbal_x_pub.publish(gimbal_x_value);
     gimbal_y_pub.publish(gimbal_y_value);
+	leveler_pub.publish(leveler_value);
+	
 
     ros::spinOnce();
     loop_wait.sleep();//wait some
   }
   return 0;
 }
+
+void tgl1_callback(const std_msgs::Int16 &msg)
+{
+  // 128 = off
+  // 0 = max fwd
+  // 255 = max rev
+   
+  //this calcualtes the value for the leveler to the above control values   
+  leveler_value.data = 128 + (msg.data * 127);
+}
+
 
 void gimbal_home_cb(const std_msgs::Bool &msg)
 {
