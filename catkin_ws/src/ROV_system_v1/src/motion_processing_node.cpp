@@ -34,7 +34,8 @@ int main(int argc, char **argv)
 
   //second argument is 100 instead of 1000 to prevent sync issues with topics the main board subrscribes to
   ros::Subscriber axis_left_thruster_topic = n.subscribe("axis_left_thruster_topic", 100, axis_left_thruster_callback);
-
+  ros::Subscriber axis_right_thruster_topic = n.subscribe("axis_right_thruster_topic", 100, axis_right_thruster_callback);
+  
   ros::Publisher motor1_pub = n.advertise<std_msgs::Int16>("motor1_topic", 100);
   ros::Publisher motor2_pub = n.advertise<std_msgs::Int16>("motor2_topic", 100);
   ros::Publisher motor3_pub = n.advertise<std_msgs::Int16>("motor3_topic", 100);
@@ -87,7 +88,7 @@ void angle_callback(const std_msgs::Float32 &msg)
  */
 void twist_callback(const std_msgs::Float32 &msg)
 {
-  moment = msg.data*TWIST_SCALE*precision; //Neutral: moment = 0 = msg.data;
+  moment = msg.data * vertical_precision; //Neutral: moment = 0 = msg.data;
 }
 
 //This exists.
@@ -105,14 +106,13 @@ void calc_motors()
   float force_x = FORCE_X_MODIFIER * magnitude * cos(angle * M_PI / 180);
   float force_y = FORCE_Y_MODIFIER * magnitude * sin(angle * M_PI / 180);
   
-  motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * precision * normalize_400(-force_y + force_x - moment);
-  motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * precision * normalize_400( -force_y - force_x + moment);
-  motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * precision * normalize_400( force_y - force_x - moment );
-  motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * precision * normalize_400( force_y + force_x + moment);
+  motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(-force_y + force_x - moment);
+  motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(-force_y - force_x + moment);
+  motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(force_y - force_x - moment);
+  motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * horizontal_precision * normalize_400(force_y + force_x + moment);
   
   motor7_value.data = 1500;
-
-  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + (VERTICAL_SCALE * precision * ((vertical&1) - (vertical&2)));
+  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + (VERTICAL_SCALE * vertical_precision * ((vertical&1) - (vertical&2)));
 } 
 
 /* trigger_callback handles data recieved from the trigger_topic subscription
@@ -143,7 +143,12 @@ void button_pinky_trigger_callback(const std_msgs::Bool &msg)
  */
 void axis_left_thruster_callback(const std_msgs::Float32 &msg)
 {
-  precision = mapf(msg.data, -1.0, 1.0, MIN_PRECISION_SCALE, MAX_PRECISION_SCALE);
+  horizontal_precision = mapf(msg.data, -1.0, 1.0, MIN_PRECISION_SCALE, MAX_PRECISION_SCALE);
+}
+
+void axis_right_thruster_callback(const std_msgs::Float32 &msg)
+{
+  vertical_precision = mapf(msg.data, -1.0, 1.0, MIN_PRECISION_SCALE, MAX_PRECISION_SCALE);
 }
 
 //this funciton maps a range of floats to another range of floats

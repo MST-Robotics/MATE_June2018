@@ -12,13 +12,15 @@
 #include "constants.h"
 #define MIN_PRECISION_SCALE 0.25
 #define MAX_PRECISION_SCALE 0.85
-#define TWIST_SCALE 1.0
 
 float magnitude = 0.0;
 float angle = 0.0;
 float moment = 0.0;
 char vertical = 0;
-float precision = 1.0;
+
+//these are globals to multiply the motor vaues based on throttle values
+float horizontal_precision = 1.0;
+float vertical_precision = 1.0;
 
 std_msgs::Int16 motor1_value;
 std_msgs::Int16 motor2_value;
