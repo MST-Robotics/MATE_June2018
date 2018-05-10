@@ -45,7 +45,7 @@ int main(int argc, char **argv)
   ros::Publisher motor6_pub = n.advertise<std_msgs::Int16>("motor6_topic", 100);
   ros::Publisher motor7_pub = n.advertise<std_msgs::Int16>("motor7_topic", 100);
  
-  ros::Rate loop_wait(20);//this is needed
+  ros::Rate loop_wait(15);//this is needed
   
   //ctr-c makes ok() return false, thus ending the program
   while(ros::ok())

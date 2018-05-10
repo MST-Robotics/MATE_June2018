@@ -35,13 +35,13 @@
 
 //use this version of to increase the buffer size 
 //12 subscribers, 5 publishers 1024 bytes per buffer
-ros::NodeHandle_<ArduinoHardware, 15, 5, 1024, 1024> nh;
+ros::NodeHandle_<ArduinoHardware, 17, 3, 1024, 1024> nh;
 
 /*
  * Stores orientation data
  * x=pitch y=roll z=pitch_offset
  */
-geometry_msgs::Vector3 orientation;
+//geometry_msgs::Vector3 orientation;
 
 //Stores raw adc value for temp sensor
 std_msgs::Float32 raw_temp;
@@ -209,7 +209,7 @@ ros::Subscriber<std_msgs::UInt8> leveler_sub("leveler_topic", leveler_cb);
 
 //set up publishers
 ros::Publisher raw_temp_pub("raw_temp_topic", &raw_temp);
-ros::Publisher orientation_pub("orientation_topic", &orientation);
+//ros::Publisher orientation_pub("orientation_topic", &orientation);
 
 //function for setting up the brushless motors
 void motor_setup(void)
@@ -284,11 +284,12 @@ void process_imu(void)
   roll *= 180.0/PI;//convert to degrees
 
 
-  orientation.x = pitch;  
-  orientation.y = roll;  
+  //orientation.x = pitch;  
+  //orientation.y = roll;  
 
   if(pid_enable)
   {
+    pitch_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
     //Calculate PID for pitch      
     pitch_PID.Compute();//calcualte the pitch_output
    
@@ -303,7 +304,7 @@ void process_imu(void)
     if(abs(roll_offset) < ROLL_OFFSET_THRESHOLD)//this number may be adjusted as well
       roll_offset = 0;//set the speed offset to zero, meaning no correction will be added to current speed
     
-    orientation.z = pitch_offset;//have this so it can be viewed with the orientation
+   // orientation.z = pitch_offset;//have this so it can be viewed with the orientation
   }
 
   else
@@ -312,7 +313,7 @@ void process_imu(void)
     pitch_offset = 0;
   }
 
-  orientation_pub.publish(&orientation);
+  //orientation_pub.publish(&orientation);
   return;
 }
 

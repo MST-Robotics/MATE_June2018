@@ -1,22 +1,22 @@
 /*
- * Author: Vinnie Marco
- * Email: vgmcn3@mst,edu
- * Date: 6-19-2017
- *
- * Code for basic implementation of rosserial
- *
- * To start the system, run from terminal:
- * Terminal 1:
- *    roscore
- *
- * Terminal 2:
- *    cd ~/MATE_June2018/catkin_ws
- *    source devel/setup.bash
- *    roslaunch ROV_system_v1 rov_system.launch
- *
- * This will start all necessary nodes to read both controllers
- * and stream data to the arduino
- */
+   Author: Vinnie Marco
+   Email: vgmcn3@mst,edu
+   Date: 6-19-2017
+
+   Code for basic implementation of rosserial
+
+   To start the system, run from terminal:
+   Terminal 1:
+      roscore
+
+   Terminal 2:
+      cd ~/MATE_June2018/catkin_ws
+      source devel/setup.bash
+      roslaunch ROV_system_v1 rov_system.launch
+
+   This will start all necessary nodes to read both controllers
+   and stream data to the arduino
+*/
 
 #include "ROV_main_node.h"
 
@@ -34,10 +34,10 @@ void setup()
   roll_PID.SetMode(AUTOMATIC);
 
   //Pitch is robot's rotation length-wise
-  pitch_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
+  
   pitch_PID.SetOutputLimits(-200, 200);//this range is an offset for motor7's speed
   pitch_PID.SetMode(AUTOMATIC);
-  
+
   nh.initNode();//initialize the node
 
   //set up topic subscriptions
@@ -60,16 +60,16 @@ void setup()
 
   //set up topic publishers
   nh.advertise(raw_temp_pub);
-  nh.advertise(orientation_pub);
+  //nh.advertise(orientation_pub);
 }
 
 void loop()
 {
   nh.spinOnce();//run ros once
-  process_temperature();//update the temperature data 
+  process_temperature();//update the temperature data
   process_imu();//handle all pid control for the vertical thrusters
-  
-  if(millis() - prev_millis >= 10)
+
+  if (millis() - prev_millis >= 10)
   {
     send_manipulator_data();
     //send_leveler_data();

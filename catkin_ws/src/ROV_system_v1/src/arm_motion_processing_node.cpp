@@ -41,7 +41,7 @@ int main(int argc, char **argv)
   ros::Publisher pid_pub = n.advertise<std_msgs::Bool>("pid_state_topic", 100);
  
 
-  ros::Rate loop_wait(20);//this is needed
+  ros::Rate loop_wait(15);//this is needed
   
   //ctr-c makes ok() return false, thus ending the program
   while(ros::ok())
