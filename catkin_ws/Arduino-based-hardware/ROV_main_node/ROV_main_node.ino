@@ -34,7 +34,7 @@ void setup()
   roll_PID.SetMode(AUTOMATIC);
 
   //Pitch is robot's rotation length-wise
-  
+  pitch_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
   pitch_PID.SetOutputLimits(-200, 200);//this range is an offset for motor7's speed
   pitch_PID.SetMode(AUTOMATIC);
 

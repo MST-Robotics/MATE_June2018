@@ -289,7 +289,6 @@ void process_imu(void)
 
   if(pid_enable)
   {
-    pitch_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
     //Calculate PID for pitch      
     pitch_PID.Compute();//calcualte the pitch_output
    
