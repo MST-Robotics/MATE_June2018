@@ -12,8 +12,9 @@
 #define FORCE_X_MODIFIER 1 /*To Be Determined*/
 #define FORCE_Y_MODIFIER 1 /*To Be Determined*/
 #define MOTOR_NEUTRAL 1500
-#define VERTICAL_SCALE 400*.8//80% of max speed
+#define VERTICAL_SCALE 400
 #define MOTOR_RAMP -400 /*Make sure this is negative*/
+
 
 /*This is our main function
  *Pre: None
@@ -111,8 +112,7 @@ void calc_motors()
   motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(force_y - force_x - moment);
   motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * horizontal_precision * normalize_400(force_y + force_x + moment);
   
-  motor7_value.data = 1500;
-  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + (VERTICAL_SCALE * vertical_precision * ((vertical&1) - (vertical&2)));
+  motor7_value.data = MOTOR_NEUTRAL;
 } 
 
 /* trigger_callback handles data recieved from the trigger_topic subscription
@@ -122,7 +122,17 @@ void calc_motors()
  */
 void trigger_callback(const std_msgs::Bool &msg) 
 {
-  msg.data ? (vertical |= 2) : (vertical &= (~2));
+  if(msg.data == 1)
+  {
+    trigger_pulled = 1;
+    motor2_value.data = motor5_value.data = MOTOR_NEUTRAL - VERTICAL_SCALE * vertical_precision;
+  }
+  else
+  {
+    trigger_pulled = 0;
+    if(pinky_trigger_pulled == 0)
+      motor2_value.data = motor5_value.data = MOTOR_NEUTRAL;
+  }
 }
 
 /* button_pinky_trigger_callback handles data recieved from the button_pinky_trigger_topic subscription
@@ -132,7 +142,17 @@ void trigger_callback(const std_msgs::Bool &msg)
  */
 void button_pinky_trigger_callback(const std_msgs::Bool &msg)
 {
-  msg.data ? (vertical |= 1) : (vertical &= (~1));
+  if(msg.data == 1)
+  {
+    pinky_trigger_pulled = 1;
+    motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * vertical_precision;
+  }
+  else
+  {
+    pinky_trigger_pulled = 0;
+    if(trigger_pulled == 0)
+      motor2_value.data = motor5_value.data = MOTOR_NEUTRAL;
+  }
 }
 
 

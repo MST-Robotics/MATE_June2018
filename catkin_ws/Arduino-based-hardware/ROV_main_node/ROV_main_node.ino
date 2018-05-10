@@ -58,7 +58,6 @@ void setup()
   nh.subscribe(gimbal_y_sub);
   nh.subscribe(leveler_sub);
 
-
   //set up topic publishers
   nh.advertise(raw_temp_pub);
   nh.advertise(orientation_pub);

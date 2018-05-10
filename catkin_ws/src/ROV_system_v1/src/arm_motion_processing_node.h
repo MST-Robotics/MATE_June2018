@@ -86,6 +86,6 @@ void sw6_callback(const std_msgs::Bool &msg);//decrement
 
 void tgl1_callback(const std_msgs::Int16 &msg);//used for controlling the leveler
 void tgl2_callback(const std_msgs::Int16 &msg);//used for controlling the opening/closing the claw
-void m1_callback(const std:msgs::Bool &msg);//simply passses the value of M1 to the slower-running node
+void m1_callback(const std_msgs::Bool &msg);//simply passses the value of M1 to the slower-running node
 
 #endif

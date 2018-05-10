@@ -16,7 +16,8 @@
 float magnitude = 0.0;
 float angle = 0.0;
 float moment = 0.0;
-char vertical = 0;
+
+bool trigger_pulled, pinky_trigger_pulled = 0;//track the status of either of the triggers
 
 //these are globals to multiply the motor vaues based on throttle values
 float horizontal_precision = 1.0;
@@ -72,6 +73,7 @@ void calc_motors();
  * Post: The range -1.0 to 1.0 is mapped to MIN_PRECISION_SCALE to 1
  */
 void axis_left_thruster_callback(const std_msgs::Float32 &msg);
+void axis_right_thruster_callback(const std_msgs::Float32 &msg);
 
 //function used for mapping float values
 float mapf(float x, float in_min, float in_max, float out_min, float out_max);

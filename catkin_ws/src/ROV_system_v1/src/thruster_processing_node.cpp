@@ -56,10 +56,10 @@ int main(int argc, char **argv)
     m1_pub.publish(button_m1_state);
 
     axis_left_thruster_pub.publish(axis_left_thruster_value);
-	axis_right_thruster_pub.publish(axis_right_thruster_value);
-	
-	tgl1_pub.publish(button_tgl1_value);
-	tgl2_pub.publish(button_tgl2_value);
+    axis_right_thruster_pub.publish(axis_right_thruster_value);
+
+    tgl1_pub.publish(button_tgl1_value);
+    tgl2_pub.publish(button_tgl2_value);
  
     ros::spinOnce();
 
@@ -83,7 +83,10 @@ void thruster_callback(const sensor_msgs::Joy &joy)
   button_sw6_state.data = joy.buttons[button_sw6];
 
   axis_left_thruster_value.data = joy.axes[axis_left_thruster];
-  
+  axis_right_thruster_value.data = joy.axes[axis_right_thruster];
+    
+
+
   button_m1_state.data = joy.buttons[button_m1];
   button_e_state.data = joy.buttons[button_e];
   

@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     gimbal_x_pub.publish(gimbal_x_value);
     gimbal_y_pub.publish(gimbal_y_value);
     leveler_pub.publish(leveler_value);
-	pid_pub.publish(pid_state);
+    pid_pub.publish(pid_state);
 	
 
     ros::spinOnce();
@@ -83,11 +83,11 @@ void tgl2_callback(const std_msgs::Int16 &msg)
 {
   if(msg.data == 1)	
   {
-    pos_claw = CLAW_MAX;
+    claw_value.data = pos_claw = CLAW_MAX;
   }
-  else(msg.data == -1)
+  else if(msg.data == -1)
   {
-    pos_claw = CLAW_MIN;
+    claw_value.data = pos_claw = CLAW_MIN;
   }	
 }
 
@@ -95,9 +95,9 @@ void manipulator_home_cb(const std_msgs::Bool &msg)
 {
   if(msg.data == 1)
   {
-    pos_wrist = WRIST_HOME;
-    pos_claw = CLAW_HOME;
-	pos_elbow = ELBOW_HOME;
+    wrist_value.data = pos_wrist = WRIST_HOME;
+    claw_value.data = pos_claw = CLAW_HOME;
+    elbow_value.data = pos_elbow = ELBOW_HOME;
   }
 }
 
@@ -150,7 +150,7 @@ void sw1_callback(const std_msgs::Bool &msg)
   // increment wrist
   if(msg.data == 1)
   {
-	if(pos_elbow + MANIPULATOR_STEP_SIZE < ELBOW_MAX) {
+	if(pos_elbow + MANIPULATOR_STEP_SIZE <= ELBOW_MAX) {
     	pos_elbow += MANIPULATOR_STEP_SIZE;
 	}
 	elbow_value.data = pos_elbow;
@@ -161,7 +161,7 @@ void sw2_callback(const std_msgs::Bool &msg)
   // decrement wrist
   if(msg.data == 1)
   {
-	if(pos_elbow - MANIPULATOR_STEP_SIZE > ELBOW_MIN) {
+	if(pos_elbow - MANIPULATOR_STEP_SIZE >= ELBOW_MIN) {
     	pos_elbow -= MANIPULATOR_STEP_SIZE;
 	}
 	elbow_value.data = pos_elbow;
@@ -172,7 +172,7 @@ void sw3_callback(const std_msgs::Bool &msg)
   // increment elbow
   if(msg.data == 1)
   {
-	if(pos_wrist + MANIPULATOR_STEP_SIZE < WRIST_MAX) {
+	if(pos_wrist + MANIPULATOR_STEP_SIZE <= WRIST_MAX) {
     	pos_wrist += MANIPULATOR_STEP_SIZE;
 	}
 	wrist_value.data = pos_wrist;
@@ -183,7 +183,7 @@ void sw4_callback(const std_msgs::Bool &msg)
   // decrement elbow
   if(msg.data == 1)
   {
-	if(pos_wrist - MANIPULATOR_STEP_SIZE > WRIST_MIN) {
+	if(pos_wrist - MANIPULATOR_STEP_SIZE >= WRIST_MIN) {
     	pos_wrist -= MANIPULATOR_STEP_SIZE;
 	}
 	wrist_value.data = pos_wrist;
@@ -194,7 +194,7 @@ void sw5_callback(const std_msgs::Bool &msg)
   // increment claw
   if(msg.data == 1)
   {
-	if(pos_claw + MANIPULATOR_STEP_SIZE< CLAW_MAX) {
+	if(pos_claw + MANIPULATOR_STEP_SIZE <= CLAW_MAX) {
 	  pos_claw += MANIPULATOR_STEP_SIZE;
 	}
 	claw_value.data = pos_claw;
@@ -205,7 +205,7 @@ void sw6_callback(const std_msgs::Bool &msg)
   //decrement claw
   if(msg.data == 1)
   {
-	if(pos_claw - MANIPULATOR_STEP_SIZE > CLAW_MIN) {
+	if(pos_claw - MANIPULATOR_STEP_SIZE >= CLAW_MIN) {
 	  pos_claw -= MANIPULATOR_STEP_SIZE;
 	}
 	claw_value.data = pos_claw;
