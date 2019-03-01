@@ -26,7 +26,8 @@ bool kill = false;
 
 void setup() {
   Wire.begin();
-  Serial.begin(115200);
+  Serial2.begin(115200);
+  Serial2.setTimeout(100);
   for (int s = 0; s < 8; s++) {
     servos[s].attach(servo_pins[s]); // attach servos to their pins
   }
@@ -36,22 +37,23 @@ void loop() {
   int motor; // which motor is being set
   int velocity; // speed motor is set to
   if (kill) {
+    Serial2.println("KILL");
     Wire.beginTransmission(PWR); 
     Wire.write(E_STOP);
     Wire.endTransmission();
     delay(50);
   } else {
-    if (Serial.available()) {
-      signal = Serial.readString();
+    if (Serial2.available()) {
+      signal = Serial2.readString();
       if (signal[0] == E_STOP) {
           kill = true;
-      } else if (signal.length() == 5 && signal[1] == ':') {
+      } else if (signal.length() == 7 && signal[1] == ':') {
         motor = signal[0] - '0'; // subtract value for char 0
-        velocity = signal.substring(2).toInt();
+        velocity = signal.substring(2, 5).toInt();
         servos[motor].write(velocity);
         delay(15);
-        Serial.println(motor);
-        Serial.println(velocity);
+        Serial2.println(motor);
+        Serial2.println(velocity);
       }
     }
   }
