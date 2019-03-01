@@ -1,0 +1,3 @@
+[submodule "common_defs"]
+	path = common_defs
+	url = https://github.com/mst-robotics/common_defs
