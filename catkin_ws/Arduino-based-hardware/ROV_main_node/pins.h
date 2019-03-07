@@ -21,6 +21,7 @@
 #define brt_pin 12
 #define back_pin 13
 
+//data collection pins
 #define temp_pin A0
 
 
