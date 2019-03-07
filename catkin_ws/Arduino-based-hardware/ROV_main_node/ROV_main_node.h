@@ -5,6 +5,7 @@
 #include <PID_v1.h>
 #include <ros.h>
 #include <Servo.h>
+#include <SD.h>
 
 #include "pins.h"//this file should be in the same directory as .ino
 #include "pwm_channels.h"
@@ -32,6 +33,9 @@
  */
 #define PITCH_OFFSET_THRESHOLD 1
 #define ROLL_OFFSET_THRESHOLD 1
+
+//Location of the csv file
+#define CSV_FILE_LOCATION "theData.csv"
 
 //use this version of to increase the buffer size 
 //12 subscribers, 5 publishers 1024 bytes per buffer
@@ -71,6 +75,7 @@ uint8_t manipulator_data[4] = {0, 0, 0, 128};
 
 //initialize this value to off
 uint8_t leveler_data = 127;
+
 
 //create PID object
 PID roll_PID(&roll, &roll_offset, &roll_setpoint, consKp, consKi, consKd, DIRECT);
@@ -185,6 +190,29 @@ void leveler_cb(const std_msgs::UInt8 &msg)
 {
   manipulator_data[3] = msg.data;
 }
+
+/*
+ * turns on temp sensor, reads it, dumps it into csv
+ */
+void temp_pin_on(const std_msgs::Bool &msg) 
+{
+  File csvFile = SD.open(CSV_FILE_LOCATION, FILE_WRITE);
+  if(msg) 
+  {
+    // turn pin on
+    digitalWrite(temp_pin, HIGH);
+    int temp_val = analogRead(); //read the temperature sensor
+
+    // write to csv
+    if (csvFile) 
+    {
+      csvFile.print("temp, %d", temp_val);
+    }
+    
+    digitalWrite(temp_pin, LOW);
+  }
+}
+
 
 //set up subscriptions
 //ros::Subscriber<std_msgs::Bool> e_button_sub("e_button_topic", button_e_cb);
@@ -334,7 +362,7 @@ void process_imu(void)
 //function for reading and calculating the temperature
 void process_temperature(void)
 {
-  raw_temp.data = analogRead(temp_pin);//read the temperature sensor
+  raw_temp.data = analogRead( );//read the temperature sensor
  
   raw_temp_pub.publish(&raw_temp);//publish the temperature data
   return;
