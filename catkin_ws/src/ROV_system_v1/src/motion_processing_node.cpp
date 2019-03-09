@@ -12,8 +12,9 @@
 #define FORCE_X_MODIFIER 1 /*To Be Determined*/
 #define FORCE_Y_MODIFIER 1 /*To Be Determined*/
 #define MOTOR_NEUTRAL 1500
-#define VERTICAL_SCALE 400*.8//80% of max speed
+#define VERTICAL_SCALE 400
 #define MOTOR_RAMP -400 /*Make sure this is negative*/
+
 
 /*This is our main function
  *Pre: None
@@ -31,10 +32,12 @@ int main(int argc, char **argv)
   ros::Subscriber joystick_rotation_topic = n.subscribe("joystick_rotation_topic", 1000, twist_callback);
   ros::Subscriber trigger_topic = n.subscribe("trigger_topic", 1000, trigger_callback);
   ros::Subscriber button_pinky_trigger_topic = n.subscribe("pinky_trigger_topic", 1000, button_pinky_trigger_callback);
+  ros::Subscriber button_e_topic = n.subscribe("button_e_topic", 100, button_e_callback);
 
   //second argument is 100 instead of 1000 to prevent sync issues with topics the main board subrscribes to
   ros::Subscriber axis_left_thruster_topic = n.subscribe("axis_left_thruster_topic", 100, axis_left_thruster_callback);
-
+  ros::Subscriber axis_right_thruster_topic = n.subscribe("axis_right_thruster_topic", 100, axis_right_thruster_callback);
+  
   ros::Publisher motor1_pub = n.advertise<std_msgs::Int16>("motor1_topic", 100);
   ros::Publisher motor2_pub = n.advertise<std_msgs::Int16>("motor2_topic", 100);
   ros::Publisher motor3_pub = n.advertise<std_msgs::Int16>("motor3_topic", 100);
@@ -43,7 +46,7 @@ int main(int argc, char **argv)
   ros::Publisher motor6_pub = n.advertise<std_msgs::Int16>("motor6_topic", 100);
   ros::Publisher motor7_pub = n.advertise<std_msgs::Int16>("motor7_topic", 100);
  
-  ros::Rate loop_wait(20);//this is needed
+  ros::Rate loop_wait(15);//this is needed
   
   //ctr-c makes ok() return false, thus ending the program
   while(ros::ok())
@@ -87,7 +90,7 @@ void angle_callback(const std_msgs::Float32 &msg)
  */
 void twist_callback(const std_msgs::Float32 &msg)
 {
-  moment = msg.data*TWIST_SCALE*precision; //Neutral: moment = 0 = msg.data;
+  moment = msg.data * vertical_precision; //Neutral: moment = 0 = msg.data;
 }
 
 //This exists.
@@ -105,14 +108,12 @@ void calc_motors()
   float force_x = FORCE_X_MODIFIER * magnitude * cos(angle * M_PI / 180);
   float force_y = FORCE_Y_MODIFIER * magnitude * sin(angle * M_PI / 180);
   
-  motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * precision * normalize_400(-force_y + force_x - moment);
-  motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * precision * normalize_400( -force_y - force_x + moment);
-  motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * precision * normalize_400( force_y - force_x - moment );
-  motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * precision * normalize_400( force_y + force_x + moment);
+  motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(-force_y + force_x - moment);
+  motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(-force_y - force_x + moment);
+  motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(force_y - force_x - moment);
+  motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * horizontal_precision * normalize_400(force_y + force_x + moment);
   
-  motor7_value.data = 1500;
-
-  motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + (VERTICAL_SCALE * precision * ((vertical&1) - (vertical&2)));
+  motor7_value.data = MOTOR_NEUTRAL;
 } 
 
 /* trigger_callback handles data recieved from the trigger_topic subscription
@@ -122,7 +123,17 @@ void calc_motors()
  */
 void trigger_callback(const std_msgs::Bool &msg) 
 {
-  msg.data ? (vertical |= 2) : (vertical &= (~2));
+  if(msg.data == 1)
+  {
+    trigger_pulled = 1;
+    motor2_value.data = motor5_value.data = MOTOR_NEUTRAL - VERTICAL_SCALE * vertical_precision;
+  }
+  else
+  {
+    trigger_pulled = 0;
+    if(pinky_trigger_pulled == 0)
+      motor2_value.data = motor5_value.data = MOTOR_NEUTRAL;
+  }
 }
 
 /* button_pinky_trigger_callback handles data recieved from the button_pinky_trigger_topic subscription
@@ -132,10 +143,33 @@ void trigger_callback(const std_msgs::Bool &msg)
  */
 void button_pinky_trigger_callback(const std_msgs::Bool &msg)
 {
-  msg.data ? (vertical |= 1) : (vertical &= (~1));
+  if(msg.data == 1)
+  {
+    pinky_trigger_pulled = 1;
+    motor2_value.data = motor5_value.data = MOTOR_NEUTRAL + VERTICAL_SCALE * vertical_precision;
+  }
+  else
+  {
+    pinky_trigger_pulled = 0;
+    if(trigger_pulled == 0)
+      motor2_value.data = motor5_value.data = MOTOR_NEUTRAL;
+  }
 }
 
+void button_e_callback(const std_msgs::Bool &msg)
+{
+  if(msg.data == 1)
+  {
+    button_e_pulled = 1;
 
+  }
+  else if(msg.data == 0)
+  {
+    button_e_pulled = 0;
+  }
+  
+
+}
 //this function calcualtes the precision scale for the movement controls from the throttle
 /* axis_left_thruster_callback calcualtes the precision scale for the movement controls from the throttle
  * Pre: axis_left_thruster_topic has to be initialized
@@ -143,7 +177,12 @@ void button_pinky_trigger_callback(const std_msgs::Bool &msg)
  */
 void axis_left_thruster_callback(const std_msgs::Float32 &msg)
 {
-  precision = mapf(msg.data, -1.0, 1.0, MIN_PRECISION_SCALE, MAX_PRECISION_SCALE);
+  horizontal_precision = mapf(msg.data, -1.0, 1.0, MIN_PRECISION_SCALE, MAX_PRECISION_SCALE);
+}
+
+void axis_right_thruster_callback(const std_msgs::Float32 &msg)
+{
+  vertical_precision = mapf(msg.data, -1.0, 1.0, MIN_PRECISION_SCALE, MAX_PRECISION_SCALE);
 }
 
 //this funciton maps a range of floats to another range of floats

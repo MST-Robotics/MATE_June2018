@@ -1,3 +1,11 @@
+#include <PixyUART.h>
+#include <TPixy.h>
+#include <Pixy.h>
+#include <PixySPI_SS.h>
+#include <PixyI2C.h>
+
+#include <ROV_main_setup.h>
+
 /*
  * Author: Vinnie Marco
  * Email: vgmcn3@mst,edu
@@ -209,7 +217,7 @@ void process_imu(void)
   accel_pub.publish(&accelerometer);
   mag_pub.publish(&magnetometer);
 }
-
+/*
 void wing_detection_data()
 {
   static int frame = 0;
@@ -236,4 +244,4 @@ void wing_detection_data()
       }
     }
   }
-}
+}*/

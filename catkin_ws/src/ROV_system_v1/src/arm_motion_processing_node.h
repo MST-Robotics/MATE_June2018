@@ -37,10 +37,19 @@
 #define GIMBAL_Y_MIN 45
 #define GIMBAL_Y_MAX 170
 
-#define GIMBAL_MOVEMENT_SPEED 1
-#define movement_speed 1
+#define GIMBAL_STEP_SIZE 1
+#define MANIPULATOR_STEP_SIZE 3
 
 #define LEVELER_SPEED 127
+
+int pos_wrist = WRIST_HOME;
+int pos_elbow = ELBOW_HOME;
+int pos_claw = CLAW_HOME;
+
+int pos_gimbal_x = GIMBAL_X_HOME;
+int pos_gimbal_y = GIMBAL_Y_HOME;
+
+
 //messages for manipulator joints
 std_msgs::UInt8 wrist_value;
 std_msgs::UInt8 claw_value;
@@ -53,10 +62,15 @@ std_msgs::Int16 gimbal_y_value;
 //message for leveler controls
 std_msgs::UInt8 leveler_value;
 
+std_msgs::Bool pid_state;
+
 //Gimbal control
 void gimbal_home_cb(const std_msgs::Bool &msg);
 void gimbal_x_cb(const std_msgs::Int16 &msg);
 void gimbal_y_cb(const std_msgs::Int16 &msg);
+
+//Manipulator control
+void manipulator_home_cb(const std_msgs::Bool &msg);
 
 //Elbow control
 void sw1_callback(const std_msgs::Bool &msg);//increment
@@ -71,5 +85,7 @@ void sw5_callback(const std_msgs::Bool &msg);//increment
 void sw6_callback(const std_msgs::Bool &msg);//decrement
 
 void tgl1_callback(const std_msgs::Int16 &msg);//used for controlling the leveler
+void tgl2_callback(const std_msgs::Int16 &msg);//used for controlling the opening/closing the claw
+void m1_callback(const std_msgs::Bool &msg);//simply passses the value of M1 to the slower-running node
 
 #endif

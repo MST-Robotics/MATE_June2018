@@ -27,8 +27,13 @@ std_msgs::Bool button_sw6_state; // claw opens
 std_msgs::Bool button_m1_state;//used for enabling/disabling PID adjustments
 
 std_msgs::Int16 button_tgl1_value;//used for controlling the leveler
+std_msgs::Int16 button_tgl2_value;//used for controlling the leveler
 
-std_msgs::Float32 axis_left_thruster_value;//used a precision scaler for the motor speeds
+std_msgs::Bool button_e_state;//sensor function activation
+
+std_msgs::Float32 axis_left_thruster_value;//used a precision scaler for the horitzontal movement
+std_msgs::Float32 axis_right_thruster_value;//used a precision scaler for the twist and vertical movement
+
 std_msgs::Int16 setpoint_value;//used to store the setpoint
 
 /* thruster_callback handles data recieved from the thruster topic

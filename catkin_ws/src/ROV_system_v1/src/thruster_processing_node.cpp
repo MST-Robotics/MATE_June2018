@@ -23,7 +23,6 @@ int main(int argc, char **argv)
   ros::Subscriber throttle_subscriber = n.subscribe("thruster_topic", 1000, thruster_callback);//subscribe to throttle values
 
   //set up publishers
-  ros::Publisher throttle_publisher = n.advertise<std_msgs::Float32>("throttle_topic", 1000);
   ros::Publisher sw1_pub = n.advertise<std_msgs::Bool>("sw1_topic", 1000);
   ros::Publisher sw2_pub = n.advertise<std_msgs::Bool>("sw2_topic", 1000);
   ros::Publisher sw3_pub = n.advertise<std_msgs::Bool>("sw3_topic", 1000);
@@ -31,12 +30,15 @@ int main(int argc, char **argv)
   ros::Publisher sw5_pub = n.advertise<std_msgs::Bool>("sw5_topic", 1000);
   ros::Publisher sw6_pub = n.advertise<std_msgs::Bool>("sw6_topic", 1000);
   ros::Publisher m1_pub = n.advertise<std_msgs::Bool>("m1_topic", 1000);
+  ros::Publisher button_e_pub = n.advertise<std_msgs::Bool>("button_e_topic", 1000);
 
   ros::Publisher axis_left_thruster_pub = n.advertise<std_msgs::Float32>("axis_left_thruster_topic", 1000);
-  ros::Publisher setpoint_pub = n.advertise<std_msgs::Int16>("setpoint_topic", 100);
+  ros::Publisher axis_right_thruster_pub = n.advertise<std_msgs::Float32>("axis_right_thruster_topic", 1000);
   
+  ros::Publisher setpoint_pub = n.advertise<std_msgs::Int16>("setpoint_topic", 100);
   ros::Publisher tgl1_pub = n.advertise<std_msgs::Int16>("tgl1_topic", 1000);
-
+  ros::Publisher tgl2_pub = n.advertise<std_msgs::Int16>("tgl2_topic", 1000);
+  
   ros::Rate loop_wait(30);//this is needed
   
   while(ros::ok()) //ctrl-c makes ok() return false, thus ending the program
@@ -50,11 +52,15 @@ int main(int argc, char **argv)
     sw6_pub.publish(button_sw6_state);
     setpoint_pub.publish(setpoint_value);
     
+    button_e_pub.publish(button_e_state);
+    
     m1_pub.publish(button_m1_state);
 
     axis_left_thruster_pub.publish(axis_left_thruster_value);
-	
-	tgl1_pub.publish(button_tgl1_value);
+    axis_right_thruster_pub.publish(axis_right_thruster_value);
+
+    tgl1_pub.publish(button_tgl1_value);
+    tgl2_pub.publish(button_tgl2_value);
  
     ros::spinOnce();
 
@@ -78,14 +84,17 @@ void thruster_callback(const sensor_msgs::Joy &joy)
   button_sw6_state.data = joy.buttons[button_sw6];
 
   axis_left_thruster_value.data = joy.axes[axis_left_thruster];
-  
+  axis_right_thruster_value.data = joy.axes[axis_right_thruster];
+    
+
+
   button_m1_state.data = joy.buttons[button_m1];
-
-
+  button_e_state.data = joy.buttons[button_e];
+  
   //the setpoint for the PID is determined here by rty4
   setpoint_value.data = (int)mapf(joy.axes[axis_base_rotary_4], -1.0, 1.0, 210.0, 150.0);
 
-  
+  //for simplifyinf toggle switch 1
   if(joy.buttons[button_tgl1_up] == 1)
   {
     button_tgl1_value.data = 1;
@@ -100,12 +109,27 @@ void thruster_callback(const sensor_msgs::Joy &joy)
   {
     button_tgl1_value.data = 0;
   }
+  
+  //for simplifying toggle switch 2
+  if(joy.buttons[button_tgl2_up] == 1)
+  {
+    button_tgl2_value.data = 1;
+  }
+
+  else if(joy.buttons[button_tgl2_down] == 1)
+  {
+    button_tgl2_value.data = -1;
+  }
+
+  else
+  {
+    button_tgl2_value.data = 0;
+  }
 /* 
   Done
   //buttons are stored in joy.buttons[]
   //axes are stored in joy.axis[]
 
-  button_e_state.data = joy.buttons[button_e];
   button_rotary_f_state.data = joy.buttons[button_rotary_f];
   button_rotary_g_state.data = joy.buttons[button_rotary_g];
   button_i_state.data = joy.buttons[button_i];
