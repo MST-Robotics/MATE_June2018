@@ -32,6 +32,7 @@ int main(int argc, char **argv)
   ros::Subscriber joystick_rotation_topic = n.subscribe("joystick_rotation_topic", 1000, twist_callback);
   ros::Subscriber trigger_topic = n.subscribe("trigger_topic", 1000, trigger_callback);
   ros::Subscriber button_pinky_trigger_topic = n.subscribe("pinky_trigger_topic", 1000, button_pinky_trigger_callback);
+  ros::Subscriber button_e_topic = n.subscribe("button_e_topic", 100, button_e_callback);
 
   //second argument is 100 instead of 1000 to prevent sync issues with topics the main board subrscribes to
   ros::Subscriber axis_left_thruster_topic = n.subscribe("axis_left_thruster_topic", 100, axis_left_thruster_callback);
@@ -155,7 +156,20 @@ void button_pinky_trigger_callback(const std_msgs::Bool &msg)
   }
 }
 
+void button_e_callback(const std_msgs::Bool &msg)
+{
+  if(msg.data == 1)
+  {
+    button_e_pulled = 1;
 
+  }
+  else if(msg.data == 0)
+  {
+    button_e_pulled = 0;
+  }
+  
+
+}
 //this function calcualtes the precision scale for the movement controls from the throttle
 /* axis_left_thruster_callback calcualtes the precision scale for the movement controls from the throttle
  * Pre: axis_left_thruster_topic has to be initialized
