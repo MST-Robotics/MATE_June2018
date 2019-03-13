@@ -23,6 +23,6 @@
 
 //data collection pins
 #define temp_pin A0
-
+#define temp_sensor_pin A1
 
 #endif

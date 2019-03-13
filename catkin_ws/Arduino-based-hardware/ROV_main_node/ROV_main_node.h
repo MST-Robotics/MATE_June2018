@@ -195,19 +195,20 @@ void leveler_cb(const std_msgs::UInt8 &msg)
 /*
  * turns on temp sensor, reads it, dumps it into csv
  */
+
 void temp_pin_on(const std_msgs::Bool &msg) 
 {
+  char temp_val = 'a';
   File csvFile = SD.open(CSV_FILE_LOCATION, FILE_WRITE);
-  if(msg) 
+  if(msg.data) 
   {
     // turn pin on
     digitalWrite(temp_pin, HIGH);
-    int temp_val = analogRead(); //read the temperature sensor
-
+    int temp_val = analogRead(temp_sensor_pin); //read the temperature sensor
     // write to csv
     if (csvFile) 
     {
-      csvFile.print("temp, %d", temp_val);
+//      csvFile.print("temp, %d", temp_val);
     }
     
     digitalWrite(temp_pin, LOW);
@@ -216,7 +217,7 @@ void temp_pin_on(const std_msgs::Bool &msg)
 
 
 //set up subscriptions
-//ros::Subscriber<std_msgs::Bool> e_button_sub("e_button_topic", button_e_cb);
+ros::Subscriber<std_msgs::Bool> e_button_sub("e_button_topic", temp_pin_on);
 ros::Subscriber<std_msgs::Int16> motor1_sub("motor1_topic", motor1_cb);
 ros::Subscriber<std_msgs::Int16> motor2_sub("motor2_topic", motor2_cb);
 ros::Subscriber<std_msgs::Int16> motor3_sub("motor3_topic", motor3_cb);
@@ -237,7 +238,7 @@ ros::Subscriber<std_msgs::Int16> setpoint_sub("setpoint_topic", setpoint_cb);
 ros::Subscriber<std_msgs::UInt8> leveler_sub("leveler_topic", leveler_cb);
 
 //set up publishers
-ros::Publisher raw_temp_pub("raw_temp_topic", &raw_temp);
+//ros::Publisher raw_temp_pub("raw_temp_topic", &raw_temp);
 //ros::Publisher orientation_pub("orientation_topic", &orientation);
 
 //function for setting up the brushless motors
@@ -344,7 +345,9 @@ void process_imu(void)
   //orientation_pub.publish(&orientation);
   return;
 }
-
+/*
+ * 
+ * analog read needs more paramters but this unused code
 //function for reading and calculating the temperature
 void process_temperature(void)
 {
@@ -353,7 +356,7 @@ void process_temperature(void)
   raw_temp_pub.publish(&raw_temp);//publish the temperature data
   return;
 }
-
+*/
 
 
 #endif

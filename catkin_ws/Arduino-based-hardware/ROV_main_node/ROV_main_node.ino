@@ -59,14 +59,14 @@ void setup()
   nh.subscribe(leveler_sub);
 
   //set up topic publishers
-  nh.advertise(raw_temp_pub);
+//  nh.advertise(raw_temp_pub);
   //nh.advertise(orientation_pub);
 }
 
 void loop()
 {
   nh.spinOnce();//run ros once
-  process_temperature();//update the temperature data
+//old code from last year  process_temperature();//update the temperature data
   process_imu();//handle all pid control for the vertical thrusters
 
   if (millis() - prev_millis >= 10)
