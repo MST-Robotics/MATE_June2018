@@ -17,8 +17,6 @@
 #define MOVEMENT_UP
 #define MOVEMENT_DOWN
 
-std_msgs::Float32 magnitude_value;
-std_msgs::Float32 angle_value;
-std_msgs::Float32 axis_stick_rotation_value;
+std_msgs::Joy movement;
 
 #endif

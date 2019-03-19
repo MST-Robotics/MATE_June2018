@@ -15,13 +15,9 @@ int main(int argc, char **argv)
   ros::init(argc, argv,"auto_motion_processing");
   ros::NodeHandle n;
 
-  ros::Subscriber sw_topic = n.subscribe("swx_topic", 1000, sw_callback);
   ros::Subscriber auto_topic = n.subscribe("auto_topic", 1000, auto_callback);
-
-  ros::Publisher joystick_x_pub = n.advertise<std_msgs::Float32>("magnitude_topic", 1000);
-  ros::Publisher joystick_y_pub = n.advertise<std_msgs::Float32>("angle_topic", 1000);
-  ros::Publisher joystick_rotation_pub = n.advertise<std_msgs::Float32>("joystick_rotation_topic", 1000);
-
+  ros::Subscriber throttle_subscriber = n.subscribe("thruster_topic", 1000, thruster_callback);//subscribe to throttle values
+  ros::Publisher joystick_pub = n.advertise<std_msgs::Joy>("joystick_topic", 1000);
 
   ros::Rate loop_wait(20);//this is needed
 
@@ -31,7 +27,7 @@ int main(int argc, char **argv)
     if (autonomous_mode && movement_needed)
     {
       movement_needed = false;
-      controls.publish(movement);
+      joystick_pub.publish(movement);
       ros::spinOnce();
     }
     loop_wait.sleep();//wait some
@@ -58,10 +54,9 @@ void auto_callback(const std_msgs::Int16 &msg)
   movement_needed = true;
 }
 
-void sw_callback(const std_msgs::Bool &msg)
+void thruster_callback(const sensor_msgs::Joy &joy)
 {
-  // increment wrist
-  if(msg.data == 1)
+  if(joy.buttons[button_auto] == 1)
   {
     autonomous_mode = true;
   }
