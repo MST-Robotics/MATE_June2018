@@ -30,8 +30,9 @@ int main(int argc, char **argv)
       joystick_pub.publish(movement);
       ros::spinOnce();
     }
-    loop_wait.sleep();//wait some
+    loop_wait.sleep();
   }
+
   return 0;
 }
 
@@ -40,12 +41,16 @@ void auto_callback(const std_msgs::Int16 &msg)
   switch (msg.data)
   {
     case UP:
+      movement = MOVEMENT_UP;
       break;
     case DOWN:
+      movement = MOVEMENT_DOWN;
       break;
     case LEFT:
+      movement = MOVEMENT_LEFT;
       break;
     case RIGHT:
+      movement = MOVEMENT_RIGHT;
       break;
     default:
       //error condition
