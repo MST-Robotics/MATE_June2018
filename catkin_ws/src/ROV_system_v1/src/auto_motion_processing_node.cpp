@@ -40,17 +40,17 @@ void auto_callback(const std_msgs::Int16 &msg)
 {
   switch (msg.data)
   {
-    case UP:
-      movement = MOVEMENT_UP;
+    case move_up:
+      movement.data = MOVEMENT_UP;
       break;
-    case DOWN:
-      movement = MOVEMENT_DOWN;
+    case move_down:
+      movement.data = MOVEMENT_DOWN;
       break;
-    case LEFT:
-      movement = MOVEMENT_LEFT;
+    case move_left:
+      movement.data = MOVEMENT_LEFT;
       break;
-    case RIGHT:
-      movement = MOVEMENT_RIGHT;
+    case move_right:
+      movement.data = MOVEMENT_RIGHT;
       break;
     default:
       //error condition

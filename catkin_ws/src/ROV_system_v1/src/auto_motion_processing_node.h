@@ -10,12 +10,12 @@
 
 #include "constants.h"
 
-
-/* Tuned through trial-and-error */
-#define MOVEMENT_LEFT
-#define MOVEMENT_RIGHT
-#define MOVEMENT_UP
-#define MOVEMENT_DOWN
+enum movements {
+  move_left,
+  move_right,
+  move_up,
+  move_down
+}
 
 std_msgs::Joy movement;
 

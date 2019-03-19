@@ -32,5 +32,12 @@
 // http://www.ngdc.noaa.gov/geomag-web/#declination
 #define DECLINATION 0.116667 // in Rolla, MO
 
+/* For autonomous movement */
+// Tuned through trial-and-error
+#define MOVEMENT_LEFT []
+#define MOVEMENT_RIGHT []
+#define MOVEMENT_UP []
+#define MOVEMENT_DOWN []
+
 
 #endif
