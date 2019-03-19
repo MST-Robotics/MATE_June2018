@@ -34,10 +34,16 @@
 
 /* For autonomous movement */
 // Tuned through trial-and-error
-#define MOVEMENT_LEFT []
-#define MOVEMENT_RIGHT []
-#define MOVEMENT_UP []
-#define MOVEMENT_DOWN []
+struct movement {
+  double x_axis;
+  double y-axis;
+  double z_axis;
+}
+
+movement move_up = {.x_axis = 0, .y_axis = 0, .z_axis = 0};
+movement move_down = {.x_axis = 0, .y_axis = 0, .z_axis = 0};
+movement move_left = {.x_axis = 0, .y_axis = 0, .z_axis = 0};
+movement move_right = {.x_axis = 0, .y_axis = 0, .z_axis = 0};
 
 
 #endif

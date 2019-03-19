@@ -9,6 +9,7 @@
 #define AUTO_NODE_H
 
 #include "constants.h"
+#include "x56_joystick.h"
 
 enum movements {
   move_left,

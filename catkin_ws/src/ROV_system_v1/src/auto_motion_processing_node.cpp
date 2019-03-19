@@ -41,16 +41,24 @@ void auto_callback(const std_msgs::Int16 &msg)
   switch (msg.data)
   {
     case move_up:
-      movement.data = MOVEMENT_UP;
+      movement.axes[axis_stick_x] = movement_up.x_axis;
+      movement.axes[axis_stick_y] = movement_up.y_axis;
+      movement.axes[axis_stick_rotation] = movement_up.z_axis;
       break;
     case move_down:
-      movement.data = MOVEMENT_DOWN;
+      movement.axes[axis_stick_x] = movement_down.x_axis;
+      movement.axes[axis_stick_y] = movement_down.y_axis;
+      movement.axes[axis_stick_rotation] = movement_down.z_axis;
       break;
     case move_left:
-      movement.data = MOVEMENT_LEFT;
+      movement.axes[axis_stick_x] = movement_left.x_axis;
+      movement.axes[axis_stick_y] = movement_left.y_axis;
+      movement.axes[axis_stick_rotation] = movement_left.z_axis;
       break;
     case move_right:
-      movement.data = MOVEMENT_RIGHT;
+      movement.axes[axis_stick_x] = movement_right.x_axis;
+      movement.axes[axis_stick_y] = movement_right.y_axis;
+      movement.axes[axis_stick_rotation] = movement_right.z_axis;
       break;
     default:
       //error condition
