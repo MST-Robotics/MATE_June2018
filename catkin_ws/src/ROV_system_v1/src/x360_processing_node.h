@@ -16,8 +16,8 @@
  */
 #include "x360_joystick.h"
 
-std_msgs::Float32 axis_joystick_thumb_stick_x_value;
-std_msgs::Float32 axis_joystick_thumb_stick_y_value;
+std_msgs::Float32 magnitude_value;
+std_msgs::Float32 angle_value;
 
 /* joystick_callback handles data recieved from the joystick topic
  * Pre: Joystick topic has to be initalized
@@ -54,8 +54,6 @@ std_msgs::Bool button_h2_right_state;
 std_msgs::Bool button_h2_down_state;
 std_msgs::Bool button_h2_left_state;
 
-std_msgs::Float32 magnitude_value;
-std_msgs::Float32 angle_value;
 std_msgs::Float32 axis_stick_rotation_value;
 std_msgs::Bool button_trigger_state;
 std_msgs::Int16 gimbal_x_value;

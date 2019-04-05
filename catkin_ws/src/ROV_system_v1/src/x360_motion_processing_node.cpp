@@ -31,11 +31,6 @@ int main(int argc, char **argv)
 
     ros::Publisher motor1x_pub = n.advertise<std_msgs::Int16>("motor1x_topic", 100);
     ros::Publisher motor2x_pub = n.advertise<std_msgs::Int16>("motor2x_topic", 100);
-    // ros::Publisher motor3_pub = n.advertise<std_msgs::Int16>("motor3_topic", 100);
-    // ros::Publisher motor4_pub = n.advertise<std_msgs::Int16>("motor4_topic", 100);
-    // ros::Publisher motor5_pub = n.advertise<std_msgs::Int16>("motor5_topic", 100);
-    // ros::Publisher motor6_pub = n.advertise<std_msgs::Int16>("motor6_topic", 100);
-    // ros::Publisher motor7_pub = n.advertise<std_msgs::Int16>("motor7_topic", 100);
 
     ros::Rate loop_wait(15); //this is needed
 
@@ -45,16 +40,21 @@ int main(int argc, char **argv)
         calc_motors();
         motor1_pub.publish(motor1_value);
         motor2_pub.publish(motor2_value);
-        // motor3_pub.publish(motor3_value);
-        // motor4_pub.publish(motor4_value);
-        // motor5_pub.publish(motor5_value);
-        // motor6_pub.publish(motor6_value);
-        // motor7_pub.publish(motor7_value);
 
         ros::spinOnce();
         loop_wait.sleep(); //wait some
     }
     return 0;
+}
+
+void angle_callback(const std_msgs::Float32 &msg)
+{
+    angle = msg.data;
+}
+
+void velocity_callback(const std_msgs::Float32 &msg)
+{
+    magnitude = msg.data;
 }
 
 //This exists.
@@ -72,16 +72,6 @@ void calc_motors()
     float force_x = FORCE_X_MODIFIER * magnitude * cos(angle * M_PI / 180);
     float force_y = FORCE_Y_MODIFIER * magnitude * sin(angle * M_PI / 180);
 
-    motor4_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(-force_y + force_x - moment);
     motor1_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(-force_y - force_x + moment);
-    motor3_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(force_y - force_x - moment);
-    motor6_value.data = MOTOR_NEUTRAL - MOTOR_RAMP * horizontal_precision * normalize_400(force_y + force_x + moment);
-
-    motor7_value.data = MOTOR_NEUTRAL;
-}
-
-//this funciton maps a range of floats to another range of floats
-float mapf(float x, float in_min, float in_max, float out_min, float out_max)
-{
-    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    motor2_value.data = MOTOR_NEUTRAL + MOTOR_RAMP * horizontal_precision * normalize_400(-force_y - force_x + moment);
 }

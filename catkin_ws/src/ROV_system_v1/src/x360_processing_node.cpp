@@ -29,8 +29,8 @@ int main(int argc, char **argv)
     while (ros::ok()) //ctrl-c makes ok() return false, thus ending the program
     {
         //publish everything once per loop
-        joystick_thumb_x_pub.publish(axis_joystick_thumb_stick_x_value);
-        joystick_thumb_y_pub.publish(axis_joystick_thumb_stick_y_value);
+        joystick_thumb_x_pub.publish(magnitude_value);
+        joystick_thumb_y_pub.publish(angle_value);
 
         ros::spinOnce();
         loop_wait.sleep(); //wait some
