@@ -29,8 +29,8 @@ int main(int argc, char **argv)
     ros::Subscriber joystick_thumb_x_topic = n.subscribe("joystick_x_topic", 1000, velocity_callback);
     ros::Subscriber joystick_thumb_y_topic = n.subscribe("joystick_y_topic", 1000, angle_callback);
 
-    ros::Publisher motor1x_pub = n.advertise<std_msgs::Int16>("motor1x_topic", 100);
-    ros::Publisher motor2x_pub = n.advertise<std_msgs::Int16>("motor2x_topic", 100);
+    ros::Publisher motor1_pub = n.advertise<std_msgs::Int16>("motor1x_topic", 100);
+    ros::Publisher motor2_pub = n.advertise<std_msgs::Int16>("motor2x_topic", 100);
 
     ros::Rate loop_wait(15); //this is needed
 

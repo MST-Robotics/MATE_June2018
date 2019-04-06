@@ -24,8 +24,8 @@ bool button_e_pulled = 0;
 float horizontal_precision = 1.0;
 float vertical_precision = 1.0;
 
-std_msgs::Int16 motor1x_value;
-std_msgs::Int16 motor2x_value;
+std_msgs::Int16 motor1_value;
+std_msgs::Int16 motor2_value;
 // std_msgs::Int16 motor3_value;
 // std_msgs::Int16 motor4_value;
 // std_msgs::Int16 motor5_value;
