@@ -28,22 +28,23 @@
 
 // Earth's magnetic field varies by location. Add or subtract
 // a declination to get a more accurate heading. Calculate
-// your's here:
+// your's here:movement 
 // http://www.ngdc.noaa.gov/geomag-web/#declination
 #define DECLINATION 0.116667 // in Rolla, MO
-
+//moved all of this to the .h file for auto movement a ton of errors got fixed
 /* For autonomous movement */
 // Tuned through trial-and-error
-struct movement {
+/*
+typedef struct{
   double x_axis;
-  double y-axis;
+  double y_axis;
   double z_axis;
-}
+} movement ;
 
 movement move_up = {.x_axis = 0, .y_axis = 0, .z_axis = 0};
 movement move_down = {.x_axis = 0, .y_axis = 0, .z_axis = 0};
 movement move_left = {.x_axis = 0, .y_axis = 0, .z_axis = 0};
 movement move_right = {.x_axis = 0, .y_axis = 0, .z_axis = 0};
-
+*/
 
 #endif

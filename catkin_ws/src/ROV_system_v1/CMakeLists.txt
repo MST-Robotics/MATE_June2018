@@ -213,3 +213,6 @@ target_link_libraries(arm_motion_processing_node ${catkin_LIBRARIES})
 
 add_executable(sensory_processing_node src/sensory_processing_node.cpp)
 target_link_libraries(sensory_processing_node ${catkin_LIBRARIES})
+
+add_executable(auto_motion_processing_node src/auto_motion_processing_node.cpp)
+target_link_libraries(auto_motion_processing_node ${catkin_LIBRARIES})

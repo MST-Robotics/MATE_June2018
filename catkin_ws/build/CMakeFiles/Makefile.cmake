@@ -628,6 +628,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "ROV_system_v1/CMakeFiles/joystick_processing_node.dir/DependInfo.cmake"
   "ROV_system_v1/CMakeFiles/motion_processing_node.dir/DependInfo.cmake"
   "ROV_system_v1/CMakeFiles/sensory_processing_node.dir/DependInfo.cmake"
+  "ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/DependInfo.cmake"
   "ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/DependInfo.cmake"
   "learning_ros/CMakeFiles/practice_node.dir/DependInfo.cmake"

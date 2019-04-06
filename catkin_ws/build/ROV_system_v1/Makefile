@@ -286,6 +286,21 @@ sensory_processing_node/fast:
 .PHONY : sensory_processing_node/fast
 
 # Convenience name for target.
+ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/rule
+.PHONY : ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/rule
+
+# Convenience name for target.
+auto_motion_processing_node: ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/rule
+
+.PHONY : auto_motion_processing_node
+
+# fast build rule for target.
+auto_motion_processing_node/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/build
+.PHONY : auto_motion_processing_node/fast
+
+# Convenience name for target.
 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
 .PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
@@ -341,6 +356,33 @@ src/arm_motion_processing_node.s: src/arm_motion_processing_node.cpp.s
 src/arm_motion_processing_node.cpp.s:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir/src/arm_motion_processing_node.cpp.s
 .PHONY : src/arm_motion_processing_node.cpp.s
+
+src/auto_motion_processing_node.o: src/auto_motion_processing_node.cpp.o
+
+.PHONY : src/auto_motion_processing_node.o
+
+# target to build an object file
+src/auto_motion_processing_node.cpp.o:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/src/auto_motion_processing_node.cpp.o
+.PHONY : src/auto_motion_processing_node.cpp.o
+
+src/auto_motion_processing_node.i: src/auto_motion_processing_node.cpp.i
+
+.PHONY : src/auto_motion_processing_node.i
+
+# target to preprocess a source file
+src/auto_motion_processing_node.cpp.i:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/src/auto_motion_processing_node.cpp.i
+.PHONY : src/auto_motion_processing_node.cpp.i
+
+src/auto_motion_processing_node.s: src/auto_motion_processing_node.cpp.s
+
+.PHONY : src/auto_motion_processing_node.s
+
+# target to generate assembly for a file
+src/auto_motion_processing_node.cpp.s:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/src/auto_motion_processing_node.cpp.s
+.PHONY : src/auto_motion_processing_node.cpp.s
 
 src/joystick_processing_node.o: src/joystick_processing_node.cpp.o
 
@@ -471,11 +513,15 @@ help:
 	@echo "... sensory_processing_node"
 	@echo "... list_install_components"
 	@echo "... install/strip"
+	@echo "... auto_motion_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_lisp"
 	@echo "... arm_motion_processing_node"
 	@echo "... src/arm_motion_processing_node.o"
 	@echo "... src/arm_motion_processing_node.i"
 	@echo "... src/arm_motion_processing_node.s"
+	@echo "... src/auto_motion_processing_node.o"
+	@echo "... src/auto_motion_processing_node.i"
+	@echo "... src/auto_motion_processing_node.s"
 	@echo "... src/joystick_processing_node.o"
 	@echo "... src/joystick_processing_node.i"
 	@echo "... src/joystick_processing_node.s"

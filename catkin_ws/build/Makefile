@@ -2337,6 +2337,19 @@ sensory_processing_node/fast:
 .PHONY : sensory_processing_node/fast
 
 #=============================================================================
+# Target rules for targets named auto_motion_processing_node
+
+# Build rule for target.
+auto_motion_processing_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 auto_motion_processing_node
+.PHONY : auto_motion_processing_node
+
+# fast build rule for target.
+auto_motion_processing_node/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir/build
+.PHONY : auto_motion_processing_node/fast
+
+#=============================================================================
 # Target rules for targets named diagnostic_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -4271,6 +4284,7 @@ help:
 	@echo "... joystick_processing_node"
 	@echo "... motion_processing_node"
 	@echo "... sensory_processing_node"
+	@echo "... auto_motion_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_lisp"
 	@echo "... arm_motion_processing_node"
 	@echo "... practice_node"

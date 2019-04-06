@@ -277,6 +277,7 @@
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/sensory_processing_node.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/list_install_components.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/install/strip.dir
+/home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/auto_motion_processing_node.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/ROV_system_v1/CMakeFiles/arm_motion_processing_node.dir
 /home/mstrobotics/MATE_June2018/catkin_ws/build/learning_ros/CMakeFiles/list_install_components.dir
