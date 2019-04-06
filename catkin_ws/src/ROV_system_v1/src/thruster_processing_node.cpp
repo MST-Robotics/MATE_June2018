@@ -31,6 +31,8 @@ int main(int argc, char **argv)
   ros::Publisher sw6_pub = n.advertise<std_msgs::Bool>("sw6_topic", 1000);
   ros::Publisher m1_pub = n.advertise<std_msgs::Bool>("m1_topic", 1000);
   ros::Publisher button_e_pub = n.advertise<std_msgs::Bool>("button_e_topic", 1000);
+  ros::Publisher button_m1_pub = n.advertise<std_msgs::Bool>("button_m1_topic", 1000);
+  ros::Publisher button_m2_pub = n.advertise<std_msgs::Bool>("button_m2_topic", 1000);
 
   ros::Publisher axis_left_thruster_pub = n.advertise<std_msgs::Float32>("axis_left_thruster_topic", 1000);
   ros::Publisher axis_right_thruster_pub = n.advertise<std_msgs::Float32>("axis_right_thruster_topic", 1000);
@@ -54,7 +56,7 @@ int main(int argc, char **argv)
     
     button_e_pub.publish(button_e_state);
     
-    m1_pub.publish(button_m1_state);
+    button_m1_pub.publish(button_m1_state);
 
     axis_left_thruster_pub.publish(axis_left_thruster_value);
     axis_right_thruster_pub.publish(axis_right_thruster_value);

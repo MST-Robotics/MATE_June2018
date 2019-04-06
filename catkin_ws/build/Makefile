@@ -2233,6 +2233,32 @@ _beginner_tutorials_generate_messages_check_deps_AddTwoInts/fast:
 .PHONY : _beginner_tutorials_generate_messages_check_deps_AddTwoInts/fast
 
 #=============================================================================
+# Target rules for targets named x360_motion_processing_node
+
+# Build rule for target.
+x360_motion_processing_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 x360_motion_processing_node
+.PHONY : x360_motion_processing_node
+
+# fast build rule for target.
+x360_motion_processing_node/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/build
+.PHONY : x360_motion_processing_node/fast
+
+#=============================================================================
+# Target rules for targets named sensory_processing_node
+
+# Build rule for target.
+sensory_processing_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensory_processing_node
+.PHONY : sensory_processing_node
+
+# fast build rule for target.
+sensory_processing_node/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
+.PHONY : sensory_processing_node/fast
+
+#=============================================================================
 # Target rules for targets named diagnostic_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -2244,19 +2270,6 @@ diagnostic_msgs_generate_messages_nodejs: cmake_check_build_system
 diagnostic_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
 .PHONY : diagnostic_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named diagnostic_msgs_generate_messages_eus
-
-# Build rule for target.
-diagnostic_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_eus
-.PHONY : diagnostic_msgs_generate_messages_eus
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_eus/fast:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
-.PHONY : diagnostic_msgs_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named thruster_processing_node
@@ -2324,17 +2337,30 @@ motion_processing_node/fast:
 .PHONY : motion_processing_node/fast
 
 #=============================================================================
-# Target rules for targets named sensory_processing_node
+# Target rules for targets named diagnostic_msgs_generate_messages_eus
 
 # Build rule for target.
-sensory_processing_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensory_processing_node
-.PHONY : sensory_processing_node
+diagnostic_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_eus
+.PHONY : diagnostic_msgs_generate_messages_eus
 
 # fast build rule for target.
-sensory_processing_node/fast:
-	$(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
-.PHONY : sensory_processing_node/fast
+diagnostic_msgs_generate_messages_eus/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
+.PHONY : diagnostic_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named x360_processing_node
+
+# Build rule for target.
+x360_processing_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 x360_processing_node
+.PHONY : x360_processing_node
+
+# fast build rule for target.
+x360_processing_node/fast:
+	$(MAKE) -f ROV_system_v1/CMakeFiles/x360_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_processing_node.dir/build
+.PHONY : x360_processing_node/fast
 
 #=============================================================================
 # Target rules for targets named diagnostic_msgs_generate_messages_lisp
@@ -4263,14 +4289,16 @@ help:
 	@echo "... _beginner_tutorials_generate_messages_check_deps_Num"
 	@echo "... listener"
 	@echo "... _beginner_tutorials_generate_messages_check_deps_AddTwoInts"
+	@echo "... x360_motion_processing_node"
+	@echo "... sensory_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_nodejs"
-	@echo "... diagnostic_msgs_generate_messages_eus"
 	@echo "... thruster_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_py"
 	@echo "... diagnostic_msgs_generate_messages_cpp"
 	@echo "... joystick_processing_node"
 	@echo "... motion_processing_node"
-	@echo "... sensory_processing_node"
+	@echo "... diagnostic_msgs_generate_messages_eus"
+	@echo "... x360_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_lisp"
 	@echo "... arm_motion_processing_node"
 	@echo "... practice_node"

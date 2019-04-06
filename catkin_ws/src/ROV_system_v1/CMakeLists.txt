@@ -205,6 +205,9 @@ target_link_libraries(joystick_processing_node ${catkin_LIBRARIES})
 add_executable(thruster_processing_node src/thruster_processing_node.cpp)
 target_link_libraries(thruster_processing_node ${catkin_LIBRARIES})
 
+add_executable(x360_processing_node src/x360_processing_node.cpp)
+target_link_libraries(x360_processing_node ${catkin_LIBRARIES})
+
 add_executable(motion_processing_node src/motion_processing_node.cpp)
 target_link_libraries(motion_processing_node ${catkin_LIBRARIES})
 
@@ -213,3 +216,6 @@ target_link_libraries(arm_motion_processing_node ${catkin_LIBRARIES})
 
 add_executable(sensory_processing_node src/sensory_processing_node.cpp)
 target_link_libraries(sensory_processing_node ${catkin_LIBRARIES})
+
+add_executable(x360_motion_processing_node src/x360_motion_processing_node.cpp)
+target_link_libraries(x360_motion_processing_node ${catkin_LIBRARIES})

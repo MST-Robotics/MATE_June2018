@@ -166,6 +166,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/rule
+.PHONY : ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/rule
+
+# Convenience name for target.
+x360_motion_processing_node: ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/rule
+
+.PHONY : x360_motion_processing_node
+
+# fast build rule for target.
+x360_motion_processing_node/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/build
+.PHONY : x360_motion_processing_node/fast
+
+# Convenience name for target.
+ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+
+# Convenience name for target.
+sensory_processing_node: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+
+.PHONY : sensory_processing_node
+
+# fast build rule for target.
+sensory_processing_node/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
+.PHONY : sensory_processing_node/fast
+
+# Convenience name for target.
 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
 .PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
@@ -179,21 +209,6 @@ diagnostic_msgs_generate_messages_nodejs: ROV_system_v1/CMakeFiles/diagnostic_ms
 diagnostic_msgs_generate_messages_nodejs/fast:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
 .PHONY : diagnostic_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-.PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_eus: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_eus
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_eus/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
-.PHONY : diagnostic_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 ROV_system_v1/CMakeFiles/thruster_processing_node.dir/rule:
@@ -271,19 +286,34 @@ motion_processing_node/fast:
 .PHONY : motion_processing_node/fast
 
 # Convenience name for target.
-ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
-.PHONY : ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
+.PHONY : ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-sensory_processing_node: ROV_system_v1/CMakeFiles/sensory_processing_node.dir/rule
+diagnostic_msgs_generate_messages_eus: ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
 
-.PHONY : sensory_processing_node
+.PHONY : diagnostic_msgs_generate_messages_eus
 
 # fast build rule for target.
-sensory_processing_node/fast:
-	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build.make ROV_system_v1/CMakeFiles/sensory_processing_node.dir/build
-.PHONY : sensory_processing_node/fast
+diagnostic_msgs_generate_messages_eus/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
+.PHONY : diagnostic_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+ROV_system_v1/CMakeFiles/x360_processing_node.dir/rule:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ROV_system_v1/CMakeFiles/x360_processing_node.dir/rule
+.PHONY : ROV_system_v1/CMakeFiles/x360_processing_node.dir/rule
+
+# Convenience name for target.
+x360_processing_node: ROV_system_v1/CMakeFiles/x360_processing_node.dir/rule
+
+.PHONY : x360_processing_node
+
+# fast build rule for target.
+x360_processing_node/fast:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/x360_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_processing_node.dir/build
+.PHONY : x360_processing_node/fast
 
 # Convenience name for target.
 ROV_system_v1/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
@@ -450,6 +480,60 @@ src/thruster_processing_node.cpp.s:
 	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/thruster_processing_node.dir/build.make ROV_system_v1/CMakeFiles/thruster_processing_node.dir/src/thruster_processing_node.cpp.s
 .PHONY : src/thruster_processing_node.cpp.s
 
+src/x360_motion_processing_node.o: src/x360_motion_processing_node.cpp.o
+
+.PHONY : src/x360_motion_processing_node.o
+
+# target to build an object file
+src/x360_motion_processing_node.cpp.o:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/src/x360_motion_processing_node.cpp.o
+.PHONY : src/x360_motion_processing_node.cpp.o
+
+src/x360_motion_processing_node.i: src/x360_motion_processing_node.cpp.i
+
+.PHONY : src/x360_motion_processing_node.i
+
+# target to preprocess a source file
+src/x360_motion_processing_node.cpp.i:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/src/x360_motion_processing_node.cpp.i
+.PHONY : src/x360_motion_processing_node.cpp.i
+
+src/x360_motion_processing_node.s: src/x360_motion_processing_node.cpp.s
+
+.PHONY : src/x360_motion_processing_node.s
+
+# target to generate assembly for a file
+src/x360_motion_processing_node.cpp.s:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_motion_processing_node.dir/src/x360_motion_processing_node.cpp.s
+.PHONY : src/x360_motion_processing_node.cpp.s
+
+src/x360_processing_node.o: src/x360_processing_node.cpp.o
+
+.PHONY : src/x360_processing_node.o
+
+# target to build an object file
+src/x360_processing_node.cpp.o:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/x360_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_processing_node.dir/src/x360_processing_node.cpp.o
+.PHONY : src/x360_processing_node.cpp.o
+
+src/x360_processing_node.i: src/x360_processing_node.cpp.i
+
+.PHONY : src/x360_processing_node.i
+
+# target to preprocess a source file
+src/x360_processing_node.cpp.i:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/x360_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_processing_node.dir/src/x360_processing_node.cpp.i
+.PHONY : src/x360_processing_node.cpp.i
+
+src/x360_processing_node.s: src/x360_processing_node.cpp.s
+
+.PHONY : src/x360_processing_node.s
+
+# target to generate assembly for a file
+src/x360_processing_node.cpp.s:
+	cd /home/mstrobotics/MATE_June2018/catkin_ws/build && $(MAKE) -f ROV_system_v1/CMakeFiles/x360_processing_node.dir/build.make ROV_system_v1/CMakeFiles/x360_processing_node.dir/src/x360_processing_node.cpp.s
+.PHONY : src/x360_processing_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -460,15 +544,17 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... install/local"
+	@echo "... x360_motion_processing_node"
+	@echo "... sensory_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_nodejs"
-	@echo "... diagnostic_msgs_generate_messages_eus"
 	@echo "... thruster_processing_node"
 	@echo "... diagnostic_msgs_generate_messages_py"
 	@echo "... install"
 	@echo "... diagnostic_msgs_generate_messages_cpp"
 	@echo "... joystick_processing_node"
 	@echo "... motion_processing_node"
-	@echo "... sensory_processing_node"
+	@echo "... diagnostic_msgs_generate_messages_eus"
+	@echo "... x360_processing_node"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... diagnostic_msgs_generate_messages_lisp"
@@ -488,6 +574,12 @@ help:
 	@echo "... src/thruster_processing_node.o"
 	@echo "... src/thruster_processing_node.i"
 	@echo "... src/thruster_processing_node.s"
+	@echo "... src/x360_motion_processing_node.o"
+	@echo "... src/x360_motion_processing_node.i"
+	@echo "... src/x360_motion_processing_node.s"
+	@echo "... src/x360_processing_node.o"
+	@echo "... src/x360_processing_node.i"
+	@echo "... src/x360_processing_node.s"
 .PHONY : help
 
 

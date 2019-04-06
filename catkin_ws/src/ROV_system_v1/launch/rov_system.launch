@@ -1,19 +1,27 @@
 <launch>
 
-  <node pkg="joy" type="joy_node" name="joystick_node" respawn="true">
-    <param name="dev" value="/dev/input/js0" />
-    <remap from="joy" to="joystick_topic"/>
-  </node>
+ # <node pkg="joy" type="joy_node" name="joystick_node" respawn="true">
+  #  <param name="dev" value="/dev/input/js0" />
+   # <remap from="joy" to="joystick_topic"/>
+ # </node>
 
-  <node pkg="joy" type="joy_node" name="thruster_node" respawn="true">
-    <param name="dev" value="/dev/input/js1" />
-    <remap from="joy" to="thruster_topic"/>
+  #<node pkg="joy" type="joy_node" name="thruster_node" respawn="true">
+   # <param name="dev" value="/dev/input/js1" />
+   # <remap from="joy" to="thruster_topic"/>
+  #</node>
+
+  <node pkg="joy" type="joy_node" name="x360_node" respawn="true">
+    <param name="dev" value="/dev/input/js0" />
+    <remap from="joy" to="x360_topic"/>
   </node>
 
   <node pkg="ROV_system_v1" type="joystick_processing_node" name="joystick_processing_node" respawn="true">
   </node>
 
   <node pkg="ROV_system_v1" type="thruster_processing_node" name="thruster_processing_node" respawn="true">
+  </node>
+
+  <node pkg="ROV_system_v1" type="x360_processing_node" name="x360_processing_node" respawn="true">
   </node>
 
   <node pkg="ROV_system_v1" type="motion_processing_node" name="motion_processing_node" respawn="true">
@@ -23,6 +31,9 @@
   </node>
 
   <node pkg="ROV_system_v1" type="sensory_processing_node" name="sensory_processing_node" respawn="true">
+  </node>
+
+  <node pkg="ROV_system_v1" type="x360_motion_processing_node" name="x360_motion_processing_node" respawn="true">
   </node>
 
   <node pkg="rosserial_python" type="serial_node.py" name="ROV_main" respawn="true">

@@ -31,6 +31,14 @@ std_msgs::Int16 button_tgl2_value;//used for controlling the leveler
 
 std_msgs::Bool button_e_state;//sensor function activation
 
+//mode switch for manual or automatic movement
+//std_msgs::Bool button_m1_state; //manual control mode
+std_msgs::Bool button_m2_state; //automatic movement mode
+
+
+
+
+
 std_msgs::Float32 axis_left_thruster_value;//used a precision scaler for the horitzontal movement
 std_msgs::Float32 axis_right_thruster_value;//used a precision scaler for the twist and vertical movement
 

@@ -198,16 +198,27 @@ void leveler_cb(const std_msgs::UInt8 &msg)
 
 void temp_pin_on(const std_msgs::Bool &msg) 
 {
-  char temp_val = 'a';
+  
+  
   File csvFile = SD.open(CSV_FILE_LOCATION, FILE_WRITE);
   if(msg.data) 
-  {
+  {  /*
+   *   int reading = analogRead(temp_sensor_pin);
+       float voltage = reading * 5.0;
+        voltage /= 1024.0;
+        float temperatureC = (voltage - 0.5) * 100;
+    *   float temperatureF = (TemperatureC * 9.0/5.0) + 32.0;
+    *   Serial.print(temperature
+    * 
+    */
+    
     // turn pin on
     digitalWrite(temp_pin, HIGH);
     int temp_val = analogRead(temp_sensor_pin); //read the temperature sensor
     // write to csv
     if (csvFile) 
     {
+      Serial.print(temp_val, csvFile);
 //      csvFile.print("temp, %d", temp_val);
     }
     
