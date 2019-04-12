@@ -71,7 +71,7 @@ void loop()
 
   if (millis() - prev_millis >= 10)
   {
-    send_manipulator_data();
+   // send_manipulator_data();
     //send_leveler_data();
     prev_millis = millis();
   }

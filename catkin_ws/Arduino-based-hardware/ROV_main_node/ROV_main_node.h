@@ -196,11 +196,12 @@ void leveler_cb(const std_msgs::UInt8 &msg)
  * turns on temp sensor, reads it, dumps it into csv
  */
 
-void temp_pin_on(const std_msgs::Bool &msg) 
+void temp_pin_on()//const std_msgs::Bool &msg) 
 {
   char temp_val = 'a';
+  bool on = true;
   File csvFile = SD.open(CSV_FILE_LOCATION, FILE_WRITE);
-  if(msg.data) 
+  if(on) 
   {
     // turn pin on
     digitalWrite(temp_pin, HIGH);
@@ -270,7 +271,7 @@ void motor_setup(void)
  */
 void send_leveler_data(void)
 {
-  Serial2.print('L'+String(leveler_data)+'\n');
+  Serial.print('L'+String(leveler_data)+'\n');
  return;  
 }
 
@@ -280,13 +281,13 @@ void send_leveler_data(void)
  */
 void send_manipulator_data(void)
 {
-  Serial2.print('M');
+  Serial.print('M');
   for(int i = 0; i < 4; i++)
   {
-    Serial2.print(manipulator_data[i]);
-    Serial2.print(',');
+    Serial.print(manipulator_data[i]);
+    Serial.print(',');
   }
-  Serial2.println();   
+  Serial.println();   
   
   return;  
 }
@@ -348,10 +349,12 @@ void process_imu(void)
 /*
  * 
  * analog read needs more paramters but this unused code
+ * */
 //function for reading and calculating the temperature
+/*
 void process_temperature(void)
 {
-  raw_temp.data = analogRead( );//read the temperature sensor
+  raw_temp.data = analogRead( A1);//read the temperature sensor
  
   raw_temp_pub.publish(&raw_temp);//publish the temperature data
   return;
