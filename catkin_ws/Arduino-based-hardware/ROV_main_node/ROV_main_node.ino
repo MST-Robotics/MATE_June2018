@@ -24,9 +24,11 @@
 unsigned long  prev_millis = 0;
 void setup()
 {
+   Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
+   Serial2.begin(9600); // opens serial port, sets data rate to 9600 bps
   main_setup();//contains the declarations and hardware setup
   motor_setup();//sets up the speed controlls and sets the motors to off
-
+   
   //Roll is robot's rotation width-wise
   roll_setpoint = 1;
   roll_PID.SetTunings(aggKp, aggKi, aggKd);//if far from setpoint, motor will ramp faster
